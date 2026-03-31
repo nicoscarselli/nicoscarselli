@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://nicoscarselli.github.io/nicoscarselli-portfolio/sitemap.xml
