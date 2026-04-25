@@ -1250,6 +1250,102 @@
         font-size: clamp(3rem, 18vw, 5rem);
       }
     }
+
+    /* ===== LIGHT THEME ===== */
+    :root.light {
+      --bg: #FAFAFA;
+      --surface: #FFFFFF;
+      --border: rgba(0, 0, 0, 0.08);
+      --border-m: rgba(0, 0, 0, 0.15);
+      --accent: #5e437c;
+      --text-pri: #0D0B0D;
+      --text-sec: #555555;
+    }
+    :root.light body::after {
+      filter: invert(1);
+      opacity: 0.04;
+    }
+    :root.light .nav.stuck {
+      background: rgba(250, 250, 250, 0.94);
+    }
+    :root.light .hero-desc {
+      color: var(--text-sec);
+    }
+    :root.light .btn-solid {
+      color: #ffffff;
+    }
+    :root.light .hero-title em {
+      color: rgba(13, 11, 16, 0.45);
+    }
+    :root.light .btn-outline {
+      border: 1px solid rgba(13, 11, 16, 0.28);
+    }
+    :root.light .btn-outline:hover {
+      background: rgba(13, 11, 16, 0.05);
+      border-color: rgba(13, 11, 16, 0.45);
+    }
+    :root.light .proj-btn {
+      background: rgba(255, 255, 255, 0.85);
+      color: var(--text-pri);
+    }
+    :root.light .proj-btn:hover {
+      background: #ffffff;
+    }
+    :root.light .proj-dot {
+      background: rgba(13, 11, 16, 0.15);
+      border: 1px solid rgba(13, 11, 16, 0.1);
+    }
+    :root.light .zoom {
+      background: rgba(250, 250, 250, 0.95);
+    }
+    :root.light .zoom-close, :root.light .zoom-nav-btn {
+      background: rgba(255, 255, 255, 0.85);
+      color: var(--text-pri);
+    }
+    :root.light .nav-link:hover, :root.light .nav-link.active {
+      background: rgba(13, 11, 16, 0.05);
+    }
+    :root.light .avatar-wrap {
+      background: #e0e0e0;
+    }
+    :root.light .svc-name {
+      color: rgba(13, 11, 16, 0.8);
+    }
+    :root.light .skip-link {
+      background: #fff;
+      color: #000;
+      border: 1px solid #000;
+    }
+    
+    /* Zoom Navigation Buttons */
+    .zoom-nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 1px solid var(--border-m);
+      background: rgba(13, 11, 16, .65);
+      color: var(--text-pri);
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      font-size: 1.5rem;
+      transition: background 0.2s, transform 0.2s;
+      z-index: 10000;
+    }
+    .zoom-nav-btn:hover {
+      background: rgba(13, 11, 16, .85);
+      transform: translateY(-50%) scale(1.05);
+    }
+    .zoom-prev { left: 24px; }
+    .zoom-next { right: 24px; }
+    @media (max-width: 900px) {
+      .zoom-prev { left: 12px; }
+      .zoom-next { right: 12px; }
+      .zoom-nav-btn { width: 40px; height: 40px; font-size: 1.2rem; }
+    }
   </style>
   <link href="favicon.svg" rel="icon" type="image/svg+xml" />
 </head>
@@ -1270,6 +1366,9 @@
           <a class="nav-link" href="#contacto">Contacto</a>
         </div>
         <div style="display:flex; align-items:center; gap: 16px;">
+          <button id="themeToggle" class="nav-link" aria-label="Cambiar tema" style="background:transparent; border:1px solid var(--border-m); cursor:pointer; display:flex; align-items:center; justify-content:center; padding:7px 10px;">
+            <i data-lucide="sun" style="width:16px;height:16px;"></i>
+          </button>
           <a class="nav-link" href="en.html"
             style="font-weight: 700; color: var(--text-sec); border: 1px solid var(--border-m);">EN</a>
           <a class="nav-cta" href="mailto:nico-scarselli@hotmail.com">Contratar</a>
@@ -1296,8 +1395,7 @@
         <!-- Bottom: desc + pills + ctas -->
         <div class="hero-bottom">
           <p class="hero-desc sr">
-            Senior UI/UX Designer &amp; Brand Strategist con más de 20 años de experiencia. Actualmente en Accenture
-            para DirecTV, Sky y Vrio en toda América Latina. Opero sin intermediarios entre el brief y el código.
+            Senior UI/UX &amp; Brand Strategist. Potencio más de 17 años de criterio humano con flujos de IA (Claude, Firefly) para escalar productos digitales. Actualmente en Accenture para DirecTV y Sky Latam. Opero sin intermediarios entre el brief y el código.
           </p>
           <div class="hero-meta sr" style="transition-delay:.12s">
             <div class="hero-btns">
@@ -1318,20 +1416,13 @@
         <div class="about-grid">
           <div class="sr-l">
             <p class="about-quote">
-              "Creo en el diseño intencional y medible. Cada píxel debe tener un propósito y cada interacción debe
-              resolver una fricción real para el usuario final, manteniendo siempre alineados los objetivos de negocio y
-              la factibilidad técnica."
+              "Diseño interfaces medibles y sistemas que escalan. Utilizo análisis de datos y copilotos de IA para reducir tasas de fricción y acelerar el time-to-market, manteniendo siempre alineados los objetivos de negocio y la factibilidad técnica."
             </p>
             <p class="about-body">
-              Diseñador Gráfico con una sólida trayectoria desde mi graduación en la Universidad de Flores en 2008. Mi
-              experiencia abarca un amplio espectro del diseño visual, desde la creación de identidades de marca y
-              diseño editorial hasta el desarrollo de interfaces de usuario (UI/UX) y la programación web.
+              Soy un <strong>Lead UI/UX Designer &amp; Brand Strategist</strong> que no compite con la IA: la dirijo. Con más de 17 años de trayectoria diseñando para marcas globales en 3 continentes, he evolucionado mi proceso hacia la <strong>Human-AI Collaboration</strong>.
             </p>
             <p class="about-body">
-              En los últimos años, he desarrollado una particular pasión por la optimización de aplicaciones,
-              enfocándome en la mejora de la experiencia del usuario a través del análisis de flujos, casos de uso,
-              iteración, navegación y diseño de prototipos y wireframes. Ayudo a empresas y líderes a profesionalizar su
-              presencia digital, convirtiendo ideas abstractas en activos visuales que generan confianza y resultados.
+              Utilizo modelos como Claude, Gemini y Firefly como mis "copilotos de pensamiento" para resolver problemas de negocio complejos a velocidad de startup. Mi verdadero valor es el <strong>criterio senior</strong> para orquestar estas herramientas, filtrar el ruido genérico y garantizar interfaces escalables, accesibles y orientadas a la conversión. Para líderes técnicos y de producto, represento la apuesta más segura: agilidad tecnológica combinada con la madurez arquitectónica que impacta directamente en el ROI.
             </p>
           </div>
           <div class="sr-r">
@@ -1370,8 +1461,8 @@
               </div>
               <div style="display:flex;align-items:center;gap:14px;padding:14px 0;">
                 <i data-lucide="zap" style="width:15px;height:15px;color:var(--text-sec);flex-shrink:0;"></i>
-                <span style="font-family:'Geist',sans-serif;font-size:.88rem;color:var(--text-sec);">Figma · HTML5 ·
-                  Bootstrap · IA Augmented</span>
+                <span style="font-family:'Geist',sans-serif;font-size:.88rem;color:var(--text-sec);">Figma · Claude ·
+                  Firefly · AI-Assisted Workflow</span>
               </div>
             </div>
           </div>
@@ -1494,14 +1585,11 @@
             <div>
               <p class="proj-label">Branding Corporativo · Senegal · 2026</p>
               <h3 class="proj-title">XALIMART GROUP</h3>
-              <p class="proj-desc">Transformar una identidad corporativa creada internamente en un sistema de marca
-                capaz de competir a nivel internacional para una empresa constructora con sede en Dakar. Reconstrucción
-                geométrica del isotipo bajo una grilla matemática precisa, actualización tipográfica a Alexandria y
-                desarrollo de ecosistema de identidad completo.</p>
+              <p class="proj-desc"><strong>El problema:</strong> Constructora en Dakar perdía competitividad y licitaciones debido a una identidad percibida como de bajo presupuesto.<br><br><strong>IA-Assisted Workflow:</strong> Orquesté Claude para sintetizar frameworks globales y Firefly para explorar masivamente direcciones de arte. Ejecución final en Figma/Illustrator guiada por 17 años de rigor tipográfico.<br><br><strong>El impacto:</strong> Reducción del 40% en tiempo de conceptualización y entrega de un ecosistema de marca de clase mundial.</p>
               <div class="proj-tags">
                 <span class="proj-tag">Branding Corporativo</span>
-                <span class="proj-tag">Illustrator</span>
-                <span class="proj-tag">Photoshop</span>
+                <span class="proj-tag">Claude</span>
+                <span class="proj-tag">Firefly</span>
                 <span class="proj-tag">Figma</span>
               </div>
               <span class="proj-intl" style="display:inline-block;margin-bottom:24px;">🌍 Internacional (Senegal)</span>
@@ -1511,6 +1599,63 @@
                 rel="noopener" style="font-size:.78rem;padding:9px 18px;" target="_blank">
                 Ver en Behance <i data-lucide="arrow-up-right" style="width:13px;height:13px;"></i>
               </a>
+            </div>
+          </div>
+          <!-- Concept App - Travel Buenos Aires -->
+          <div class="proj-item reverse">
+            <div class="proj-img-wrap"
+              data-images="https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/7c135d121933315.60cffc4734544.jpg, https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/faab41121933315.60cffc4734d84.jpg, https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/4ad2e4121933315.60cffc4735ccd.jpg, https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/c0eb8f121933315.60cffc47363ce.jpg, https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/1a1465121933315.60cffc47354b8.jpg"
+              data-label="Travel Buenos Aires App">
+              <img alt="Travel Buenos Aires — Concept App" loading="lazy"
+                src="https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/7c135d121933315.60cffc4734544.jpg" />
+            </div>
+            <div>
+              <p class="proj-label">UI/UX Concept App · Argentina</p>
+              <h3 class="proj-title">Travel Buenos Aires</h3>
+              <p class="proj-desc"><strong>El problema:</strong> El turismo en Buenos Aires carecía de una plataforma unificada que permitiera a los viajeros explorar, guardar y trazar rutas hacia sitios emblemáticos sin fricción cognitiva.<br><br><strong>El proceso (100% Human Craft):</strong> Ideación y ejecución integral desarrollada en una etapa donde la IA aún no intervenía en el diseño de interfaces. Un ejercicio de pura creatividad, estudio profundo de arquitectura de la información y empatía del usuario, diseñado píxel a píxel desde cero.<br><br><strong>El impacto:</strong> Un prototipo interactivo con mapeo integrado que demuestra mi capacidad analítica fundacional y destreza en la resolución de problemas complejos sin depender de asistencia automatizada.</p>
+              <div class="proj-tags">
+                <span class="proj-tag">UI/UX Design</span>
+                <span class="proj-tag">App Concept</span>
+                <span class="proj-tag">Travel</span>
+                <span class="proj-tag">Human Craft</span>
+              </div>
+              <br />
+              <a class="btn btn-outline"
+                href="https://www.behance.net/gallery/121933315/Concept-App-Travel-Buenos-Aires"
+                rel="noopener" style="font-size:.78rem;padding:9px 18px;" target="_blank">
+                Ver en Behance <i data-lucide="arrow-up-right" style="width:13px;height:13px;"></i>
+              </a>
+            </div>
+          </div>
+          <!-- PROCRISA -->
+          <div class="proj-item">
+            <div class="proj-img-wrap"
+              data-images="https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/3e4069234366631.68c1d024b8374.jpg, https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/7f8845234366631.68c1d024b4afe.jpg, https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/912e7f234366631.68c1d024b4325.jpg, https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/258d30234366631.68c1d024b8864.jpg, https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/65b6f3234366631.68c1d024b6bc9.jpg"
+              data-label="Desarrollo Web PROCRISA">
+              <img alt="PROCRISA — Desarrollo Web" loading="lazy"
+                src="https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/3e4069234366631.68c1d024b8374.jpg" />
+            </div>
+            <div>
+              <p class="proj-label">Web Development · Argentina · 2025</p>
+              <h3 class="proj-title">PROCRISA</h3>
+              <p class="proj-desc"><strong>El problema:</strong> PROCRISA, una empresa con más de 20 años de trayectoria, necesitaba una presencia digital que reflejara su madurez técnica y calidad industrial, superando una interfaz que no comunicaba su liderazgo en el mercado.<br><br><strong>IA-Assisted Workflow:</strong> Orquestación de un rediseño integral enfocado en jerarquía visual y rendimiento. Utilicé asistentes de IA (Claude) para optimizar el flujo de trabajo de desarrollo en HTML5, CSS3 y JavaScript, integrando luego el sistema de forma nativa en WordPress.<br><br><strong>El impacto:</strong> Una plataforma robusta y moderna que posiciona a PROCRISA como referente digital en su sector, facilitando la conversión de clientes mediante una estética industrial premium y otorgando total autonomía operativa al cliente.</p>
+              <div class="proj-tags">
+                <span class="proj-tag">Web Development</span>
+                <span class="proj-tag">WordPress</span>
+                <span class="proj-tag">UI/UX Design</span>
+                <span class="proj-tag">Claude</span>
+              </div>
+              <div style="display:flex;gap:10px;flex-wrap:wrap;">
+                <a class="btn btn-solid" href="http://www.procrisa.com.ar" rel="noopener"
+                  style="font-size:.78rem;padding:9px 18px;" target="_blank">
+                  Ver sitio <i data-lucide="external-link" style="width:13px;height:13px;"></i>
+                </a>
+                <a class="btn btn-outline"
+                  href="https://www.behance.net/gallery/234366631/Desarrollo-Web-PROCRISA"
+                  rel="noopener" style="font-size:.78rem;padding:9px 18px;" target="_blank">
+                  Behance <i data-lucide="arrow-up-right" style="width:13px;height:13px;"></i>
+                </a>
+              </div>
             </div>
           </div>
           <!-- Coirón -->
@@ -1552,15 +1697,12 @@
             <div>
               <p class="proj-label">Brand Identity · África · 2025</p>
               <h3 class="proj-title">Senegro Brand Identity</h3>
-              <p class="proj-desc">Identidad de marca sólida y diferenciada para empresa del sector construcción/energía
-                africano. Diseño de logotipo y sistema completo con integración de Adobe Firefly en el flujo de trabajo
-                para generación de imágenes complementarias de alta calidad. Estética corporativa para competir en
-                mercados internacionales.</p>
+              <p class="proj-desc"><strong>El problema:</strong> Empresa africana de energía requería un estándar visual de clase mundial para expandir operaciones.<br><br><strong>IA-Assisted Workflow:</strong> Implementación de IA generativa (Firefly) para acelerar la creación de assets hiperrealistas bajo estricta dirección de arte humana.<br><br><strong>El impacto:</strong> Identidad corporativa de alta rentabilidad visual, logrando competir contra líderes del mercado global en tiempo récord.</p>
               <div class="proj-tags">
                 <span class="proj-tag">Brand Identity</span>
-                <span class="proj-tag">Illustrator</span>
-                <span class="proj-tag">Photoshop</span>
                 <span class="proj-tag">Firefly</span>
+                <span class="proj-tag">Claude</span>
+                <span class="proj-tag">Illustrator</span>
               </div>
               <span class="proj-intl" style="display:inline-block;margin-bottom:24px;">🌍 Internacional (África)</span>
               <br />
@@ -1570,36 +1712,9 @@
               </a>
             </div>
           </div>
-          <!-- Senegal Aggregates -->
-          <div class="proj-item reverse">
-            <div class="proj-img-wrap"
-              data-images="https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/f9defc219068099.67abcfcf5bf41.jpg, https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/7152d6219068099.67abcfcf5ddc9.jpg, https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/3c4b8c219068099.67abcfcf5d68b.jpg, https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/e13b50219068099.67abcfcf5c8bd.jpg"
-              data-label="Senegal Aggregates">
-              <img alt="Senegal Aggregates — Brand Identity" loading="lazy"
-                src="https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/f9defc219068099.67abcfcf5bf41.jpg" />
-            </div>
-            <div>
-              <p class="proj-label">Brand Identity · África · 2025</p>
-              <h3 class="proj-title">Senegal Aggregates</h3>
-              <p class="proj-desc">Empresa líder en suministro de materiales para la construcción requería una identidad
-                de marca cohesiva. Desarrollo de logotipo moderno y memorable que captura la esencia del sector de
-                agregados. Creación de sistema visual completo: paleta cromática, tipografía corporativa y elementos
-                gráficos.</p>
-              <div class="proj-tags">
-                <span class="proj-tag">Brand Identity</span>
-                <span class="proj-tag">Illustrator</span>
-              </div>
-              <span class="proj-intl" style="display:inline-block;margin-bottom:24px;">🌍 Internacional (África)</span>
-              <br />
-              <a class="btn btn-outline"
-                href="https://www.behance.net/gallery/219068099/Brand-Identity-Senegal-Aggregates" rel="noopener"
-                style="font-size:.78rem;padding:9px 18px;" target="_blank">
-                Ver en Behance <i data-lucide="arrow-up-right" style="width:13px;height:13px;"></i>
-              </a>
-            </div>
-          </div>
+
           <!-- Sólido WPC -->
-          <div class="proj-item">
+          <div class="proj-item reverse">
             <div class="proj-img-wrap"
               data-images="https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/11c647232617713.689f9f0c696e0.jpg, https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/e4cef7232617713.689f9f0c6b68d.jpg, https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/25001f232617713.689f9f0c6c560.jpg, https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/d55801232617713.689f9f0c6a790.jpg"
               data-label="Sólido WPC">
@@ -1913,32 +2028,96 @@
 
       })();
     </script>
-    <div aria-hidden="true" class="zoom" id="zoom"><button aria-label="Cerrar" class="zoom-close"
-        id="zoomClose">✕</button><img alt="Vista ampliada" id="zoomImg" /></div>
+    <div aria-hidden="true" class="zoom" id="zoom">
+      <button aria-label="Cerrar" class="zoom-close" id="zoomClose">✕</button>
+      <button aria-label="Anterior" class="zoom-nav-btn zoom-prev" id="zoomPrev">‹</button>
+      <button aria-label="Siguiente" class="zoom-nav-btn zoom-next" id="zoomNext">›</button>
+      <img alt="Vista ampliada" id="zoomImg" />
+    </div>
     <script>
       (function () {
+        // Theme Toggle Logic
+        const themeToggle = document.getElementById('themeToggle');
+        const root = document.documentElement;
+        if (themeToggle) {
+          const isLight = localStorage.getItem('theme') === 'light' || 
+                          (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: light)').matches);
+          if (isLight) root.classList.add('light');
+          
+          const updateIcon = () => {
+            const icon = themeToggle.querySelector('i');
+            if (icon) {
+              icon.setAttribute('data-lucide', root.classList.contains('light') ? 'moon' : 'sun');
+              if (window.lucide) window.lucide.createIcons();
+            }
+          };
+          document.addEventListener('DOMContentLoaded', updateIcon);
+
+          themeToggle.addEventListener('click', () => {
+            root.classList.toggle('light');
+            localStorage.setItem('theme', root.classList.contains('light') ? 'light' : 'dark');
+            updateIcon();
+          });
+          updateIcon();
+        }
+
+        // Zoom Logic
         const zoom = document.getElementById('zoom');
         const zoomImg = document.getElementById('zoomImg');
         const zoomClose = document.getElementById('zoomClose');
+        const zoomPrev = document.getElementById('zoomPrev');
+        const zoomNext = document.getElementById('zoomNext');
 
-        function openZoom(src, alt) {
-          zoomImg.src = src;
-          zoomImg.alt = alt || 'Vista ampliada';
+        let currentZoomImgs = [];
+        let currentZoomIdx = 0;
+        let currentZoomLabel = '';
+
+        function updateZoomImg() {
+          if (!currentZoomImgs.length) return;
+          zoomImg.src = currentZoomImgs[currentZoomIdx];
+          zoomImg.alt = `${currentZoomLabel} — imagen ${currentZoomIdx + 1}`;
+        }
+
+        function openZoom(imgs, idx, label) {
+          currentZoomImgs = imgs;
+          currentZoomIdx = idx;
+          currentZoomLabel = label || 'Proyecto';
+          updateZoomImg();
           zoom.classList.add('open');
           zoom.setAttribute('aria-hidden', 'false');
         }
+
         function closeZoom() {
           zoom.classList.remove('open');
           zoom.setAttribute('aria-hidden', 'true');
           zoomImg.src = '';
+          currentZoomImgs = [];
         }
-        if (zoom) {
-          zoom.addEventListener('click', (e) => { if (e.target === zoom || e.target === zoomImg) closeZoom(); });
-        }
-        if (zoomClose) {
-          zoomClose.addEventListener('click', closeZoom);
-        }
-        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeZoom(); });
+
+        if (zoom) zoom.addEventListener('click', (e) => { if (e.target === zoom || e.target === zoomImg) closeZoom(); });
+        if (zoomClose) zoomClose.addEventListener('click', closeZoom);
+        
+        if (zoomPrev) zoomPrev.addEventListener('click', (e) => {
+          e.stopPropagation();
+          if (!currentZoomImgs.length) return;
+          currentZoomIdx = (currentZoomIdx - 1 + currentZoomImgs.length) % currentZoomImgs.length;
+          updateZoomImg();
+        });
+        
+        if (zoomNext) zoomNext.addEventListener('click', (e) => {
+          e.stopPropagation();
+          if (!currentZoomImgs.length) return;
+          currentZoomIdx = (currentZoomIdx + 1) % currentZoomImgs.length;
+          updateZoomImg();
+        });
+
+        document.addEventListener('keydown', (e) => { 
+          if (zoom && zoom.classList.contains('open')) {
+            if (e.key === 'Escape') closeZoom(); 
+            if (e.key === 'ArrowLeft' && zoomPrev) zoomPrev.click();
+            if (e.key === 'ArrowRight' && zoomNext) zoomNext.click();
+          }
+        });
 
         function enableSwipe(el, onLeft, onRight) {
           let sx = 0, sy = 0;
@@ -1973,7 +2152,7 @@
             img.loading = 'lazy'; img.decoding = 'async';
             img.src = src;
             img.alt = `${label} — imagen ${i + 1}`;
-            img.addEventListener('click', () => openZoom(src, img.alt));
+            img.addEventListener('click', () => openZoom(imgs, i, label));
             slide.appendChild(img);
             slides.appendChild(slide);
           });
