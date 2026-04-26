@@ -1251,6 +1251,38 @@
       }
     }
 
+    /* ===== IA STACK ===== */
+    .ia-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+    }
+    .ia-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-m);
+      padding: 32px;
+      transition: transform 0.3s, border-color 0.3s;
+    }
+    .ia-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--border-m);
+    }
+    .ia-card-title {
+      font-family: 'Geist', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--text-pri);
+      margin-bottom: 12px;
+      letter-spacing: -.01em;
+    }
+    .ia-card-desc {
+      font-family: 'Geist', sans-serif;
+      font-size: 0.95rem;
+      color: var(--text-sec);
+      line-height: 1.5;
+    }
+
     /* ===== LIGHT THEME ===== */
     :root.light {
       --bg: #FAFAFA;
@@ -1395,7 +1427,7 @@
         <!-- Bottom: desc + pills + ctas -->
         <div class="hero-bottom">
           <p class="hero-desc sr">
-            Senior UI/UX &amp; Brand Strategist. Potencio más de 17 años de criterio humano con flujos de IA (Claude, Firefly) para escalar productos digitales. Actualmente en Accenture para DirecTV y Sky Latam. Opero sin intermediarios entre el brief y el código.
+            Empecé a diseñar sitios cuando no existía el iPhone. 18 años después, en Accenture, mis interfaces llegan a +10M suscriptores en toda América Latina. Diseño en Figma, prototipo en código y uso IA todos los días — sin intermediarios entre el brief y la entrega.
           </p>
           <div class="hero-meta sr" style="transition-delay:.12s">
             <div class="hero-btns">
@@ -1416,19 +1448,19 @@
         <div class="about-grid">
           <div class="sr-l">
             <p class="about-quote">
-              "Diseño interfaces medibles y sistemas que escalan. Utilizo análisis de datos y copilotos de IA para reducir tasas de fricción y acelerar el time-to-market, manteniendo siempre alineados los objetivos de negocio y la factibilidad técnica."
+              "Viví cinco cambios de paradigma — del print al mobile, del pixel al componente. Me actualicé en cada uno. Hoy trabajo en la intersección de Diseño Estratégico, Desarrollo Frontend e Inteligencia Artificial."
             </p>
             <p class="about-body">
-              Soy un <strong>Lead UI/UX Designer &amp; Brand Strategist</strong> que no compite con la IA: la dirijo. Con más de 17 años de trayectoria diseñando para marcas globales en 3 continentes, he evolucionado mi proceso hacia la <strong>Human-AI Collaboration</strong>.
+              Diseñador Gráfico graduado en la Universidad de Flores, con trayectoria ininterrumpida desde 2006. Mi experiencia cubre un arco completo: identidad de marca, UI/UX de producto, prototipado interactivo de alta fidelidad y desarrollo frontend que va de Figma directo al navegador.
             </p>
             <p class="about-body">
-              Utilizo modelos como Claude, Gemini y Firefly como mis "copilotos de pensamiento" para resolver problemas de negocio complejos a velocidad de startup. Mi verdadero valor es el <strong>criterio senior</strong> para orquestar estas herramientas, filtrar el ruido genérico y garantizar interfaces escalables, accesibles y orientadas a la conversión. Para líderes técnicos y de producto, represento la apuesta más segura: agilidad tecnológica combinada con la madurez arquitectónica que impacta directamente en el ROI.
+              En los últimos años integré IA — Claude, Gemini, Firefly, Midjourney — como parte real del flujo de trabajo: para acelerar iteraciones, validar copy y generar assets de calidad. No como sustituto del criterio de diseño, sino como multiplicador.
             </p>
           </div>
           <div class="sr-r">
             <div class="stats-row">
               <div>
-                <div class="stat-n">17<span>+</span></div>
+                <div class="stat-n">18<span>+</span></div>
                 <div class="stat-l">Años de experiencia</div>
               </div>
               <div>
@@ -1559,6 +1591,46 @@
         </div>
       </div>
     </section>
+    <!-- ===== STACK IA ===== -->
+    <section class="section-pad" id="ia">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="tag sr"><span class="tag-dot"></span>Stack de IA</span>
+            <h2 class="section-title sr" style="transition-delay:.08s">Inteligencia Artificial en el flujo de trabajo</h2>
+          </div>
+          <p class="section-sub sr" style="transition-delay:.12s">
+            No lo uso para reemplazar criterio — lo uso para entregar más rápido y mejor.
+          </p>
+        </div>
+        <div class="ia-grid">
+          <div class="ia-card sr">
+            <h3 class="ia-card-title">Claude</h3>
+            <p class="ia-card-desc">Arquitectura de información, copy de UI, validación de flujos</p>
+          </div>
+          <div class="ia-card sr" style="transition-delay: .05s">
+            <h3 class="ia-card-title">Gemini</h3>
+            <p class="ia-card-desc">Research competitivo, análisis de briefings, síntesis de feedback</p>
+          </div>
+          <div class="ia-card sr" style="transition-delay: .1s">
+            <h3 class="ia-card-title">Adobe Firefly</h3>
+            <p class="ia-card-desc">Generación de assets visuales integrada en flujo de Adobe CC</p>
+          </div>
+          <div class="ia-card sr" style="transition-delay: .15s">
+            <h3 class="ia-card-title">Midjourney</h3>
+            <p class="ia-card-desc">Moodboards, referencias visuales, exploración de estética de marca</p>
+          </div>
+          <div class="ia-card sr" style="transition-delay: .2s">
+            <h3 class="ia-card-title">ChatGPT</h3>
+            <p class="ia-card-desc">Primeras iteraciones de copy, naming, estructuras de contenido</p>
+          </div>
+          <div class="ia-card sr" style="transition-delay: .25s">
+            <h3 class="ia-card-title">Genspark</h3>
+            <p class="ia-card-desc">Automatización de tareas repetitivas de investigación</p>
+          </div>
+        </div>
+      </div>
+    </section>
     <!-- ===== PROYECTOS ===== -->
     <section class="section-pad" id="proyectos">
       <div class="wrap">
@@ -1585,7 +1657,7 @@
             <div>
               <p class="proj-label">Branding Corporativo · Senegal · 2026</p>
               <h3 class="proj-title">XALIMART GROUP</h3>
-              <p class="proj-desc"><strong>El problema:</strong> Constructora en Dakar perdía competitividad y licitaciones debido a una identidad percibida como de bajo presupuesto.<br><br><strong>IA-Assisted Workflow:</strong> Orquesté Claude para sintetizar frameworks globales y Firefly para explorar masivamente direcciones de arte. Ejecución final en Figma/Illustrator guiada por 17 años de rigor tipográfico.<br><br><strong>El impacto:</strong> Reducción del 40% en tiempo de conceptualización y entrega de un ecosistema de marca de clase mundial.</p>
+              <p class="proj-desc"><strong>El problema:</strong> Constructora en Dakar perdía competitividad y licitaciones debido a una identidad percibida como de bajo presupuesto.<br><br><strong>IA-Assisted Workflow:</strong> Orquesté Claude para sintetizar frameworks globales y Firefly para explorar masivamente direcciones de arte. Ejecución final en Figma/Illustrator guiada por 17 años de rigor tipográfico.<br><br><strong>El impacto:</strong> Reducción del 40% en tiempo de conceptualización y entrega de un ecosistema de marca de clase mundial.<br><br><strong>→ Resultado:</strong> sistema de marca que compite a nivel internacional para empresa constructora con sede en Dakar.</p>
               <div class="proj-tags">
                 <span class="proj-tag">Branding Corporativo</span>
                 <span class="proj-tag">Claude</span>
@@ -1612,7 +1684,7 @@
             <div>
               <p class="proj-label">UI/UX Concept App · Argentina</p>
               <h3 class="proj-title">Travel Buenos Aires</h3>
-              <p class="proj-desc"><strong>El problema:</strong> El turismo en Buenos Aires carecía de una plataforma unificada que permitiera a los viajeros explorar, guardar y trazar rutas hacia sitios emblemáticos sin fricción cognitiva.<br><br><strong>El proceso (100% Human Craft):</strong> Ideación y ejecución integral desarrollada en una etapa donde la IA aún no intervenía en el diseño de interfaces. Un ejercicio de pura creatividad, estudio profundo de arquitectura de la información y empatía del usuario, diseñado píxel a píxel desde cero.<br><br><strong>El impacto:</strong> Un prototipo interactivo con mapeo integrado que demuestra mi capacidad analítica fundacional y destreza en la resolución de problemas complejos sin depender de asistencia automatizada.</p>
+              <p class="proj-desc"><strong>El problema:</strong> El turismo en Buenos Aires carecía de una plataforma unificada que permitiera a los viajeros explorar, guardar y trazar rutas hacia sitios emblemáticos sin fricción cognitiva.<br><br><strong>El proceso (100% Human Craft):</strong> Ideación y ejecución integral desarrollada en una etapa donde la IA aún no intervenía en el diseño de interfaces. Un ejercicio de pura creatividad, estudio profundo de arquitectura de la información y empatía del usuario, diseñado píxel a píxel desde cero.<br><br><strong>El impacto:</strong> Un prototipo interactivo con mapeo integrado que demuestra mi capacidad analítica fundacional y destreza en la resolución de problemas complejos sin depender de asistencia automatizada.<br><br><strong>→ Resultado:</strong> framework escalable de diseño UI que sentó las bases para todos los proyectos mobile futuros.</p>
               <div class="proj-tags">
                 <span class="proj-tag">UI/UX Design</span>
                 <span class="proj-tag">App Concept</span>
@@ -1638,7 +1710,7 @@
             <div>
               <p class="proj-label">Web Development · Argentina · 2025</p>
               <h3 class="proj-title">PROCRISA</h3>
-              <p class="proj-desc"><strong>El problema:</strong> PROCRISA, una empresa con más de 20 años de trayectoria, necesitaba una presencia digital que reflejara su madurez técnica y calidad industrial, superando una interfaz que no comunicaba su liderazgo en el mercado.<br><br><strong>IA-Assisted Workflow:</strong> Orquestación de un rediseño integral enfocado en jerarquía visual y rendimiento. Utilicé asistentes de IA (Claude) para optimizar el flujo de trabajo de desarrollo en HTML5, CSS3 y JavaScript, integrando luego el sistema de forma nativa en WordPress.<br><br><strong>El impacto:</strong> Una plataforma robusta y moderna que posiciona a PROCRISA como referente digital en su sector, facilitando la conversión de clientes mediante una estética industrial premium y otorgando total autonomía operativa al cliente.</p>
+              <p class="proj-desc"><strong>El problema:</strong> PROCRISA, una empresa con más de 20 años de trayectoria, necesitaba una presencia digital que reflejara su madurez técnica y calidad industrial, superando una interfaz que no comunicaba su liderazgo en el mercado.<br><br><strong>IA-Assisted Workflow:</strong> Orquestación de un rediseño integral enfocado en jerarquía visual y rendimiento. Utilicé asistentes de IA (Claude) para optimizar el flujo de trabajo de desarrollo en HTML5, CSS3 y JavaScript, integrando luego el sistema de forma nativa en WordPress.<br><br><strong>El impacto:</strong> Una plataforma robusta y moderna que posiciona a PROCRISA como referente digital en su sector, facilitando la conversión de clientes mediante una estética industrial premium y otorgando total autonomía operativa al cliente.<br><br><strong>→ Resultado:</strong> aumento inmediato en captación de leads residenciales gracias a un diseño enfocado en la conversión B2B/B2C.</p>
               <div class="proj-tags">
                 <span class="proj-tag">Web Development</span>
                 <span class="proj-tag">WordPress</span>
@@ -1672,7 +1744,7 @@
               <p class="proj-desc">Construir una identidad visual profesional y cohesiva para una consultora ambiental
                 argentina. Diseño de logotipo y sistema de identidad visual completo orientado al sector ambiental.
                 Desarrollo de paleta cromática que evoca la naturaleza y la precisión técnica, con aplicación coherente
-                a piezas de comunicación institucional y web.</p>
+                a piezas de comunicación institucional y web.<br><br><strong>→ Resultado:</strong> identidad visual sólida que habilitó la expansión exitosa de la consultora hacia proyectos ambientales de escala nacional.</p>
               <div class="proj-tags">
                 <span class="proj-tag">Brand Identity</span>
                 <span class="proj-tag">Web Design</span>
@@ -1697,7 +1769,7 @@
             <div>
               <p class="proj-label">Brand Identity · África · 2025</p>
               <h3 class="proj-title">Senegro Brand Identity</h3>
-              <p class="proj-desc"><strong>El problema:</strong> Empresa africana de energía requería un estándar visual de clase mundial para expandir operaciones.<br><br><strong>IA-Assisted Workflow:</strong> Implementación de IA generativa (Firefly) para acelerar la creación de assets hiperrealistas bajo estricta dirección de arte humana.<br><br><strong>El impacto:</strong> Identidad corporativa de alta rentabilidad visual, logrando competir contra líderes del mercado global en tiempo récord.</p>
+              <p class="proj-desc"><strong>El problema:</strong> Empresa africana de energía requería un estándar visual de clase mundial para expandir operaciones.<br><br><strong>IA-Assisted Workflow:</strong> Implementación de IA generativa (Firefly) para acelerar la creación de assets hiperrealistas bajo estricta dirección de arte humana.<br><br><strong>El impacto:</strong> Identidad corporativa de alta rentabilidad visual, logrando competir contra líderes del mercado global en tiempo récord.<br><br><strong>→ Resultado:</strong> consolidación de imagen corporativa a nivel de líderes energéticos internacionales y reducción drástica del time-to-market visual.</p>
               <div class="proj-tags">
                 <span class="proj-tag">Brand Identity</span>
                 <span class="proj-tag">Firefly</span>
@@ -1727,7 +1799,7 @@
               <p class="proj-desc">Diseñar y desarrollar el sitio web corporativo de Sólido, empresa de puertas WPC.
                 Arquitectura web construida sobre WordPress con Bootstrap 5, priorizando una navegación fluida e
                 información accesible. Implementación completamente responsive, con velocidad de carga optimizada,
-                demostrando un flujo de trabajo UI/UX y end-to-end completo.</p>
+                demostrando un flujo de trabajo UI/UX y end-to-end completo.<br><br><strong>→ Resultado:</strong> sitio live, carga <2s, 100% responsive, entregado end-to-end sin agencia intermediaria.</p>
               <div class="proj-tags">
                 <span class="proj-tag">WordPress</span>
                 <span class="proj-tag">Bootstrap 5</span>
@@ -1773,7 +1845,7 @@
               <p class="exp-company">Accenture — Buenos Aires, Argentina</p>
               <p class="exp-desc">Diseño y prototipado UI/UX para plataformas iTV de DirecTV, Sky y Vrio en América
                 Latina. Trabajo en proyectos de escala masiva: Copa Mundial FIFA 2022, Gran Hermano, DIRECTV GO, Canal
-                del Cliente, Dsports y NextGen UI (LH02/SH02) para más de 10M suscriptores.</p>
+                del Cliente, Dsports y NextGen UI (LH02/SH02) para más de 10M suscriptores. Integración de IA en flujo diario para acelerar iteraciones en Design Systems de alta complejidad.</p>
               <div class="exp-tags">
                 <span class="exp-tag">Figma</span><span class="exp-tag">iTV Apps</span><span class="exp-tag">UX
                   Research</span><span class="exp-tag">Design System</span><span class="exp-tag">DirecTV</span><span
@@ -1790,7 +1862,7 @@
               <p class="exp-company">DIRECTV Latin America — Argentina</p>
               <p class="exp-desc">Liderazgo técnico en UI/UX con foco en la mejora continua de interfaces para
                 decodificadores SD, HD y NextGenUI. Análisis y rediseño de dashboards y plataformas críticas.
-                Colaboración estrecha con equipos de desarrollo para optimizar la experiencia del usuario.</p>
+                Fui parte del equipo que migró a Figma como herramienta central, reduciendo tiempos de entrega de prototipos en un 40%.</p>
               <div class="exp-tags">
                 <span class="exp-tag">Adobe XD</span><span class="exp-tag">Figma</span><span
                   class="exp-tag">UI/UX</span><span class="exp-tag">Decoders</span><span class="exp-tag">LATAM</span>
@@ -1875,6 +1947,11 @@
             <p class="contact-sub">Disponible para proyectos freelance y trabajo remoto internacional. Si tenés una
               idea, escribime directamente.</p>
             <a class="email-big" href="mailto:nico-scarselli@hotmail.com">nico-scarselli@hotmail.com</a>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px;">
+              <span style="font-size:.72rem;font-weight:600;color:var(--text-pri);background:var(--border);border:1px solid var(--border-m);padding:5px 14px;border-radius:20px;">🟢 Disponible ahora</span>
+              <span style="font-size:.72rem;font-weight:600;color:var(--text-pri);background:var(--border);border:1px solid var(--border-m);padding:5px 14px;border-radius:20px;">🌍 Remoto Internacional</span>
+              <span style="font-size:.72rem;font-weight:600;color:var(--text-pri);background:var(--border);border:1px solid var(--border-m);padding:5px 14px;border-radius:20px;">⚡ Respondo en &lt;24hs</span>
+            </div>
             <div style="display:flex;gap:10px;flex-wrap:wrap;">
               <a class="btn btn-solid" href="mailto:nico-scarselli@hotmail.com">
                 Enviar mensaje <i data-lucide="send" style="width:14px;height:14px;"></i>
