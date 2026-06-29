@@ -38,8 +38,8 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Geist:wght@200;300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
     rel="stylesheet" />
-  <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <!-- Material Symbols Rounded (Iconography unified with Google) -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,300..700,0..1,-50..200" />
   <style>
     /* ===== RESET ===== */
     *,
@@ -64,20 +64,122 @@
       overflow-x: hidden;
     }
 
-    /* ===== CSS VARIABLES ===== */
+    /* ===== CSS VARIABLES — Material 3 tokens (Dark by default) ===== */
     :root {
-      --pad: 48px;
-      --bg: #0d0b10;
-      --surface: #141117;
-      --border: rgba(234, 231, 224, 0.05);
-      --border-m: rgba(234, 231, 224, 0.10);
-      --accent: #473260;
-      --text-pri: #EAE7E0;
-      --text-sec: #9F9C98;
-      --radius-s: 8px;
-      --radius-m: 14px;
-      --radius-l: 22px;
-      --radius-xl: 32px;
+      /* ===== COLOR — Tonal Palette derivada de #473260 ===== */
+      --primary-0:   #000000;
+      --primary-10:  #1a0f29;
+      --primary-20:  #2d1d44;
+      --primary-30:  #473260;  /* accent original */
+      --primary-40:  #5e437c;
+      --primary-50:  #765599;
+      --primary-60:  #8f6fb5;
+      --primary-70:  #a98ad0;
+      --primary-80:  #c5a8e8;
+      --primary-90:  #e3ccf8;
+      --primary-95:  #f2e4ff;
+      --primary-99:  #fffbfe;
+
+      --primary:            var(--primary-80);   /* en dark */
+      --on-primary:         var(--primary-20);
+      --primary-container:  var(--primary-30);
+      --on-primary-container: var(--primary-90);
+
+      /* Superficie tonal (elevación M3) */
+      --surface:            #0d0b10;
+      --surface-dim:        #0a080d;
+      --surface-bright:     #1a1721;
+      --surface-1:          #141117;  /* elevation +1 */
+      --surface-2:          #1a1620;  /* elevation +2 */
+      --surface-3:          #221c2a;  /* elevation +3 */
+      --surface-4:          #251e2e;
+      --surface-5:          #2b2335;
+
+      --on-surface:         #EAE7E0;
+      --on-surface-variant: #9F9C98;
+      --outline:            rgba(234, 231, 224, 0.18);
+      --outline-variant:    rgba(234, 231, 224, 0.08);
+
+      /* Estados (state layers M3) */
+      --state-hover:    rgba(234, 231, 224, 0.08);
+      --state-focus:    rgba(234, 231, 224, 0.12);
+      --state-pressed:  rgba(234, 231, 224, 0.16);
+
+      /* Microacento Google opcional (usar con moderación) */
+      --google-blue:   #4285F4;
+      --google-red:    #EA4335;
+      --google-yellow: #FBBC04;
+      --google-green:  #34A853;
+
+      /* ===== TYPE SCALE M3 ===== */
+      --font-display: 'Geist', 'Google Sans', system-ui, sans-serif;
+      --font-body:    'Geist', system-ui, sans-serif;
+      --font-serif:   'Playfair Display', Georgia, serif;
+
+      --display-lg: clamp(3.5rem, 8vw, 6.5rem);
+      --display-md: clamp(2.8rem, 6vw, 4.5rem);
+      --display-sm: clamp(2.25rem, 4.5vw, 3.5rem);
+      --headline-lg: clamp(2rem, 3.5vw, 2.75rem);
+      --headline-md: clamp(1.5rem, 2.8vw, 2rem);
+      --headline-sm: clamp(1.25rem, 2.2vw, 1.5rem);
+      --title-lg: 1.375rem;
+      --title-md: 1.125rem;
+      --title-sm: 0.95rem;
+      --body-lg: 1.0625rem;
+      --body-md: 0.9375rem;
+      --body-sm: 0.8125rem;
+      --label-lg: 0.875rem;
+      --label-md: 0.75rem;
+      --label-sm: 0.6875rem;
+
+      /* ===== SPACING — 4 px baseline ===== */
+      --sp-1: 4px;   --sp-2: 8px;   --sp-3: 12px;  --sp-4: 16px;
+      --sp-5: 20px;  --sp-6: 24px;  --sp-8: 32px;  --sp-10: 40px;
+      --sp-12: 48px; --sp-16: 64px; --sp-20: 80px; --sp-24: 96px;
+      --sp-32: 128px; --sp-40: 160px;
+
+      --container-max: 1280px;
+      --container-pad: clamp(16px, 4vw, 48px);
+      --pad: var(--container-pad);
+      --bg: var(--surface);
+
+      /* ===== SHAPE SCALE M3 ===== */
+      --shape-xs:  4px;
+      --shape-sm:  8px;
+      --shape-md:  12px;
+      --shape-lg:  16px;
+      --shape-xl:  28px;   /* hero, cards principales */
+      --shape-2xl: 36px;
+      --shape-full: 9999px;
+
+      /* legacy radius mapping for existing classes */
+      --radius-s: var(--shape-sm);
+      --radius-m: var(--shape-md);
+      --radius-l: var(--shape-lg);
+      --radius-xl: var(--shape-xl);
+
+      /* alias para compatibilidad con el CSS existente */
+      --border: var(--outline);
+      --border-m: var(--outline-variant);
+      --accent: var(--primary-30);
+      --text-pri: var(--on-surface);
+      --text-sec: var(--on-surface-variant);
+
+      /* ===== ELEVATION (tonal + sombra suave) ===== */
+      --elev-1: 0 1px 2px rgba(0,0,0,.30), 0 1px 3px 1px rgba(0,0,0,.15);
+      --elev-2: 0 1px 2px rgba(0,0,0,.30), 0 2px 6px 2px rgba(0,0,0,.15);
+      --elev-3: 0 4px 8px 3px rgba(0,0,0,.15), 0 1px 3px rgba(0,0,0,.30);
+      --elev-4: 0 6px 10px 4px rgba(0,0,0,.15), 0 2px 3px rgba(0,0,0,.30);
+
+      /* ===== MOTION ===== */
+      --ease-standard:     cubic-bezier(0.2, 0, 0, 1);
+      --ease-emphasized:   cubic-bezier(0.2, 0, 0, 1);
+      --ease-emphasized-decel: cubic-bezier(0.05, 0.7, 0.1, 1);
+      --ease-emphasized-accel: cubic-bezier(0.3, 0, 0.8, 0.15);
+      --dur-short-1: 50ms;   --dur-short-2: 100ms;
+      --dur-medium-1: 250ms; --dur-medium-2: 300ms;
+      --dur-long-1: 450ms;   --dur-long-2: 500ms;
+      --dur-extra-long: 700ms;
     }
 
     /* ===== NOISE TEXTURE ===== */
@@ -128,6 +230,47 @@
     .sr-r.vis {
       opacity: 1;
       transform: none;
+    }
+
+    /* ===== TYPOGRAPHY UTILITIES (Type Scale M3) ===== */
+    .display-lg { font: 800 var(--display-lg)/0.92 var(--font-display); letter-spacing: -0.04em; }
+    .display-md { font: 700 var(--display-md)/0.95 var(--font-display); letter-spacing: -0.03em; }
+    .headline-lg { font: 700 var(--headline-lg)/1.15 var(--font-display); letter-spacing: -0.015em; }
+    .headline-md { font: 600 var(--headline-md)/1.2 var(--font-display); letter-spacing: -0.01em; }
+    .title-lg { font: 600 var(--title-lg)/1.3 var(--font-display); }
+    .body-lg { font: 400 var(--body-lg)/1.6 var(--font-body); color: var(--on-surface-variant); }
+    .label-lg { font: 600 var(--label-lg)/1.4 var(--font-display); letter-spacing: 0.08em; text-transform: uppercase; }
+
+    /* ===== MATERIAL SYMBOLS BASE ===== */
+    .material-symbols-rounded {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+      font-size: 20px; vertical-align: middle; display: inline-block; line-height: 1;
+      -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+    }
+
+    /* ===== ACCESSIBILITY: focus visible global ===== */
+    :focus-visible {
+      outline: 3px solid var(--primary);
+      outline-offset: 3px;
+      border-radius: var(--shape-xs);
+    }
+
+    /* Skip link styles (visible on keyboard focus) */
+    .skip-link {
+      position: absolute;
+      top: -64px;
+      left: var(--sp-4);
+      padding: var(--sp-3) var(--sp-4);
+      background: var(--primary);
+      color: var(--on-primary);
+      border-radius: var(--shape-sm);
+      z-index: 1000;
+      transition: top var(--dur-medium-1) var(--ease-standard);
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .skip-link:focus {
+      top: var(--sp-4);
     }
 
     /* ===== NAVIGATION ===== */
@@ -275,8 +418,7 @@
     }
 
     .hero-title {
-      font-family: 'Geist', sans-serif;
-      font-size: clamp(4rem, 10vw, 7.5rem);
+      font-family: var(--font-display);
       font-weight: 800;
       line-height: 0.9;
       letter-spacing: -.03em;
@@ -310,6 +452,21 @@
       max-width: 420px;
       max-height: 420px;
     }
+
+    .avatar-wrap::before {
+      content: '';
+      position: absolute;
+      inset: -6px;
+      border-radius: 50%;
+      background: conic-gradient(from 0deg, var(--primary-40), var(--primary-60), var(--primary-80), var(--primary-60), var(--primary-40));
+      filter: blur(6px);
+      opacity: 0.45;
+      z-index: 0;
+      pointer-events: none;
+      animation: ringSpin 12s linear infinite;
+    }
+
+    @keyframes ringSpin { to { transform: rotate(360deg); } }
 
     @keyframes float {
 
@@ -474,7 +631,7 @@
     }
 
     .about-quote {
-      font-family: 'Geist', sans-serif;
+      font-family: var(--font-serif);
       font-size: clamp(1.4rem, 2.5vw, 2rem);
       font-weight: 300;
       font-style: italic;
@@ -600,7 +757,7 @@
     .svc-body {
       display: grid;
       grid-template-rows: 0fr;
-      transition: grid-template-rows .45s cubic-bezier(.16, 1, .3, 1);
+      transition: grid-template-rows var(--dur-medium-2) var(--ease-standard);
       padding-left: 52px;
     }
 
@@ -661,7 +818,7 @@
       border-bottom: 1px solid var(--border);
       opacity: 0;
       transform: translateY(28px);
-      transition: opacity .85s cubic-bezier(.16, 1, .3, 1), transform .85s cubic-bezier(.16, 1, .3, 1);
+      transition: opacity var(--dur-long-1) var(--ease-emphasized-decel), transform var(--dur-long-1) var(--ease-emphasized-decel);
     }
 
     .proj-item.vis {
@@ -689,7 +846,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform .9s cubic-bezier(.16, 1, .3, 1), filter .6s;
+      transition: transform var(--dur-long-1) var(--ease-emphasized-decel), filter var(--dur-medium-2) var(--ease-standard);
       filter: grayscale(12%);
     }
 
@@ -708,7 +865,7 @@
     .proj-slides {
       display: flex;
       height: 100%;
-      transition: transform .45s cubic-bezier(.16, 1, .3, 1);
+      transition: transform var(--dur-medium-2) var(--ease-standard);
     }
 
     .proj-slide {
@@ -939,7 +1096,7 @@
       border-bottom: 1px solid var(--border);
       opacity: 0;
       transform: translateY(18px);
-      transition: opacity .7s cubic-bezier(.16, 1, .3, 1), transform .7s cubic-bezier(.16, 1, .3, 1);
+      transition: opacity var(--dur-long-1) var(--ease-emphasized-decel), transform var(--dur-long-1) var(--ease-emphasized-decel);
     }
 
     .exp-item.vis {
@@ -1268,6 +1425,12 @@
       transform: translateY(-4px);
       border-color: var(--border-m);
     }
+    .ia-card::after {  /* glow sutil al hover, tipo Google AI Studio */
+      content: ''; position: absolute; inset: 0; border-radius: inherit;
+      background: radial-gradient(600px circle at var(--mx,50%) var(--my,50%), color-mix(in srgb, var(--primary) 12%, transparent), transparent 40%);
+      opacity: 0; transition: opacity var(--dur-medium-2) var(--ease-standard); pointer-events: none;
+    }
+    .ia-card:hover::after { opacity: 1; }
     .ia-card-title {
       font-family: 'Geist', sans-serif;
       font-size: 1.25rem;
@@ -1283,15 +1446,21 @@
       line-height: 1.5;
     }
 
-    /* ===== LIGHT THEME ===== */
+    /* ===== LIGHT THEME (M3) ===== */
     :root.light {
-      --bg: #FAFAFA;
-      --surface: #FFFFFF;
-      --border: rgba(0, 0, 0, 0.08);
-      --border-m: rgba(0, 0, 0, 0.15);
-      --accent: #5e437c;
-      --text-pri: #0D0B0D;
-      --text-sec: #555555;
+      --primary: var(--primary-30);
+      --on-primary: #ffffff;
+      --primary-container: var(--primary-90);
+      --on-primary-container: var(--primary-10);
+      --surface: #FAFAFA;
+      --surface-1: #F2EFF5;
+      --surface-2: #ECE8F1;
+      --surface-3: #E6E1EC;
+      --on-surface: #0D0B0D;
+      --on-surface-variant: #555555;
+      --outline: rgba(0,0,0,0.18);
+      --outline-variant: rgba(0,0,0,0.08);
+      --state-hover: rgba(0,0,0,0.06);
     }
     :root.light body::after {
       filter: invert(1);
@@ -1380,11 +1549,27 @@
     }
   </style>
   <link href="favicon.svg" rel="icon" type="image/svg+xml" />
+  <link rel="manifest" href="manifest.webmanifest">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Nicolás Scarselli",
+    "jobTitle": "Senior UI/UX Designer & Brand Strategist",
+    "url": "https://nicoscarselli.github.io/scarselli-homepage/",
+    "image": "https://nicoscarselli.github.io/scarselli-homepage/img/avatar.png",
+    "sameAs": [
+      "https://www.behance.net/nicoscarselli",
+      "https://linkedin.com/in/nicoscarselli",
+      "https://dribbble.com/nicoscarselli"
+    ],
+    "address": { "@type": "PostalAddress", "addressLocality": "Buenos Aires", "addressCountry": "AR" },
+    "worksFor": { "@type": "Organization", "name": "Accenture" }
+  }
+  </script>
 </head>
 
-<body><a class="skip-link" href="#main-content"
-    style="position:absolute;top:-40px;left:0;background:#000;color:#fff;padding:8px;z-index:100;transition:top 0.3s;text-decoration:none;">Saltar
-    al contenido principal</a>
+  <body><a class="skip-link" href="#main-content">Saltar al contenido principal</a>
   <main id="main-content">
     <!-- ===== NAV ===== -->
     <nav class="nav" id="nav">
@@ -1399,7 +1584,7 @@
         </div>
         <div style="display:flex; align-items:center; gap: 16px;">
           <button id="themeToggle" class="nav-link" aria-label="Cambiar tema" style="background:transparent; border:1px solid var(--border-m); cursor:pointer; display:flex; align-items:center; justify-content:center; padding:7px 10px;">
-            <i data-lucide="sun" style="width:16px;height:16px;"></i>
+            <span class="material-symbols-rounded" aria-hidden="true">light_mode</span>
           </button>
           <a class="nav-link" href="en.html"
             style="font-weight: 700; color: var(--text-sec); border: 1px solid var(--border-m);">EN</a>
@@ -1412,7 +1597,7 @@
       <div class="hero-inner">
         <!-- Top: title + avatar -->
         <div class="hero-top">
-          <h1 class="hero-title">
+            <h1 class="hero-title display-lg">
             <span>Diseño</span><br />
             <em>que</em><br />
             <span class="accent">resuelve<span style="color:#908D55">.</span></span>
@@ -1433,7 +1618,7 @@
             <div class="hero-btns">
               <a class="btn btn-solid" href="#proyectos">
                 Ver proyectos
-                <i data-lucide="arrow-down" style="width:14px;height:14px;"></i>
+                <span class="material-symbols-rounded">arrow_downward</span>
               </a>
             </div>
           </div>
@@ -1475,24 +1660,24 @@
             <div style="margin-top:40px;display:flex;flex-direction:column;gap:14px;">
               <div
                 style="display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid var(--border);">
-                <i data-lucide="map-pin" style="width:15px;height:15px;color:var(--text-sec);flex-shrink:0;"></i>
+                <span class="material-symbols-rounded" style="font-size:15px;color:var(--text-sec);flex-shrink:0;" aria-hidden="true">location_on</span>
                 <span style="font-family:'Geist',sans-serif;font-size:.88rem;color:var(--text-sec);">Buenos Aires,
                   Argentina</span>
               </div>
               <div
                 style="display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid var(--border);">
-                <i data-lucide="briefcase" style="width:15px;height:15px;color:var(--text-sec);flex-shrink:0;"></i>
+                <span class="material-symbols-rounded" style="font-size:15px;color:var(--text-sec);flex-shrink:0;" aria-hidden="true">work</span>
                 <span style="font-family:'Geist',sans-serif;font-size:.88rem;color:var(--text-sec);">Accenture ·
                   Freelance disponible</span>
               </div>
               <div
                 style="display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid var(--border);">
-                <i data-lucide="languages" style="width:15px;height:15px;color:var(--text-sec);flex-shrink:0;"></i>
+                <span class="material-symbols-rounded" style="font-size:15px;color:var(--text-sec);flex-shrink:0;" aria-hidden="true">translate</span>
                 <span style="font-family:'Geist',sans-serif;font-size:.88rem;color:var(--text-sec);">Español (nativo) ·
                   Inglés (profesional)</span>
               </div>
               <div style="display:flex;align-items:center;gap:14px;padding:14px 0;">
-                <i data-lucide="zap" style="width:15px;height:15px;color:var(--text-sec);flex-shrink:0;"></i>
+                <span class="material-symbols-rounded" style="font-size:15px;color:var(--text-sec);flex-shrink:0;" aria-hidden="true">bolt</span>
                 <span style="font-family:'Geist',sans-serif;font-size:.88rem;color:var(--text-sec);">Figma · Claude ·
                   Firefly · AI-Assisted Workflow</span>
               </div>
@@ -1507,7 +1692,7 @@
         <div class="section-head">
           <div>
             <span class="tag sr"><span class="tag-dot"></span>Servicios</span>
-            <h2 class="section-title sr" style="transition-delay:.08s">Servicios & Soluciones</h2>
+            <h2 class="section-title sr headline-lg" style="transition-delay:.08s">Servicios & Soluciones</h2>
           </div>
 
         </div>
@@ -1516,8 +1701,7 @@
             <button aria-expanded="true" class="svc-trigger">
               <span class="svc-num">01</span>
               <span class="svc-name">Brand Strategy</span>
-              <span class="svc-icon"><i data-lucide="plus"
-                  style="width:14px;height:14px;color:var(--text-pri);"></i></span>
+                <span class="svc-icon"><span class="material-symbols-rounded" style="font-size:14px;color:var(--text-pri);" aria-hidden="true">add</span></span>
             </button>
             <div class="svc-body">
               <div class="svc-body-inner">
@@ -1535,8 +1719,7 @@
             <button aria-expanded="false" class="svc-trigger">
               <span class="svc-num">02</span>
               <span class="svc-name">UI/UX Design</span>
-              <span class="svc-icon"><i data-lucide="plus"
-                  style="width:14px;height:14px;color:var(--text-pri);"></i></span>
+                <span class="svc-icon"><span class="material-symbols-rounded" style="font-size:14px;color:var(--text-pri);" aria-hidden="true">add</span></span>
             </button>
             <div class="svc-body">
               <div class="svc-body-inner">
@@ -1554,8 +1737,7 @@
             <button aria-expanded="false" class="svc-trigger">
               <span class="svc-num">03</span>
               <span class="svc-name">Product &amp; Web Design</span>
-              <span class="svc-icon"><i data-lucide="plus"
-                  style="width:14px;height:14px;color:var(--text-pri);"></i></span>
+                <span class="svc-icon"><span class="material-symbols-rounded" style="font-size:14px;color:var(--text-pri);" aria-hidden="true">add</span></span>
             </button>
             <div class="svc-body">
               <div class="svc-body-inner">
@@ -1573,8 +1755,7 @@
             <button aria-expanded="false" class="svc-trigger">
               <span class="svc-num">04</span>
               <span class="svc-name">Prototipado Interactivo</span>
-              <span class="svc-icon"><i data-lucide="plus"
-                  style="width:14px;height:14px;color:var(--text-pri);"></i></span>
+                <span class="svc-icon"><span class="material-symbols-rounded" style="font-size:14px;color:var(--text-pri);" aria-hidden="true">add</span></span>
             </button>
             <div class="svc-body">
               <div class="svc-body-inner">
@@ -1597,7 +1778,7 @@
         <div class="section-head">
           <div>
             <span class="tag sr"><span class="tag-dot"></span>Stack de IA</span>
-            <h2 class="section-title sr" style="transition-delay:.08s">Inteligencia Artificial en el flujo de trabajo</h2>
+            <h2 class="section-title sr headline-lg" style="transition-delay:.08s">Inteligencia Artificial en el flujo de trabajo</h2>
           </div>
           <p class="section-sub sr" style="transition-delay:.12s">
             No lo uso para reemplazar criterio — lo uso para entregar más rápido y mejor.
@@ -1637,12 +1818,12 @@
         <div class="section-head">
           <div>
             <span class="tag sr"><span class="tag-dot"></span>Portafolio</span>
-            <h2 class="section-title sr" style="transition-delay:.08s">Trabajo Reciente</h2>
+            <h2 class="section-title sr headline-lg" style="transition-delay:.08s">Trabajo Reciente</h2>
           </div>
           <a class="btn btn-outline sr" href="https://www.behance.net/nicoscarselli" rel="noopener"
             style="transition-delay:.14s;" target="_blank">
             Ver todo en Behance
-            <i data-lucide="arrow-up-right" style="width:14px;height:14px;"></i>
+            <span class="material-symbols-rounded" style="font-size:14px;" aria-hidden="true">open_in_new</span>
           </a>
         </div>
         <div class="projects-grid">
@@ -1656,7 +1837,7 @@
             </div>
             <div>
               <p class="proj-label">Branding Corporativo · Senegal · 2026</p>
-              <h3 class="proj-title">XALIMART GROUP</h3>
+              <h3 class="proj-title headline-md">XALIMART GROUP</h3>
               <p class="proj-desc"><strong>El problema:</strong> Constructora en Dakar perdía competitividad y licitaciones debido a una identidad percibida como de bajo presupuesto.<br><br><strong>IA-Assisted Workflow:</strong> Orquesté Claude para sintetizar frameworks globales y Firefly para explorar masivamente direcciones de arte. Ejecución final en Figma/Illustrator guiada por 17 años de rigor tipográfico.<br><br><strong>El impacto:</strong> Reducción del 40% en tiempo de conceptualización y entrega de un ecosistema de marca de clase mundial.<br><br><strong>→ Resultado:</strong> sistema de marca que compite a nivel internacional para empresa constructora con sede en Dakar.</p>
               <div class="proj-tags">
                 <span class="proj-tag">Branding Corporativo</span>
@@ -1669,7 +1850,7 @@
               <a class="btn btn-outline"
                 href="https://www.behance.net/gallery/243151349/XALIMART-GROUP-Constructing-new-Brand-Identity"
                 rel="noopener" style="font-size:.78rem;padding:9px 18px;" target="_blank">
-                Ver en Behance <i data-lucide="arrow-up-right" style="width:13px;height:13px;"></i>
+                Ver en Behance <span class="material-symbols-rounded" style="font-size:13px;" aria-hidden="true">open_in_new</span>
               </a>
             </div>
           </div>
@@ -1683,7 +1864,7 @@
             </div>
             <div>
               <p class="proj-label">UI/UX Concept App · Argentina</p>
-              <h3 class="proj-title">Travel Buenos Aires</h3>
+              <h3 class="proj-title headline-md">Travel Buenos Aires</h3>
               <p class="proj-desc"><strong>El problema:</strong> El turismo en Buenos Aires carecía de una plataforma unificada que permitiera a los viajeros explorar, guardar y trazar rutas hacia sitios emblemáticos sin fricción cognitiva.<br><br><strong>El proceso (100% Human Craft):</strong> Ideación y ejecución integral desarrollada en una etapa donde la IA aún no intervenía en el diseño de interfaces. Un ejercicio de pura creatividad, estudio profundo de arquitectura de la información y empatía del usuario, diseñado píxel a píxel desde cero.<br><br><strong>El impacto:</strong> Un prototipo interactivo con mapeo integrado que demuestra mi capacidad analítica fundacional y destreza en la resolución de problemas complejos sin depender de asistencia automatizada.<br><br><strong>→ Resultado:</strong> framework escalable de diseño UI que sentó las bases para todos los proyectos mobile futuros.</p>
               <div class="proj-tags">
                 <span class="proj-tag">UI/UX Design</span>
@@ -1695,7 +1876,7 @@
               <a class="btn btn-outline"
                 href="https://www.behance.net/gallery/121933315/Concept-App-Travel-Buenos-Aires"
                 rel="noopener" style="font-size:.78rem;padding:9px 18px;" target="_blank">
-                Ver en Behance <i data-lucide="arrow-up-right" style="width:13px;height:13px;"></i>
+                Ver en Behance <span class="material-symbols-rounded" style="font-size:13px;" aria-hidden="true">open_in_new</span>
               </a>
             </div>
           </div>
@@ -1709,7 +1890,7 @@
             </div>
             <div>
               <p class="proj-label">Web Development · Argentina · 2025</p>
-              <h3 class="proj-title">PROCRISA</h3>
+              <h3 class="proj-title headline-md">PROCRISA</h3>
               <p class="proj-desc"><strong>El problema:</strong> PROCRISA, una empresa con más de 20 años de trayectoria, necesitaba una presencia digital que reflejara su madurez técnica y calidad industrial, superando una interfaz que no comunicaba su liderazgo en el mercado.<br><br><strong>IA-Assisted Workflow:</strong> Orquestación de un rediseño integral enfocado en jerarquía visual y rendimiento. Utilicé asistentes de IA (Claude) para optimizar el flujo de trabajo de desarrollo en HTML5, CSS3 y JavaScript, integrando luego el sistema de forma nativa en WordPress.<br><br><strong>El impacto:</strong> Una plataforma robusta y moderna que posiciona a PROCRISA como referente digital en su sector, facilitando la conversión de clientes mediante una estética industrial premium y otorgando total autonomía operativa al cliente.<br><br><strong>→ Resultado:</strong> aumento inmediato en captación de leads residenciales gracias a un diseño enfocado en la conversión B2B/B2C.</p>
               <div class="proj-tags">
                 <span class="proj-tag">Web Development</span>
@@ -1720,12 +1901,12 @@
               <div style="display:flex;gap:10px;flex-wrap:wrap;">
                 <a class="btn btn-solid" href="http://www.procrisa.com.ar" rel="noopener"
                   style="font-size:.78rem;padding:9px 18px;" target="_blank">
-                  Ver sitio <i data-lucide="external-link" style="width:13px;height:13px;"></i>
+                  Ver sitio <span class="material-symbols-rounded" style="font-size:13px;" aria-hidden="true">open_in_new</span>
                 </a>
                 <a class="btn btn-outline"
                   href="https://www.behance.net/gallery/234366631/Desarrollo-Web-PROCRISA"
                   rel="noopener" style="font-size:.78rem;padding:9px 18px;" target="_blank">
-                  Behance <i data-lucide="arrow-up-right" style="width:13px;height:13px;"></i>
+                  Behance <span class="material-symbols-rounded" style="font-size:13px;" aria-hidden="true">open_in_new</span>
                 </a>
               </div>
             </div>
@@ -1740,7 +1921,7 @@
             </div>
             <div>
               <p class="proj-label">Brand Identity + Web · Argentina · 2025</p>
-              <h3 class="proj-title">Coirón Consultoria Ambiental</h3>
+              <h3 class="proj-title headline-md">Coirón Consultoria Ambiental</h3>
               <p class="proj-desc">Construir una identidad visual profesional y cohesiva para una consultora ambiental
                 argentina. Diseño de logotipo y sistema de identidad visual completo orientado al sector ambiental.
                 Desarrollo de paleta cromática que evoca la naturaleza y la precisión técnica, con aplicación coherente
@@ -1754,7 +1935,7 @@
               <a class="btn btn-outline"
                 href="https://www.behance.net/gallery/227541965/Brand-Visual-Identity-Coiron-Consultoria-Ambiental"
                 rel="noopener" style="font-size:.78rem;padding:9px 18px;" target="_blank">
-                Ver en Behance <i data-lucide="arrow-up-right" style="width:13px;height:13px;"></i>
+                Ver en Behance <span class="material-symbols-rounded" style="font-size:13px;" aria-hidden="true">open_in_new</span>
               </a>
             </div>
           </div>
@@ -1768,7 +1949,7 @@
             </div>
             <div>
               <p class="proj-label">Brand Identity · África · 2025</p>
-              <h3 class="proj-title">Senegro Brand Identity</h3>
+              <h3 class="proj-title headline-md">Senegro Brand Identity</h3>
               <p class="proj-desc"><strong>El problema:</strong> Empresa africana de energía requería un estándar visual de clase mundial para expandir operaciones.<br><br><strong>IA-Assisted Workflow:</strong> Implementación de IA generativa (Firefly) para acelerar la creación de assets hiperrealistas bajo estricta dirección de arte humana.<br><br><strong>El impacto:</strong> Identidad corporativa de alta rentabilidad visual, logrando competir contra líderes del mercado global en tiempo récord.<br><br><strong>→ Resultado:</strong> consolidación de imagen corporativa a nivel de líderes energéticos internacionales y reducción drástica del time-to-market visual.</p>
               <div class="proj-tags">
                 <span class="proj-tag">Brand Identity</span>
@@ -1780,7 +1961,7 @@
               <br />
               <a class="btn btn-outline" href="https://www.behance.net/gallery/223259251/Brand-Identity-Senegro"
                 rel="noopener" style="font-size:.78rem;padding:9px 18px;" target="_blank">
-                Ver en Behance <i data-lucide="arrow-up-right" style="width:13px;height:13px;"></i>
+                Ver en Behance <span class="material-symbols-rounded" style="font-size:13px;" aria-hidden="true">open_in_new</span>
               </a>
             </div>
           </div>
@@ -1795,7 +1976,7 @@
             </div>
             <div>
               <p class="proj-label">Web Design &amp; Dev · Argentina · 2025</p>
-              <h3 class="proj-title">Sólido WPC</h3>
+              <h3 class="proj-title headline-md">Sólido WPC</h3>
               <p class="proj-desc">Diseñar y desarrollar el sitio web corporativo de Sólido, empresa de puertas WPC.
                 Arquitectura web construida sobre WordPress con Bootstrap 5, priorizando una navegación fluida e
                 información accesible. Implementación completamente responsive, con velocidad de carga optimizada,
@@ -1809,12 +1990,12 @@
               <div style="display:flex;gap:10px;flex-wrap:wrap;">
                 <a class="btn btn-solid" href="https://solidonet.com.ar" rel="noopener"
                   style="font-size:.78rem;padding:9px 18px;" target="_blank">
-                  Ver sitio <i data-lucide="external-link" style="width:13px;height:13px;"></i>
+                  Ver sitio <span class="material-symbols-rounded" style="font-size:13px;" aria-hidden="true">open_in_new</span>
                 </a>
                 <a class="btn btn-outline"
                   href="https://www.behance.net/gallery/232617713/Web-Design-Development-Solido" rel="noopener"
                   style="font-size:.78rem;padding:9px 18px;" target="_blank">
-                  Behance <i data-lucide="arrow-up-right" style="width:13px;height:13px;"></i>
+                  Behance <span class="material-symbols-rounded" style="font-size:13px;" aria-hidden="true">open_in_new</span>
                 </a>
               </div>
             </div>
@@ -1828,7 +2009,7 @@
         <div class="section-head">
           <div>
             <span class="tag sr"><span class="tag-dot"></span>Trayectoria</span>
-            <h2 class="section-title sr" style="transition-delay:.08s">Experiencia Laboral</h2>
+            <h2 class="section-title sr headline-lg" style="transition-delay:.08s">Experiencia Laboral</h2>
           </div>
           <p class="section-sub sr" style="transition-delay:.14s">
             20 años de evolución continua en diseño, tecnología y estrategia visual.
@@ -1841,7 +2022,7 @@
               </div>
             </div>
             <div>
-              <h3 class="exp-role">Firmware &amp; Embedded UI/UX Designer</h3>
+              <h3 class="exp-role headline-md">Firmware &amp; Embedded UI/UX Designer</h3>
               <p class="exp-company">Accenture — Buenos Aires, Argentina</p>
               <p class="exp-desc">Diseño y prototipado UI/UX para plataformas iTV de DirecTV, Sky y Vrio en América
                 Latina. Trabajo en proyectos de escala masiva: Copa Mundial FIFA 2022, Gran Hermano, DIRECTV GO, Canal
@@ -1858,7 +2039,7 @@
               <div class="exp-period">Sep 2021 — Feb 2024</div>
             </div>
             <div>
-              <h3 class="exp-role">Especialista Sr. UI/UX</h3>
+              <h3 class="exp-role headline-md">Especialista Sr. UI/UX</h3>
               <p class="exp-company">DIRECTV Latin America — Argentina</p>
               <p class="exp-desc">Liderazgo técnico en UI/UX con foco en la mejora continua de interfaces para
                 decodificadores SD, HD y NextGenUI. Análisis y rediseño de dashboards y plataformas críticas.
@@ -1874,7 +2055,7 @@
               <div class="exp-period">Nov 2020 — Sep 2021</div>
             </div>
             <div>
-              <h3 class="exp-role">Diseñador UI/UX</h3>
+              <h3 class="exp-role headline-md">Diseñador UI/UX</h3>
               <p class="exp-company">Red Link S.A. — Argentina</p>
               <p class="exp-desc">Análisis, prototipado y desarrollo web UI/UX de productos para entidades financieras
                 líderes. Ajustes críticos en backoffice utilizando HTML5/CSS3 y Angular, asegurando solución de
@@ -1890,7 +2071,7 @@
               <div class="exp-period">Oct 2016 — Nov 2020</div>
             </div>
             <div>
-              <h3 class="exp-role">Líder de Diseño Web</h3>
+              <h3 class="exp-role headline-md">Líder de Diseño Web</h3>
               <p class="exp-company">LATCOM / Contenidos Advertising S.A. — Argentina</p>
               <p class="exp-desc">Liderazgo de equipo a cargo del desarrollo web, maquetación y estrategia de branding y
                 email marketing. Creación de presentaciones HTML, fotomontajes comerciales y gestión de contenidos para
@@ -1906,7 +2087,7 @@
               <div class="exp-period">Oct 2011 — Oct 2016</div>
             </div>
             <div>
-              <h3 class="exp-role">Diseñador Gráfico / Web Sr.</h3>
+              <h3 class="exp-role headline-md">Diseñador Gráfico / Web Sr.</h3>
               <p class="exp-company">TIMwe South Cone — Puerto Madero, Argentina</p>
               <p class="exp-desc">Diseño gráfico, web, editorial y multimedia. Imagen corporativa y publicidad.
                 Especialización en UI/UX para aplicaciones mobile y sitios de suscripción. Desarrollo de landing pages,
@@ -1943,7 +2124,7 @@
         <span class="tag sr"><span class="tag-dot"></span>Contacto</span>
         <div class="contact-grid">
           <div class="sr-l">
-            <h2 class="contact-h">¿Hablemos de<br />tu próximo<br />proyecto?</h2>
+            <h2 class="contact-h headline-lg">¿Hablemos de<br />tu próximo<br />proyecto?</h2>
             <p class="contact-sub">Disponible para proyectos freelance y trabajo remoto internacional. Si tenés una
               idea, escribime directamente.</p>
             <a class="email-big" href="mailto:nico-scarselli@hotmail.com">nico-scarselli@hotmail.com</a>
@@ -1954,10 +2135,10 @@
             </div>
             <div style="display:flex;gap:10px;flex-wrap:wrap;">
               <a class="btn btn-solid" href="mailto:nico-scarselli@hotmail.com">
-                Enviar mensaje <i data-lucide="send" style="width:14px;height:14px;"></i>
+                Enviar mensaje <span class="material-symbols-rounded" style="font-size:14px;" aria-hidden="true">send</span>
               </a>
               <a class="btn btn-outline" href="https://www.behance.net/nicoscarselli" rel="noopener" target="_blank">
-                Ver portafolio <i data-lucide="arrow-up-right" style="width:14px;height:14px;"></i>
+                Ver portafolio <span class="material-symbols-rounded" style="font-size:14px;" aria-hidden="true">open_in_new</span>
               </a>
             </div>
           </div>
@@ -1987,28 +2168,28 @@
                 <span>Behance</span>
                 <span style="display:flex;align-items:center;gap:6px;">
                   <span style="font-size:.78rem;color:var(--text-sec);">behance.net/nicoscarselli</span>
-                  <i class="soc-arr" data-lucide="arrow-up-right" style="width:13px;height:13px;"></i>
+                  <span class="material-symbols-rounded soc-arr" style="font-size:13px;" aria-hidden="true">open_in_new</span>
                 </span>
               </a>
               <a class="soc-link" href="https://linkedin.com/in/nicoscarselli" rel="noopener" target="_blank">
                 <span>LinkedIn</span>
                 <span style="display:flex;align-items:center;gap:6px;">
                   <span style="font-size:.78rem;color:var(--text-sec);">linkedin.com/in/nicoscarselli</span>
-                  <i class="soc-arr" data-lucide="arrow-up-right" style="width:13px;height:13px;"></i>
+                  <span class="material-symbols-rounded soc-arr" style="font-size:13px;" aria-hidden="true">open_in_new</span>
                 </span>
               </a>
               <a class="soc-link" href="https://dribbble.com/nicoscarselli" rel="noopener" target="_blank">
                 <span>Dribbble</span>
                 <span style="display:flex;align-items:center;gap:6px;">
                   <span style="font-size:.78rem;color:var(--text-sec);">dribbble.com/nicoscarselli</span>
-                  <i class="soc-arr" data-lucide="arrow-up-right" style="width:13px;height:13px;"></i>
+                  <span class="material-symbols-rounded soc-arr" style="font-size:13px;" aria-hidden="true">open_in_new</span>
                 </span>
               </a>
               <a class="soc-link" href="https://t.me/nicoscarselli" rel="noopener" target="_blank">
                 <span>Telegram</span>
                 <span style="display:flex;align-items:center;gap:6px;">
                   <span style="font-size:.78rem;color:var(--text-sec);">t.me/nicoscarselli</span>
-                  <i class="soc-arr" data-lucide="arrow-up-right" style="width:13px;height:13px;"></i>
+                  <span class="material-symbols-rounded soc-arr" style="font-size:13px;" aria-hidden="true">open_in_new</span>
                 </span>
               </a>
             </div>
@@ -2022,8 +2203,7 @@
     <script>
       (function () {
 
-        /* Icons */
-        lucide.createIcons();
+        /* Icons: using Material Symbols font — no JS init required */
 
         /* Nav scroll */
         var nav = document.getElementById('nav');
@@ -2050,7 +2230,9 @@
             if (e.isIntersecting) {
               var id = e.target.id;
               links.forEach(function (l) {
-                l.classList.toggle('active', l.getAttribute('href') === '#' + id);
+                var isActive = l.getAttribute('href') === '#' + id;
+                l.classList.toggle('active', isActive);
+                if (isActive) l.setAttribute('aria-current', 'page'); else l.removeAttribute('aria-current');
               });
             }
           });
@@ -2122,10 +2304,9 @@
           if (isLight) root.classList.add('light');
           
           const updateIcon = () => {
-            const icon = themeToggle.querySelector('i');
+            const icon = themeToggle.querySelector('.material-symbols-rounded');
             if (icon) {
-              icon.setAttribute('data-lucide', root.classList.contains('light') ? 'moon' : 'sun');
-              if (window.lucide) window.lucide.createIcons();
+              icon.textContent = root.classList.contains('light') ? 'dark_mode' : 'light_mode';
             }
           };
           document.addEventListener('DOMContentLoaded', updateIcon);
@@ -2243,6 +2424,7 @@
           nav.appendChild(prev); nav.appendChild(next);
 
           const dots = document.createElement('div');
+          dots.setAttribute('aria-live', 'polite');
           dots.className = 'proj-dots';
           const dotEls = imgs.map((_, i) => {
             const d = document.createElement('button');
@@ -2270,6 +2452,19 @@
           slider.appendChild(dots);
           wrap.appendChild(slider);
         });
+
+        // IA card subtle spotlight tracking (sets --mx / --my)
+        document.querySelectorAll('.ia-card').forEach((card) => {
+          card.addEventListener('mousemove', (e) => {
+            const r = card.getBoundingClientRect();
+            card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+            card.style.setProperty('--my', (e.clientY - r.top) + 'px');
+          }, { passive: true });
+          card.addEventListener('mouseleave', () => {
+            card.style.removeProperty('--mx');
+            card.style.removeProperty('--my');
+          });
+        });
       })();
     </script>
   </main>
@@ -2284,7 +2479,7 @@
         </div>
         <span class="footer-copy">© 2026 · Buenos Aires, Argentina</span>
         <a class="footer-top" href="#hero">
-          Volver arriba <i data-lucide="arrow-up" style="width:13px;height:13px;"></i>
+          Volver arriba <span class="material-symbols-rounded" style="font-size:13px;" aria-hidden="true">arrow_upward</span>
         </a>
       </div>
     </div>
