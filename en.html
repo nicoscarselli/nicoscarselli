@@ -30,6 +30,7 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,400..700,0..1,-50..200&display=swap" rel="stylesheet" />
 <!-- Lucide Icons -->
 <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 <style>
@@ -254,6 +255,50 @@
       font-size: .9rem; font-weight: 400;
       color: var(--muted-l); line-height: 1.7;
       max-width: 340px; text-align: right;
+    }
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+    }
+    .process-card {
+      position: relative;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-m);
+      padding: 28px;
+      transition: transform .3s ease, border-color .3s ease;
+    }
+    .process-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--border-m);
+    }
+    .process-card h3 {
+      font-family: 'Geist', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--cream);
+      margin-bottom: 14px;
+    }
+    .process-card p {
+      font-family: 'Geist', sans-serif;
+      font-size: .95rem;
+      color: var(--muted-l);
+      line-height: 1.75;
+    }
+    .contact-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      font-family: 'Geist', sans-serif;
+      font-size: .72rem;
+      font-weight: 600;
+      color: var(--cream);
+      background: rgba(255,255,255,.05);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 8px 14px;
     }
 
     /* (ticker removed) */
@@ -611,15 +656,16 @@
 <div class="nav-inner">
 <a class="nav-logo" href="#hero">Nico Scarselli</a>
 <div class="nav-links">
-<a class="nav-link" href="#sobre">About me</a>
-<a class="nav-link" href="#servicios">Services</a>
-<a class="nav-link" href="#proyectos">Projects</a>
-<a class="nav-link" href="#experiencia">Experience</a>
-<a class="nav-link" href="#contacto">Contact</a>
+<a class="nav-link" href="#about">About</a>
+<a class="nav-link" href="#services">Services</a>
+<a class="nav-link" href="#ai">AI Stack</a>
+<a class="nav-link" href="#projects">Projects</a>
+<a class="nav-link" href="#experience">Experience</a>
+<a class="nav-link" href="#contact">Contact</a>
 </div>
 <div style="display:flex; align-items:center; gap: 16px;">
 <a class="nav-link" href="index.html" style="font-weight: 700; color: var(--accent-l); border: 1px solid var(--border-m);">ES</a>
-<a class="nav-cta" href="mailto:nico-scarselli@hotmail.com">Hire me</a>
+<a class="nav-cta" href="mailto:scarselli.nicolas@gmail.com">Hire me</a>
 </div>
 </div>
 </nav>
@@ -641,13 +687,20 @@
 <!-- Bottom: desc + pills + ctas -->
 <div class="hero-bottom">
 <p class="hero-desc sr">
-        Senior UI/UX Designer &amp; Brand Strategist with over 20 years of experience. Currently at Accenture for DirecTV, Sky, and Vrio across Latin America. I operate with no middlemen between the brief and the code.
-      </p>
+            <strong>15+ years</strong> designing digital products at scale. I lead
+            Design Systems of <strong>200+ components</strong> that power platforms
+            used by <strong>10M+ people</strong> every day. Design, prototyping,
+            code and AI <em>under a single principle</em>: human criterion first.
+          </p>
 <div class="hero-meta sr" style="transition-delay:.12s">
 <div class="hero-btns">
-<a class="btn btn-solid" href="#proyectos">
-            View projects
+<a class="btn btn-solid" href="#projects">
+            See recent work
             <i data-lucide="arrow-down" style="width:14px;height:14px;"></i>
+</a>
+<a class="btn btn-outline" href="mailto:scarselli.nicolas@gmail.com">
+            Let's work together
+            <i data-lucide="arrow-up-right" style="width:14px;height:14px;"></i>
 </a>
 </div>
 </div>
@@ -655,20 +708,20 @@
 </div>
 </section>
 <!-- ===== TICKER ===== -->
-<!-- ===== SOBRE MÍ ===== -->
-<section class="section-pad" id="sobre">
+<!-- ===== ABOUT ===== -->
+<section class="section-pad" id="about">
 <div class="wrap">
 <span class="tag sr"><span class="tag-dot"></span>About me</span>
 <div class="about-grid">
 <div class="sr-l">
 <p class="about-quote">
-          "I believe in intentional and measurable design. Every pixel must have a purpose and every interaction must solve a real friction for the end user, always keeping business objectives and technical feasibility aligned."
+          "Design is a decision system. I connect strategy, interface and code so products launch with clarity and consistency."
         </p>
 <p class="about-body">
-          Graphic Designer with a solid career since graduating from the Universidad de Flores in 2008. My experience spans a broad spectrum of visual design, from brand identity creation and editorial design to user interface development (UI/UX) and web programming.
+          Senior designer since 2008. I blend brand strategy, product thinking and frontend execution to deliver work that is both meaningful and buildable.
         </p>
 <p class="about-body">
-          In recent years, I have developed a particular passion for application optimization, focusing on improving user experience through flow analysis, use cases, iteration, navigation, and prototype and wireframe design. I help companies and leaders professionalize their digital presence, turning abstract ideas into visual assets that build trust and deliver results.
+          I help companies and teams move from messy briefs to polished digital products using systems, prototypes and AI-assisted validation — always guided by human judgment.
         </p>
 </div>
 <div class="sr-r">
@@ -708,8 +761,8 @@
 </div>
 </div>
 </section>
-<!-- ===== SERVICIOS ===== -->
-<section class="section-pad" id="servicios">
+<!-- ===== SERVICES ===== -->
+<section class="section-pad" id="services">
 <div class="wrap">
 <div class="section-head">
 <div>
@@ -728,9 +781,9 @@
 </button>
 <div class="svc-body">
 <div class="svc-body-inner">
-<p class="svc-desc">I build complete visual identities that tell your story at a glance. Logo, color palette, typography, brand manual, and institutional applications consistent across all channels.</p>
+<p class="svc-desc">I build visual systems that make brands feel consistent across products, marketing and customer touchpoints. Logo, identity, guidelines and experience alignment.</p>
 <div class="svc-chips">
-<span class="chip-s">Illustrator</span><span class="chip-s">Figma</span><span class="chip-s">Photoshop</span><span class="chip-s">InDesign</span>
+<span class="chip-s">Illustrator</span><span class="chip-s">Figma</span><span class="chip-s">Photoshop</span><span class="chip-s">Brand System</span>
 </div>
 </div>
 </div>
@@ -743,7 +796,7 @@
 </button>
 <div class="svc-body">
 <div class="svc-body-inner">
-<p class="svc-desc">Intuitive, user-centered interfaces. I design wireframes, high-fidelity interactive prototypes in Figma, and scalable component systems that connect with people and drive conversions.</p>
+<p class="svc-desc">User-centered interfaces with clear structure, fast interactions and scalable components. I deliver designs that support product goals and real user behavior.</p>
 <div class="svc-chips">
 <span class="chip-s">Figma</span><span class="chip-s">Adobe XD</span><span class="chip-s">Prototyping</span><span class="chip-s">Design System</span>
 </div>
@@ -758,7 +811,7 @@
 </button>
 <div class="svc-body">
 <div class="svc-body-inner">
-<p class="svc-desc">Design and development of responsive sites from Figma to production. I work with WordPress, Bootstrap 5, and HTML5/CSS3 to create fast, optimized platforms with a flawless visual experience.</p>
+<p class="svc-desc">Responsive web and product design built for performance. I move from concept to browser-ready visuals using WordPress, Bootstrap and HTML/CSS workflows.</p>
 <div class="svc-chips">
 <span class="chip-s">HTML5/CSS3</span><span class="chip-s">Bootstrap 5</span><span class="chip-s">WordPress</span><span class="chip-s">JavaScript</span>
 </div>
@@ -768,14 +821,14 @@
 <div class="svc-item">
 <button aria-expanded="false" class="svc-trigger">
 <span class="svc-num">04</span>
-<span class="svc-name">Interactive Prototyping</span>
+<span class="svc-name">AI-Assisted Workflow</span>
 <span class="svc-icon"><i data-lucide="plus" style="width:14px;height:14px;color:var(--cream);"></i></span>
 </button>
 <div class="svc-body">
 <div class="svc-body-inner">
-<p class="svc-desc">High-fidelity functional prototypes for apps, iTV platforms, and complex systems. Specialized in set-top box environments (DirecTV, Sky) with experience in massive-scale projects for 10M+ users.</p>
+<p class="svc-desc">I use AI as an accelerator for research, copy and asset generation — always under human direction. This reduces iterations without sacrificing design judgment.</p>
 <div class="svc-chips">
-<span class="chip-s">Figma</span><span class="chip-s">Adobe XD</span><span class="chip-s">iTV Apps</span><span class="chip-s">Interactive</span>
+<span class="chip-s">Claude</span><span class="chip-s">Gemini</span><span class="chip-s">Firefly</span><span class="chip-s">Midjourney</span>
 </div>
 </div>
 </div>
@@ -783,8 +836,48 @@
 </div>
 </div>
 </section>
-<!-- ===== PROYECTOS ===== -->
-<section class="section-pad" id="proyectos">
+<!-- ===== AI STACK ===== -->
+<section class="section-pad" id="ai">
+<div class="wrap">
+  <div class="section-head">
+    <div>
+      <span class="tag sr"><span class="tag-dot"></span>AI Stack</span>
+      <h2 class="section-title sr" style="transition-delay:.08s">AI in the workflow</h2>
+    </div>
+    <p class="section-sub sr" style="transition-delay:.14s">
+      Tools used to speed research, validate design decisions and generate polished visual assets.
+    </p>
+  </div>
+  <div class="ia-grid">
+    <div class="ia-card sr">
+      <h3 class="ia-card-title">Claude</h3>
+      <p class="ia-card-desc">Information architecture, UI copy, flow validation.</p>
+    </div>
+    <div class="ia-card sr" style="transition-delay: .05s">
+      <h3 class="ia-card-title">Gemini</h3>
+      <p class="ia-card-desc">Competitive research, brief analysis, feedback synthesis.</p>
+    </div>
+    <div class="ia-card sr" style="transition-delay: .1s">
+      <h3 class="ia-card-title">Adobe Firefly</h3>
+      <p class="ia-card-desc">Visual asset generation integrated with Adobe CC workflows.</p>
+    </div>
+    <div class="ia-card sr" style="transition-delay: .15s">
+      <h3 class="ia-card-title">Midjourney</h3>
+      <p class="ia-card-desc">Moodboards, visual exploration and brand direction references.</p>
+    </div>
+    <div class="ia-card sr" style="transition-delay: .2s">
+      <h3 class="ia-card-title">ChatGPT</h3>
+      <p class="ia-card-desc">Early copy drafts, structure planning and naming experimentation.</p>
+    </div>
+    <div class="ia-card sr" style="transition-delay: .25s">
+      <h3 class="ia-card-title">Genspark</h3>
+      <p class="ia-card-desc">Research automation and task orchestration to keep the process efficient.</p>
+    </div>
+  </div>
+</div>
+</section>
+<!-- ===== PROJECTS ===== -->
+<section class="section-pad" id="projects">
 <div class="wrap">
 <div class="section-head">
 <div>
@@ -909,8 +1002,8 @@
 </div>
 </div>
 </section>
-<!-- ===== EXPERIENCIA LABORAL ===== -->
-<section class="section-pad" id="experiencia">
+<!-- ===== EXPERIENCE ===== -->
+<section class="section-pad" id="experience">
 <div class="wrap">
 <div class="section-head">
 <div>
@@ -1004,17 +1097,22 @@
 </div>
 </section>
 <!-- ===== NAME TICKER ===== -->
-<!-- ===== CONTACTO ===== -->
-<section class="section-pad" id="contacto">
+<!-- ===== CONTACT ===== -->
+<section class="section-pad" id="contact">
 <div class="wrap">
 <span class="tag sr"><span class="tag-dot"></span>Contact</span>
 <div class="contact-grid">
 <div class="sr-l">
 <h2 class="contact-h">Let's talk about<br/>your next<br/>project?</h2>
 <p class="contact-sub">Available for freelance projects and international remote work. If you have an idea, write me directly.</p>
-<a class="email-big" href="mailto:nico-scarselli@hotmail.com">nico-scarselli@hotmail.com</a>
-<div style="display:flex;gap:10px;flex-wrap:wrap;">
-<a class="btn btn-solid" href="mailto:nico-scarselli@hotmail.com">
+<a class="email-big" href="mailto:scarselli.nicolas@gmail.com">scarselli.nicolas@gmail.com</a>
+<div style="display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 28px;">
+            <span class="contact-badge">Freelance available</span>
+            <span class="contact-badge">International remote</span>
+            <span class="contact-badge">Response in <24h</span>
+          </div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;">
+<a class="btn btn-solid" href="mailto:scarselli.nicolas@gmail.com">
             Send message <i data-lucide="send" style="width:14px;height:14px;"></i>
 </a>
 <a class="btn btn-outline" href="https://www.behance.net/nicoscarselli" rel="noopener" target="_blank">
