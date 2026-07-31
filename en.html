@@ -27,6 +27,13 @@
 
 <meta content="#0D0B0D" name="theme-color"/>
 <!-- Geist Font -->
+<script>
+  (function(){
+    if (!localStorage.getItem('theme')) {
+      document.documentElement.classList.add('light');
+    }
+  })();
+</script>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
@@ -64,9 +71,41 @@
       --radius-m: 14px;
       --radius-l: 22px;
       --radius-xl:32px;
-    }
+      }
 
-    /* ===== NOISE TEXTURE ===== */
+      /* ===== LIGHT THEME (M3) ===== */
+      :root.light {
+        --primary: var(--accent);
+        --on-primary: #ffffff;
+        --primary-container: #f2ecfa;
+        --on-primary-container: #222022;
+        --surface: #FAFAFA;
+        --surface-1: #F2EFF5;
+        --surface-2: #ECE8F1;
+        --surface-3: #E6E1EC;
+        --on-surface: #0D0B0D;
+        --on-surface-variant: #555555;
+        --outline: rgba(0, 0, 0, 0.18);
+        --outline-variant: rgba(0, 0, 0, 0.08);
+        --state-hover: rgba(0, 0, 0, 0.06);
+      }
+
+      :root.light body::after { filter: invert(1); opacity: 0.04; }
+
+      :root.light .nav.stuck { background: rgba(250,250,250,0.94); }
+      :root.light .hero-desc { color: var(--muted); }
+      :root.light .btn-solid { color: #ffffff; }
+      :root.light .hero-title em { color: rgba(13,11,16,0.45); }
+      :root.light .btn-outline { border: 1px solid rgba(13,11,16,0.28); }
+      :root.light .btn-outline:hover { background: rgba(13,11,16,0.05); border-color: rgba(13,11,16,0.45); }
+      :root.light .proj-btn { background: rgba(255,255,255,0.85); color: var(--on-primary); }
+      :root.light .proj-dot { background: rgba(13,11,16,0.15); border: 1px solid rgba(13,11,16,0.1); }
+      :root.light .nav-link:hover, :root.light .nav-link.active { background: rgba(13,11,16,0.05); }
+      :root.light .avatar-wrap { background: #e0e0e0; }
+      :root.light .svc-name { color: rgba(13,11,16,0.8); }
+      :root.light .skip-link { background: #fff; color: #000; border: 1px solid #000; }
+
+      /* ===== NOISE TEXTURE ===== */
     body::after {
       content: '';
       position: fixed; inset: 0; z-index: 0;
@@ -663,10 +702,13 @@
 <a class="nav-link" href="#experience">Experience</a>
 <a class="nav-link" href="#contact">Contact</a>
 </div>
-<div style="display:flex; align-items:center; gap: 16px;">
-<a class="nav-link" href="index.html" style="font-weight: 700; color: var(--accent-l); border: 1px solid var(--border-m);">ES</a>
-<a class="nav-cta" href="mailto:scarselli.nicolas@gmail.com">Hire me</a>
-</div>
+  <div style="display:flex; align-items:center; gap: 16px;">
+  <button id="themeToggle" class="nav-link" aria-label="Toggle theme" style="background:transparent; border:1px solid var(--border-m); cursor:pointer; display:flex; align-items:center; justify-content:center; padding:7px 10px;">
+    <span class="material-symbols-rounded" aria-hidden="true">light_mode</span>
+  </button>
+  <a class="nav-link" href="index.html" style="font-weight: 700; color: var(--accent-l); border: 1px solid var(--border-m);">ES</a>
+  <a class="nav-cta" href="mailto:scarselli.nicolas@gmail.com">Hire me</a>
+  </div>
 </div>
 </nav>
 <!-- ===== HERO ===== -->
@@ -1261,7 +1303,32 @@
   });
 
 })();
-</script>
+(function () {
+  // Theme Toggle Logic (EN)
+  const themeToggle = document.getElementById('themeToggle');
+  const root = document.documentElement;
+  if (themeToggle) {
+    const stored = localStorage.getItem('theme');
+    const isLight = stored === 'light' || (!stored);
+    if (isLight) root.classList.add('light');
+
+    const updateIcon = () => {
+      const icon = themeToggle.querySelector('.material-symbols-rounded');
+      if (icon) {
+        icon.textContent = root.classList.contains('light') ? 'dark_mode' : 'light_mode';
+      }
+    };
+    document.addEventListener('DOMContentLoaded', updateIcon);
+
+    themeToggle.addEventListener('click', () => {
+      root.classList.toggle('light');
+      localStorage.setItem('theme', root.classList.contains('light') ? 'light' : 'dark');
+      updateIcon();
+    });
+    updateIcon();
+  }
+})();
+
 <div aria-hidden="true" class="zoom" id="zoom"><button aria-label="Close" class="zoom-close" id="zoomClose">✕</button><img alt="Zoomed view" id="zoomImg"/></div><script>
 (function(){
   const zoom = document.getElementById('zoom');

@@ -32,6 +32,13 @@
   <meta name="twitter:image" content="https://nicoscarselli.github.io/scarselli-homepage/favicon.png" />
 
   <meta content="#0D0B0D" name="theme-color" />
+  <script>
+    (function(){
+      if (!localStorage.getItem('theme')) {
+        document.documentElement.classList.add('light');
+      }
+    })();
+  </script>
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect" />
   <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
@@ -1923,8 +1930,8 @@
             style="background:transparent; border:1px solid var(--border-m); cursor:pointer; display:flex; align-items:center; justify-content:center; padding:7px 10px;">
             <span class="material-symbols-rounded" aria-hidden="true">light_mode</span>
           </button>
-          <a class="nav-link" href="en.html"
-            style="font-weight: 700; color: var(--text-sec); border: 1px solid var(--border-m);">EN</a>
+          <!-- =====<a class="nav-link" href="en.html"
+            style="font-weight: 700; color: var(--text-sec); border: 1px solid var(--border-m);">EN</a>===== -->
           <a class="nav-cta" href="mailto:scarselli.nicolas@gmail.com">Contratar</a>
         </div>
       </div>
@@ -2805,9 +2812,9 @@
           const themeToggle = document.getElementById('themeToggle');
           const root = document.documentElement;
           if (themeToggle) {
-            const isLight = localStorage.getItem('theme') === 'light' ||
-              (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: light)').matches);
-            if (isLight) root.classList.add('light');
+              const stored = localStorage.getItem('theme');
+              const isLight = stored === 'light' || (!stored);
+              if (isLight) root.classList.add('light');
 
             const updateIcon = () => {
               const icon = themeToggle.querySelector('.material-symbols-rounded');
