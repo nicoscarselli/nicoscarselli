@@ -1,3041 +1,761 @@
 <!DOCTYPE html>
-
 <html lang="es">
-
 <head>
   <meta name="google-site-verification" content="xcgquO0lHdE0t6CV8tJW4S-ky_GPRCKmYYy_7iLboUQ" />
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <title>Nicolás Scarselli — UI/UX Designer &amp; Brand Strategist</title>
-  <meta
-    content="Senior UI/UX Designer &amp; Brand Strategist. Trayectoria desde 2008 creando interfaces, identidades de marca y productos digitales para empresas en Argentina y el mundo. +150 proyectos globales."
-    name="description" />
+  <title>Nicolás Scarselli — Diseñador de Producto y Marca</title>
+  <meta name="description" content="Nicolás Scarselli — diseñador de producto y marca. Ayudo a equipos y organizaciones a convertir ideas complejas en experiencias claras y bien construidas. Buenos Aires / Remoto." />
   <meta name="author" content="Nicolás Scarselli" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://nicoscarselli.github.io/scarselli-homepage/" />
-
-  <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://nicoscarselli.github.io/scarselli-homepage/" />
-  <meta content="Nicolás Scarselli — Diseño que resuelve." property="og:title" />
-  <meta
-    content="Senior UI/UX Designer &amp; Brand Strategist. +150 proyectos globales. Diseño intencional y medible para empresas en Argentina y el mundo."
-    property="og:description" />
+  <meta content="Nicolás Scarselli — Diseño digital, con criterio y oficio." property="og:title" />
+  <meta content="Diseñador de producto y marca. Ideas complejas convertidas en experiencias claras y bien construidas." property="og:description" />
   <meta property="og:image" content="https://nicoscarselli.github.io/scarselli-homepage/favicon.png" />
-
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:url" content="https://nicoscarselli.github.io/scarselli-homepage/" />
-  <meta name="twitter:title" content="Nicolás Scarselli — UI/UX Designer &amp; Brand Strategist" />
-  <meta name="twitter:description"
-    content="Senior UI/UX Designer &amp; Brand Strategist. Trayectoria desde 2008. +150 proyectos globales. Buenos Aires, Argentina." />
-  <meta name="twitter:image" content="https://nicoscarselli.github.io/scarselli-homepage/favicon.png" />
-
-  <meta content="#0D0B0D" name="theme-color" />
+  <meta name="theme-color" content="#FAFAFA" />
   <script>
     (function(){
-      if (!localStorage.getItem('theme')) {
-        document.documentElement.classList.add('light');
-      }
+      var stored = localStorage.getItem('theme');
+      document.documentElement.dataset.theme = stored === 'dark' ? 'dark' : 'light';
+      document.documentElement.classList.add('js');
     })();
   </script>
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect" />
   <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Geist:wght@200;300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
-    rel="stylesheet" />
-  <!-- Material Symbols Rounded (Iconography unified with Google) -->
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,300..700,0..1,-50..200" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,300..700,0..1,-50..200" />
   <style>
-    /* ===== RESET ===== */
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      font-size: 16px;
-    }
-
-    /* ===== BASE ===== */
-    body {
-      font-family: 'Geist', system-ui, -apple-system, sans-serif;
-      background: var(--bg);
-      color: var(--text-pri);
-      -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
-    }
-
-    /* ===== CSS VARIABLES — Material 3 tokens (Dark by default) ===== */
-    :root {
-      /* ===== COLOR — Tonal Palette derivada de #473260 ===== */
-      --primary-0: #000000;
-      --primary-10: #1a0f29;
-      --primary-20: #2d1d44;
-      --primary-30: #473260;
-      /* accent original */
-      --primary-40: #5e437c;
-      --primary-50: #765599;
-      --primary-60: #8f6fb5;
-      --primary-70: #a98ad0;
-      --primary-80: #c5a8e8;
-      --primary-90: #e3ccf8;
-      --primary-95: #f2e4ff;
-      --primary-99: #fffbfe;
-
-      --primary: var(--primary-80);
-      /* en dark */
-      --on-primary: var(--primary-20);
-      --primary-container: var(--primary-30);
-      --on-primary-container: var(--primary-90);
-
-      /* Superficie tonal (elevación M3) */
-      --surface: #0d0b10;
-      --surface-dim: #0a080d;
-      --surface-bright: #1a1721;
-      --surface-1: #141117;
-      /* elevation +1 */
-      --surface-2: #1a1620;
-      /* elevation +2 */
-      --surface-3: #221c2a;
-      /* elevation +3 */
-      --surface-4: #251e2e;
-      --surface-5: #2b2335;
-
-      --on-surface: #EAE7E0;
-      --on-surface-variant: #9F9C98;
-      --outline: rgba(234, 231, 224, 0.18);
-      --outline-variant: rgba(234, 231, 224, 0.08);
-
-      /* Estados (state layers M3) */
-      --state-hover: rgba(234, 231, 224, 0.08);
-      --state-focus: rgba(234, 231, 224, 0.12);
-      --state-pressed: rgba(234, 231, 224, 0.16);
-
-      /* Microacento Google opcional (usar con moderación) */
-      --google-blue: #4285F4;
-      --google-red: #EA4335;
-      --google-yellow: #FBBC04;
-      --google-green: #34A853;
-
-      /* ===== TYPE SCALE M3 ===== */
-      --font-display: 'Geist', 'Google Sans', system-ui, sans-serif;
-      --font-body: 'Geist', system-ui, sans-serif;
-      --font-serif: 'Playfair Display', Georgia, serif;
-
-      --display-lg: clamp(3.5rem, 8vw, 6.5rem);
-      --display-md: clamp(2.8rem, 6vw, 4.5rem);
-      --display-sm: clamp(2.25rem, 4.5vw, 3.5rem);
-      --headline-lg: clamp(2rem, 3.5vw, 2.75rem);
-      --headline-md: clamp(1.5rem, 2.8vw, 2rem);
-      --headline-sm: clamp(1.25rem, 2.2vw, 1.5rem);
-      --title-lg: 1.375rem;
-      --title-md: 1.125rem;
-      --title-sm: 0.95rem;
-      --body-lg: 1.0625rem;
-      --body-md: 0.9375rem;
-      --body-sm: 0.8125rem;
-      --label-lg: 0.875rem;
-      --label-md: 0.75rem;
-      --label-sm: 0.6875rem;
-
-      /* ===== SPACING — 4 px baseline ===== */
-      --sp-1: 4px;
-      --sp-2: 8px;
-      --sp-3: 12px;
-      --sp-4: 16px;
-      --sp-5: 20px;
-      --sp-6: 24px;
-      --sp-8: 32px;
-      --sp-10: 40px;
-      --sp-12: 48px;
-      --sp-16: 64px;
-      --sp-20: 80px;
-      --sp-24: 96px;
-      --sp-32: 128px;
-      --sp-40: 160px;
-
-      --container-max: 1280px;
-      --container-pad: clamp(16px, 4vw, 48px);
-      --pad: var(--container-pad);
-      --bg: var(--surface);
-
-      /* ===== SHAPE SCALE M3 ===== */
-      --shape-xs: 4px;
-      --shape-sm: 8px;
-      --shape-md: 12px;
-      --shape-lg: 16px;
-      --shape-xl: 28px;
-      /* hero, cards principales */
-      --shape-2xl: 36px;
-      --shape-full: 9999px;
-
-      /* legacy radius mapping for existing classes */
-      --radius-s: var(--shape-sm);
-      --radius-m: var(--shape-md);
-      --radius-l: var(--shape-lg);
-      --radius-xl: var(--shape-xl);
-
-      /* alias para compatibilidad con el CSS existente */
-      --border: var(--outline);
-      --border-m: var(--outline-variant);
-      --accent: var(--primary-30);
-      --text-pri: var(--on-surface);
-      --text-sec: var(--on-surface-variant);
-
-      /* ===== ELEVATION (tonal + sombra suave) ===== */
-      --elev-1: 0 1px 2px rgba(0, 0, 0, .30), 0 1px 3px 1px rgba(0, 0, 0, .15);
-      --elev-2: 0 1px 2px rgba(0, 0, 0, .30), 0 2px 6px 2px rgba(0, 0, 0, .15);
-      --elev-3: 0 4px 8px 3px rgba(0, 0, 0, .15), 0 1px 3px rgba(0, 0, 0, .30);
-      --elev-4: 0 6px 10px 4px rgba(0, 0, 0, .15), 0 2px 3px rgba(0, 0, 0, .30);
-
-      /* ===== MOTION ===== */
-      --ease-standard: cubic-bezier(0.2, 0, 0, 1);
-      --ease-emphasized: cubic-bezier(0.2, 0, 0, 1);
-      --ease-emphasized-decel: cubic-bezier(0.05, 0.7, 0.1, 1);
-      --ease-emphasized-accel: cubic-bezier(0.3, 0, 0.8, 0.15);
-      --dur-short-1: 50ms;
-      --dur-short-2: 100ms;
-      --dur-medium-1: 250ms;
-      --dur-medium-2: 300ms;
-      --dur-long-1: 450ms;
-      --dur-long-2: 500ms;
-      --dur-extra-long: 700ms;
-    }
-
-    /* ===== NOISE TEXTURE ===== */
-    body::after {
-      content: '';
-      position: fixed;
-      inset: 0;
-      z-index: 0;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
-      opacity: .022;
-      pointer-events: none;
-    }
-
-    body>* {
-      position: relative;
-      z-index: 1;
-    }
-
-    /* ===== SCROLL REVEAL ===== */
-    .sr {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity .8s cubic-bezier(.16, 1, .3, 1), transform .8s cubic-bezier(.16, 1, .3, 1);
-    }
-
-    .sr.vis {
-      opacity: 1;
-      transform: none;
-    }
-
-    .sr-l {
-      opacity: 0;
-      transform: translateX(-28px);
-      transition: opacity .8s cubic-bezier(.16, 1, .3, 1), transform .8s cubic-bezier(.16, 1, .3, 1);
-    }
-
-    .sr-l.vis {
-      opacity: 1;
-      transform: none;
-    }
-
-    .sr-r {
-      opacity: 0;
-      transform: translateX(28px);
-      transition: opacity .8s cubic-bezier(.16, 1, .3, 1), transform .8s cubic-bezier(.16, 1, .3, 1);
-    }
-
-    .sr-r.vis {
-      opacity: 1;
-      transform: none;
-    }
-
-    /* ===== TYPOGRAPHY UTILITIES (Type Scale M3) ===== */
-    .display-lg {
-      font: 800 var(--display-lg)/0.92 var(--font-display);
-      letter-spacing: -0.04em;
-    }
-
-    .display-md {
-      font: 700 var(--display-md)/0.95 var(--font-display);
-      letter-spacing: -0.03em;
-    }
-
-    .headline-lg {
-      font: 700 var(--headline-lg)/1.15 var(--font-display);
-      letter-spacing: -0.015em;
-    }
-
-    .headline-md {
-      font: 600 var(--headline-md)/1.2 var(--font-display);
-      letter-spacing: -0.01em;
-    }
-
-    .title-lg {
-      font: 600 var(--title-lg)/1.3 var(--font-display);
-    }
-
-    .body-lg {
-      font: 400 var(--body-lg)/1.6 var(--font-body);
-      color: var(--on-surface-variant);
-    }
-
-    .label-lg {
-      font: 600 var(--label-lg)/1.4 var(--font-display);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    /* ===== MATERIAL SYMBOLS BASE ===== */
-    .material-symbols-rounded {
-      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
-      font-size: 20px;
-      vertical-align: middle;
-      display: inline-block;
-      line-height: 1;
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-    }
-
-    /* ===== ACCESSIBILITY: focus visible global ===== */
-    :focus-visible {
-      outline: 3px solid var(--primary);
-      outline-offset: 3px;
-      border-radius: var(--shape-xs);
-    }
-
-    /* Skip link styles (visible on keyboard focus) */
-    .skip-link {
-      position: absolute;
-      top: -64px;
-      left: var(--sp-4);
-      padding: var(--sp-3) var(--sp-4);
-      background: var(--primary);
-      color: var(--on-primary);
-      border-radius: var(--shape-sm);
-      z-index: 1000;
-      transition: top var(--dur-medium-1) var(--ease-standard);
-      text-decoration: none;
-      font-weight: 700;
-    }
-
-    .skip-link:focus {
-      top: var(--sp-4);
-    }
-
-    /* ===== NAVIGATION ===== */
-    .nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 900;
-      padding: 24px 0;
-      transition: padding .4s ease, background .4s ease, border-color .4s ease;
-      border-bottom: 1px solid transparent;
-    }
-
-    .nav.stuck {
-      padding: 16px 0;
-      background: rgba(13, 11, 16, .94);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-color: var(--border);
-    }
-
-    .nav-inner {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 0 var(--pad);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 32px;
-    }
-
-    .nav-logo {
-      font-family: 'Geist', sans-serif;
-      font-size: .95rem;
-      font-weight: 700;
-      color: var(--text-pri);
-      text-decoration: none;
-      letter-spacing: -.01em;
-    }
-
-    .nav-logo span {
-      color: var(--text-sec);
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .nav-link {
-      font-family: 'Geist', sans-serif;
-      font-size: .82rem;
-      font-weight: 500;
-      color: var(--text-sec);
-      text-decoration: none;
-      padding: 4px 0;
-      border-bottom: 1px solid transparent;
-      transition: color .25s, border-color .25s;
-      letter-spacing: .01em;
-    }
-
-    .nav-link:hover,
-    .nav-link.active {
-      color: var(--text-pri);
-      background: transparent;
-      border-bottom-color: var(--text-pri);
-    }
-
-    .nav-cta {
-      font-family: 'Geist', sans-serif;
-      font-size: .8rem;
-      font-weight: 600;
-      background: var(--text-pri);
-      color: var(--bg);
-      border: 1px solid var(--text-pri);
-      border-radius: 20px;
-      padding: 8px 18px;
-      text-decoration: none;
-      transition: background .25s, color .25s, transform .2s;
-      cursor: pointer;
-      letter-spacing: .04em;
-    }
-
-    .nav-cta:hover {
-      background: transparent;
-      color: var(--text-pri);
-      transform: translateY(-1px);
-    }
-
-    /* ===== WRAPPER ===== */
-    .wrap {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 0 var(--pad);
-    }
-
-    /* ===== SECTION LABEL ===== */
-    .tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-family: 'Geist', sans-serif;
-      font-size: .72rem;
-      font-weight: 600;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      color: var(--text-sec);
-      padding: 6px 14px;
-      border-radius: 20px;
-      border: 1px solid var(--border-m);
-      margin-bottom: 32px;
-    }
-
-    .tag-dot {
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background: var(--text-sec);
-      flex-shrink: 0;
-    }
-
-    /* ===== HERO ===== */
-    .hero {
-      min-height: 100vh;
-      padding: 180px 0 120px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .hero-inner {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 0 var(--pad);
-    }
-
-    .hero-top {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 48px;
-      margin-bottom: 64px;
-    }
-
-    .hero-title {
-      font-family: var(--font-display);
-      font-weight: 800;
-      line-height: 0.9;
-      letter-spacing: -.03em;
-      color: var(--text-pri);
-      flex: 1;
-    }
-
-    .hero-title em {
-      font-family: 'Geist', sans-serif;
-      font-style: italic;
-      font-weight: 400;
-      color: rgba(232, 227, 220, .45);
-    }
-
-    .hero-title .accent {
-      color: var(--text-pri);
-      font-style: italic;
-    }
-
-    /* Avatar circular flotante */
-    .avatar-wrap {
-      flex-shrink: 0;
-      width: clamp(216px, 24vw, 336px);
-      height: clamp(216px, 24vw, 336px);
-      border-radius: 50%;
-      overflow: hidden;
-      border: 1.5px solid var(--border-m);
-      position: relative;
-      animation: float 10s ease-in-out infinite;
-      background: #1a1a1a;
-      max-width: 420px;
-      max-height: 420px;
-    }
-
-    .avatar-wrap::before {
-      content: '';
-      position: absolute;
-      inset: -6px;
-      border-radius: 50%;
-      background: conic-gradient(from 0deg, var(--primary-40), var(--primary-60), var(--primary-80), var(--primary-60), var(--primary-40));
-      filter: blur(6px);
-      opacity: 0.45;
-      z-index: 0;
-      pointer-events: none;
-      animation: ringSpin 12s linear infinite;
-    }
-
-    @keyframes ringSpin {
-      to {
-        transform: rotate(360deg);
-      }
-    }
-
-    @keyframes float {
-
-      0%,
-      100% {
-        transform: translateY(0);
-      }
-
-      50% {
-        transform: translateY(-6px);
-      }
-    }
-
-    .avatar-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
-      display: block;
-    }
-
-    .avatar-ring {
-      position: absolute;
-      inset: -8px;
-      border-radius: 50%;
-      border: 1px solid var(--border-m);
-      pointer-events: none;
-    }
-
-    .hero-bottom {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 48px;
-      align-items: end;
-      border-top: 1px solid var(--border);
-      padding-top: 36px;
-      margin-top: 32px;
-    }
-
-    .hero-desc {
-      font-family: 'Geist', sans-serif;
-      font-size: 1.05rem;
-      font-weight: 400;
-      color: rgba(232, 227, 220, 0.72);
-      line-height: 1.6;
-      max-width: 580px;
-    }
-
-    .hero-meta {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 20px;
-    }
-
-    /* (hero pills removed) */
-    .hero-btns {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    }
-
-    /* ===== BUTTONS ===== */
-    .btn {
-      font-family: 'Geist', sans-serif;
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      font-size: .82rem;
-      font-weight: 600;
-      text-decoration: none;
-      border: none;
-      border-radius: 20px;
-      cursor: pointer;
-      transition: all .25s;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-    }
-
-    .btn-solid {
-      background: var(--accent);
-      color: var(--text-pri);
-      padding: 11px 22px;
-    }
-
-    .btn-solid:hover {
-      background: #3d2a54;
-      transform: translateY(-2px);
-    }
-
-    .btn-outline {
-      background: transparent;
-      color: var(--text-pri);
-      border: 1px solid rgba(232, 227, 220, 0.28);
-      padding: 11px 22px;
-    }
-
-    .btn-outline:hover {
-      background: rgba(232, 227, 220, 0.07);
-      border-color: rgba(232, 227, 220, 0.45);
-      transform: translateY(-2px);
-    }
-
-    .btn-ghost {
-      background: transparent;
-      color: var(--text-sec);
-      padding: 11px 0;
-      gap: 10px;
-    }
-
-    .btn-ghost:hover {
-      color: var(--text-pri);
-    }
-
-    .btn svg {
-      flex-shrink: 0;
-    }
-
-    /* ===== SECTION ===== */
-
-    .section-pad {
-      padding: 140px 0;
-    }
-
-    .section-head {
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      gap: 32px;
-      margin-bottom: 80px;
-      flex-wrap: wrap;
-    }
-
-    .section-title {
-      font-family: 'Geist', sans-serif;
-      font-size: clamp(1.875rem, 4vw, 2.125rem);
-      font-weight: 700;
-      line-height: 1.15;
-      letter-spacing: -.01em;
-      color: var(--text-pri);
-    }
-
-    .section-sub {
-      font-family: 'Geist', sans-serif;
-      font-size: 1.05rem;
-      font-weight: 400;
-      color: var(--text-sec);
-      line-height: 1.6;
-      max-width: 380px;
-      text-align: right;
-    }
-
-    /* ===== BLOQUE C: ÍNDICE DE SECCIONES ===== */
-    .section-index {
-      padding: 100px 0;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .index-grid {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .index-row {
-      display: grid;
-      grid-template-columns: 180px 1fr;
-      gap: 48px;
-      align-items: start;
-      padding: 40px 0;
-      border-top: 1px solid var(--border);
-    }
-
-    .index-num {
-      font-family: var(--font-display);
-      font-size: clamp(4.5rem, 9vw, 8rem);
-      font-weight: 800;
-      color: var(--text-pri);
-      line-height: 0.85;
-      letter-spacing: -0.04em;
-    }
-
-    .index-content {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      max-width: 620px;
-    }
-
-    .index-title {
-      color: var(--text-pri);
-      font-weight: 700;
-    }
-
-    .index-desc {
-      font-family: 'Geist', sans-serif;
-      font-size: 0.98rem;
-      color: var(--text-sec);
-      line-height: 1.6;
-    }
-
-    .index-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: var(--text-pri);
-      text-decoration: none;
-      border-bottom: 1px solid transparent;
-      width: fit-content;
-      margin-top: 8px;
-      transition: border-color 0.2s, color 0.2s;
-    }
-
-    .index-link:hover {
-      border-bottom-color: var(--text-pri);
-    }
-
-    .index-link .material-symbols-rounded {
-      font-size: 14px;
-    }
-
-    /* ===== SOBRE MÍ ===== */
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: start;
-    }
-
-    .about-quote {
-      font-size: clamp(1.4rem, 2.5vw, 2rem);
-      font-weight: 300;
-      line-height: 1.3;
-      color: var(--text-pri);
-      margin-bottom: 40px;
-    }
-
-    .about-body {
-      font-family: 'Geist', sans-serif;
-      font-size: 1.05rem;
-      font-weight: 400;
-      color: var(--text-sec);
-      line-height: 1.6;
-      margin-bottom: 24px;
-      max-width: 580px;
-    }
-
-    .stats-row {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      padding-top: 40px;
-      border-top: 1px solid var(--border);
-    }
-
-    .stat-n {
-      font-family: 'Geist', sans-serif;
-      font-size: 2.6rem;
-      font-weight: 800;
-      letter-spacing: -.04em;
-      color: var(--text-pri);
-      line-height: 1;
-    }
-
-    .stat-n span {
-      color: var(--text-sec);
-    }
-
-    .stat-l {
-      font-family: 'Geist', sans-serif;
-      font-size: .78rem;
-      font-weight: 400;
-      color: var(--text-sec);
-      margin-top: 6px;
-      line-height: 1.4;
-    }
-
-    /* ===== SERVICIOS (accordion style Kalvin) ===== */
-    .svc-list {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .svc-item {
-      border-top: 1px solid var(--border);
-      padding: 0;
-      overflow: hidden;
-    }
-
-    .svc-item:last-child {
-      border-bottom: 1px solid var(--border);
-    }
-
-    .svc-trigger {
-      width: 100%;
-      background: none;
-      border: none;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 32px 0;
-      gap: 24px;
-      text-align: left;
-    }
-
-    .svc-trigger:hover .svc-name {
-      color: var(--text-pri);
-    }
-
-    .svc-num {
-      font-family: 'Geist', sans-serif;
-      font-size: .8125rem;
-      font-weight: 600;
-      color: var(--text-sec);
-      letter-spacing: .1em;
-      flex-shrink: 0;
-      width: 28px;
-    }
-
-    .svc-name {
-      font-family: 'Geist', sans-serif;
-      font-size: clamp(1.2rem, 2.2vw, 1.7rem);
-      font-weight: 600;
-      color: rgba(232, 227, 220, .7);
-      flex: 1;
-      transition: color .3s;
-      letter-spacing: -.02em;
-    }
-
-    /* (svc-price-removed removed) */
-    .svc-icon {
-      width: 34px;
-      height: 34px;
-      border-radius: 50%;
-      background: var(--surface);
-      border: 1px solid var(--border-m);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      transition: background .3s, transform .3s;
-    }
-
-    .svc-item.open .svc-icon {
-      background: var(--accent);
-      transform: rotate(45deg);
-    }
-
-    .svc-body {
-      display: grid;
-      grid-template-rows: 0fr;
-      transition: grid-template-rows var(--dur-medium-2) var(--ease-standard);
-      padding-left: 52px;
-    }
-
-    .svc-item.open .svc-body {
-      grid-template-rows: 1fr;
-    }
-
-    .svc-body-inner {
-      overflow: hidden;
-      padding-bottom: 0;
-      transition: padding-bottom .45s;
-    }
-
-    .svc-item.open .svc-body-inner {
-      padding-bottom: 32px;
-    }
-
-    .svc-desc {
-      font-family: 'Geist', sans-serif;
-      font-size: 1.05rem;
-      font-weight: 400;
-      color: var(--text-sec);
-      line-height: 1.6;
-      max-width: 580px;
-    }
-
-    .svc-chips {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-top: 16px;
-    }
-
-    .chip-s {
-      font-family: 'Geist', sans-serif;
-      font-size: .7rem;
-      font-weight: 500;
-      color: var(--text-pri);
-      background: var(--border);
-      border: 1px solid var(--border-m);
-      padding: 3px 11px;
-      border-radius: 20px;
-    }
-
-    /* ===== PROYECTOS ===== */
-    .projects-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-    }
-
-    .proj-item {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 64px;
-      align-items: start;
-      padding: 80px 0;
-      border-top: 1px solid var(--border);
-      opacity: 0;
-      transform: translateY(28px);
-      transition: opacity var(--dur-long-1) var(--ease-emphasized-decel), transform var(--dur-long-1) var(--ease-emphasized-decel);
-    }
-
-    .proj-item:last-child {
-      border-bottom: 1px solid var(--border);
-    }
-
-    .proj-item.vis {
-      opacity: 1;
-      transform: none;
-    }
-
-    .proj-info {
-      display: flex;
-      flex-direction: column;
-      max-width: 620px;
-    }
-
-    .proj-meta-rows {
-      display: flex;
-      flex-direction: column;
-      border-top: 1px solid var(--border);
-      margin: 24px 0 28px;
-    }
-
-    .proj-meta-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 12px 0;
-      border-bottom: 1px solid var(--border);
-      font-size: 0.84rem;
-      gap: 16px;
-    }
-
-    .proj-meta-row .lbl {
-      color: var(--text-sec);
-      font-weight: 500;
-      flex-shrink: 0;
-    }
-
-    .proj-meta-row .val {
-      color: var(--text-pri);
-      font-weight: 500;
-      text-align: right;
-    }
-
-    .proj-tags-inline {
-      display: flex;
-      gap: 6px;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    }
-
-    .proj-media {
-      position: sticky;
-      top: 100px;
-    }
-
-    .proj-img-wrap {
-      border-radius: var(--shape-sm);
-      border: 1px solid var(--border);
-      overflow: hidden;
-      position: relative;
-      aspect-ratio: 4/3;
-      background: var(--surface-1);
-    }
-
-    .proj-img-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform var(--dur-long-1) var(--ease-emphasized-decel), filter var(--dur-medium-2) var(--ease-standard);
-      filter: grayscale(12%);
-    }
-
-    .proj-img-wrap:hover img {
-      transform: scale(1.03);
-      filter: grayscale(0%);
-    }
-
-    /* ===== PROJECT SLIDER + ZOOM ===== */
-    .proj-slider {
-      position: relative;
-      width: 100%;
-      height: 100%;
-    }
-
-    .proj-slides {
-      display: flex;
-      height: 100%;
-      transition: transform var(--dur-medium-2) var(--ease-standard);
-    }
-
-    .proj-slide {
-      min-width: 100%;
-      height: 100%;
-    }
-
-    .proj-slide img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      cursor: zoom-in;
-    }
-
-    .proj-nav {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      pointer-events: none;
-      padding: 0 14px;
-    }
-
-    .proj-btn {
-      pointer-events: auto;
-      width: 40px;
-      height: 40px;
-      border-radius: 9999px;
-      border: 1px solid var(--border-m);
-      background: rgba(13, 11, 16, .65);
-      color: var(--text-pri);
-      display: grid;
-      place-items: center;
-      cursor: pointer;
-      transition: transform .2s, background .2s;
-    }
-
-    .proj-btn:hover {
-      background: rgba(13, 11, 16, .85);
-      transform: translateY(-1px);
-    }
-
-    .proj-dots {
-      position: absolute;
-      left: 16px;
-      right: 16px;
-      bottom: 16px;
-      display: flex;
-      gap: 8px;
-      justify-content: center;
-    }
-
-    .proj-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: rgba(232, 227, 220, .25);
-      border: 1px solid rgba(255, 255, 255, .12);
-      cursor: pointer;
-    }
-
-    .proj-dot[aria-current=\"true\"] {
-      background: var(--accent);
-    }
-
-    /* Zoom modal */
-    .zoom {
-      position: fixed;
-      inset: 0;
-      background: rgba(13, 11, 16, .92);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-      padding: 24px;
-    }
-
-    .zoom.open {
-      display: flex;
-    }
-
-    .zoom img {
-      max-width: min(1100px, 96vw);
-      max-height: 90vh;
-      border-radius: var(--radius-l);
-      box-shadow: 0 20px 60px rgba(0, 0, 0, .45);
-      cursor: zoom-out;
-    }
-
-    .zoom-close {
-      position: fixed;
-      top: 18px;
-      right: 18px;
-      width: 42px;
-      height: 42px;
-      border-radius: 9999px;
-      border: 1px solid var(--border-m);
-      background: rgba(13, 11, 16, .65);
-      color: var(--text-pri);
-      display: grid;
-      place-items: center;
-      cursor: pointer;
-    }
-
-    @media (max-width: 900px) {
-      :root {
-        --pad: 24px;
-      }
-
-      .avatar-wrap {
-        width: 160px !important;
-        height: 160px !important;
-        animation: none;
-      }
-
-      .proj-btn {
-        width: 36px;
-        height: 36px;
-      }
-
-      .proj-dots {
-        bottom: 12px;
-      }
-    }
-
-    @media (max-width: 560px) {
-      :root {
-        --pad: 16px;
-      }
-
-      .hero {
-        padding: 140px 0 80px;
-      }
-
-      .btn {
-        width: 100%;
-        justify-content: center;
-      }
-
-      .hero-btns {
-        width: 100%;
-      }
-    }
-
-    .proj-label {
-      font-family: 'Geist', sans-serif;
-      font-size: .8125rem;
-      font-weight: 600;
-      color: var(--text-sec);
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      margin-bottom: 14px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .proj-label::before {
-      content: '';
-      width: 16px;
-      height: 1px;
-      background: var(--text-sec);
-      flex-shrink: 0;
-    }
-
-    .proj-title {
-      font-family: 'Geist', sans-serif;
-      font-size: clamp(1.375rem, 2vw, 1.5rem);
-      font-weight: 600;
-      letter-spacing: 0em;
-      color: var(--text-pri);
-      line-height: 1.25;
-      margin-bottom: 16px;
-    }
-
-    .proj-desc {
-      font-family: 'Geist', sans-serif;
-      font-size: 1.05rem;
-      font-weight: 400;
-      color: var(--text-sec);
-      line-height: 1.6;
-      margin-bottom: 24px;
-      max-width: 580px;
-    }
-
-    .proj-tags {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-bottom: 28px;
-    }
-
-    .proj-tag {
-      font-family: 'Geist', sans-serif;
-      font-size: .68rem;
-      font-weight: 500;
-      color: var(--text-pri);
-      background: var(--border);
-      border: 1px solid var(--border-m);
-      padding: 4px 12px;
-      border-radius: 20px;
-    }
-
-    .proj-intl {
-      font-family: 'Geist', sans-serif;
-      font-size: .7rem;
-      font-weight: 600;
-      color: var(--text-pri);
-      background: var(--border);
-      border: 1px solid var(--border-m);
-      padding: 4px 12px;
-      border-radius: 20px;
-    }
-
-    /* ===== EXPERIENCIA LABORAL ===== */
-    .exp-list {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .exp-item {
-      display: grid;
-      grid-template-columns: 200px 1fr;
-      gap: 48px;
-      padding: 48px 0;
-      border-bottom: 1px solid var(--border);
-      opacity: 0;
-      transform: translateY(18px);
-      transition: opacity var(--dur-long-1) var(--ease-emphasized-decel), transform var(--dur-long-1) var(--ease-emphasized-decel);
-    }
-
-    .exp-item.vis {
-      opacity: 1;
-      transform: none;
-    }
-
-    .exp-period {
-      font-family: 'Geist', sans-serif;
-      font-size: .8125rem;
-      font-weight: 500;
-      color: var(--text-sec);
-      letter-spacing: .04em;
-      padding-top: 4px;
-    }
-
-    .exp-period .badge {
-      display: inline-block;
-      font-size: .65rem;
-      font-weight: 700;
-      color: var(--text-pri);
-      background: var(--border);
-      border: 1px solid var(--border-m);
-      border-radius: 20px;
-      padding: 3px 10px;
-      margin-top: 8px;
-      letter-spacing: .06em;
-      text-transform: uppercase;
-    }
-
-    .exp-role {
-      font-family: 'Geist', sans-serif;
-      font-size: clamp(1.1rem, 1.8vw, 1.4rem);
-      font-weight: 600;
-      letter-spacing: 0em;
-      color: var(--text-pri);
-      margin-bottom: 4px;
-    }
-
-    .exp-company {
-      font-family: 'Geist', sans-serif;
-      font-size: .88rem;
-      font-weight: 500;
-      color: var(--text-sec);
-      margin-bottom: 12px;
-    }
-
-    .exp-desc {
-      font-family: 'Geist', sans-serif;
-      font-size: 1.05rem;
-      font-weight: 400;
-      color: var(--text-sec);
-      line-height: 1.6;
-      margin-bottom: 14px;
-      max-width: 580px;
-    }
-
-    .exp-tags {
-      display: flex;
-      gap: 7px;
-      flex-wrap: wrap;
-    }
-
-    .exp-tag {
-      font-family: 'Geist', sans-serif;
-      font-size: .67rem;
-      font-weight: 500;
-      color: var(--text-sec);
-      border: 1px solid var(--border-m);
-      padding: 3px 10px;
-      border-radius: 20px;
-    }
-
-    /* ===== CONTACTO ===== */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: start;
-    }
-
-    .contact-h {
-      font-family: 'Geist', sans-serif;
-      font-size: clamp(1.875rem, 4vw, 2.125rem);
-      font-weight: 700;
-      letter-spacing: -.01em;
-      color: var(--text-pri);
-      line-height: 1.15;
-      margin-bottom: 24px;
-    }
-
-    .contact-sub {
-      font-family: 'Geist', sans-serif;
-      font-size: 1.05rem;
-      font-weight: 400;
-      color: var(--text-sec);
-      line-height: 1.6;
-      margin-bottom: 36px;
-      max-width: 580px;
-    }
-
-    .email-big {
-      font-family: 'Geist', sans-serif;
-      font-size: clamp(1rem, 2.2vw, 1.55rem);
-      font-weight: 400;
-      color: var(--text-pri);
-      text-decoration: none;
-      display: block;
-      border-bottom: 1px solid var(--border-m);
-      padding-bottom: 20px;
-      margin-bottom: 28px;
-      transition: color .3s;
-      word-break: break-all;
-    }
-
-    .email-big:hover {
-      color: var(--text-sec);
-    }
-
-    .contact-info {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-    }
-
-    .info-row {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      padding: 18px 0;
-      border-bottom: 1px solid var(--border);
-      font-family: 'Geist', sans-serif;
-    }
-
-    .info-row .lbl {
-      font-size: .8125rem;
-      font-weight: 600;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      color: var(--text-sec);
-      min-width: 80px;
-    }
-
-    .info-row .val {
-      font-size: .88rem;
-      font-weight: 400;
-      color: var(--text-pri);
-    }
-
-    .social-links {
-      display: flex;
-      flex-direction: column;
-      margin-top: 40px;
-    }
-
-    .soc-link {
-      font-family: 'Geist', sans-serif;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 18px 0;
-      border-bottom: 1px solid var(--border);
-      text-decoration: none;
-      color: var(--text-sec);
-      font-size: .88rem;
-      font-weight: 400;
-      transition: color .25s;
-    }
-
-    .soc-link:first-child {
-      border-top: 1px solid var(--border);
-    }
-
-    .soc-link:hover {
-      color: var(--text-pri);
-    }
-
-    .soc-link .soc-arr {
-      opacity: 0;
-      transition: opacity .25s, transform .25s;
-    }
-
-    .soc-link:hover .soc-arr {
-      opacity: 1;
-      transform: translate(2px, -2px);
-    }
-
-    /* (name ticker removed) */
-
-    /* ===== BLOQUE F — CTA BANNER FULL-BLEED ===== */
-    .cta-banner {
-      background: var(--accent);
-      color: var(--text-pri);
-      padding: 96px 0;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .cta-banner-inner {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 0 var(--pad);
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 24px;
-    }
-
-    .cta-banner-title {
-      font-family: var(--font-display);
-      font-size: clamp(2.2rem, 4.5vw, 3.8rem);
-      font-weight: 800;
-      line-height: 1.05;
-      letter-spacing: -0.02em;
-      max-width: 800px;
-    }
-
-    .cta-banner-email {
-      font-family: 'Geist', sans-serif;
-      font-size: clamp(1.2rem, 2.5vw, 2rem);
-      font-weight: 500;
-      color: var(--text-pri);
-      text-decoration: none;
-      border-bottom: 2px solid rgba(255, 255, 255, 0.4);
-      padding-bottom: 4px;
-      transition: border-color .25s, opacity .25s;
-    }
-
-    .cta-banner-email:hover {
-      border-bottom-color: var(--text-pri);
-      opacity: 0.9;
-    }
-
-    /* ===== BLOQUE E — FOOTER MULTI-COLUMNA ===== */
-    .footer-multi {
-      padding: 96px 0 40px;
-      background: var(--bg);
-    }
-
-    .footer-cols {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 48px;
-      margin-bottom: 64px;
-    }
-
-    .footer-col {
-      border-top: 1px solid var(--border);
-      padding-top: 24px;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-
-    .footer-col-lbl {
-      font-family: 'Geist', sans-serif;
-      font-size: .75rem;
-      font-weight: 700;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      color: var(--text-sec);
-      margin-bottom: 4px;
-    }
-
-    .footer-col-link {
-      font-family: 'Geist', sans-serif;
-      font-size: .9rem;
-      color: var(--text-sec);
-      text-decoration: none;
-      transition: color .25s;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .footer-col-link:hover {
-      color: var(--text-pri);
-    }
-
-    .footer-col-text {
-      font-family: 'Geist', sans-serif;
-      font-size: .9rem;
-      color: var(--text-sec);
-      line-height: 1.5;
-    }
-
-    .footer-bottom {
-      border-top: 1px solid var(--border);
-      padding-top: 32px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 16px;
-    }
-
-    .footer-copy {
-      font-family: 'Geist', sans-serif;
-      font-size: .8125rem;
-      color: var(--text-sec);
-    }
-
-    .footer-top {
-      font-family: 'Geist', sans-serif;
-      font-size: .8125rem;
-      font-weight: 600;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color: var(--text-sec);
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      transition: color .25s;
-    }
-
-    .footer-top:hover {
-      color: var(--text-pri);
-    }
-
-    /* ===== MOBILE ===== */
-    @media (max-width: 900px) {
-      .wrap {
-        padding: 0 24px;
-      }
-
-      .nav-inner {
-        padding: 0 24px;
-      }
-
-      .nav-links {
-        display: none;
-      }
-
-      .hero-top {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 32px;
-      }
-
-      .avatar-wrap {
-        width: 140px;
-        height: 140px;
-        align-self: flex-end;
-      }
-
-      .hero-bottom {
-        grid-template-columns: 1fr;
-        gap: 24px;
-      }
-
-      .hero-meta {
-        align-items: flex-start;
-      }
-
-      /* (hero pills removed) */
-      .hero-btns {
-        justify-content: flex-start;
-      }
-
-      .about-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-
-      .stats-row {
-        grid-template-columns: repeat(3, 1fr);
-      }
-
-      .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-
-      .proj-item {
-        grid-template-columns: 1fr !important;
-        gap: 36px;
-        padding: 48px 0;
-      }
-
-      .proj-media {
-        position: static;
-        order: 2;
-      }
-
-      .proj-info {
-        order: 1;
-      }
-
-      .proj-meta-row {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 6px;
-      }
-
-      .proj-meta-row .val,
-      .proj-tags-inline {
-        justify-content: flex-start;
-        text-align: left;
-      }
-
-      .exp-item {
-        grid-template-columns: 1fr;
-        gap: 8px;
-      }
-
-      .section-sub {
-        text-align: left;
-      }
-
-      .footer-cols {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 32px;
-      }
-    }
-
-    @media (max-width: 560px) {
-      .stats-row {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .hero-title {
-        font-size: clamp(3rem, 18vw, 5rem);
-      }
-
-      .footer-cols {
-        grid-template-columns: 1fr;
-        gap: 32px;
-      }
-    }
-
-    /* ===== IA STACK ===== */
-    .ia-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 24px;
-    }
-
-    .ia-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-m);
-      padding: 32px;
-      transition: transform 0.3s, border-color 0.3s;
-    }
-
-    .ia-card:hover {
-      transform: translateY(-4px);
-      border-color: var(--border-m);
-    }
-
-    .ia-card::after {
-      /* glow sutil al hover, tipo Google AI Studio */
-      content: '';
-      position: absolute;
-      inset: 0;
-      border-radius: inherit;
-      background: radial-gradient(600px circle at var(--mx, 50%) var(--my, 50%), color-mix(in srgb, var(--primary) 12%, transparent), transparent 40%);
-      opacity: 0;
-      transition: opacity var(--dur-medium-2) var(--ease-standard);
-      pointer-events: none;
-    }
-
-    .ia-card:hover::after {
-      opacity: 1;
-    }
-
-    .ia-card-title {
-      font-family: 'Geist', sans-serif;
-      font-size: 1.25rem;
-      font-weight: 600;
-      color: var(--text-pri);
-      margin-bottom: 12px;
-      letter-spacing: -.01em;
-    }
-
-    .ia-card-desc {
-      font-family: 'Geist', sans-serif;
-      font-size: 0.95rem;
-      color: var(--text-sec);
-      line-height: 1.5;
-    }
-
-    /* ===== LIGHT THEME (M3) ===== */
-    :root.light {
-      --primary: var(--primary-30);
-      --on-primary: #ffffff;
-      --primary-container: var(--primary-90);
-      --on-primary-container: var(--primary-10);
-      --surface: #FAFAFA;
-      --surface-1: #F2EFF5;
-      --surface-2: #ECE8F1;
-      --surface-3: #E6E1EC;
-      --on-surface: #0D0B0D;
-      --on-surface-variant: #555555;
-      --outline: rgba(0, 0, 0, 0.18);
-      --outline-variant: rgba(0, 0, 0, 0.08);
-      --state-hover: rgba(0, 0, 0, 0.06);
-    }
-
-    :root.light body::after {
-      filter: invert(1);
-      opacity: 0.04;
-    }
-
-    :root.light .nav.stuck {
-      background: rgba(250, 250, 250, 0.94);
-    }
-
-    :root.light .hero-desc {
-      color: var(--text-sec);
-    }
-
-    :root.light .btn-solid {
-      color: #ffffff;
-    }
-
-    :root.light .hero-title em {
-      color: rgba(13, 11, 16, 0.45);
-    }
-
-    :root.light .btn-outline {
-      border: 1px solid rgba(13, 11, 16, 0.28);
-    }
-
-    :root.light .btn-outline:hover {
-      background: rgba(13, 11, 16, 0.05);
-      border-color: rgba(13, 11, 16, 0.45);
-    }
-
-    :root.light .proj-btn {
-      background: rgba(255, 255, 255, 0.85);
-      color: var(--text-pri);
-    }
-
-    :root.light .proj-btn:hover {
-      background: #ffffff;
-    }
-
-    :root.light .proj-dot {
-      background: rgba(13, 11, 16, 0.15);
-      border: 1px solid rgba(13, 11, 16, 0.1);
-    }
-
-    :root.light .zoom {
-      background: rgba(250, 250, 250, 0.95);
-    }
-
-    :root.light .zoom-close,
-    :root.light .zoom-nav-btn {
-      background: rgba(255, 255, 255, 0.85);
-      color: var(--text-pri);
-    }
-
-    :root.light .nav-link:hover,
-    :root.light .nav-link.active {
-      background: rgba(13, 11, 16, 0.05);
-    }
-
-    :root.light .avatar-wrap {
-      background: #e0e0e0;
-    }
-
-    :root.light .svc-name {
-      color: rgba(13, 11, 16, 0.8);
-    }
-
-    :root.light .skip-link {
-      background: #fff;
-      color: #000;
-      border: 1px solid #000;
-    }
-
-    /* Zoom Navigation Buttons */
-    .zoom-nav-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      border: 1px solid var(--border-m);
-      background: rgba(13, 11, 16, .65);
-      color: var(--text-pri);
-      display: grid;
-      place-items: center;
-      cursor: pointer;
-      font-size: 1.5rem;
-      transition: background 0.2s, transform 0.2s;
-      z-index: 10000;
-    }
-
-    .zoom-nav-btn:hover {
-      background: rgba(13, 11, 16, .85);
-      transform: translateY(-50%) scale(1.05);
-    }
-
-    .zoom-prev {
-      left: 24px;
-    }
-
-    .zoom-next {
-      right: 24px;
-    }
-
-    @media (max-width: 900px) {
-      .zoom-prev {
-        left: 12px;
-      }
-
-      .zoom-next {
-        right: 12px;
-      }
-
-      .zoom-nav-btn {
-        width: 40px;
-        height: 40px;
-        font-size: 1.2rem;
-      }
-    }
+/* ===== GRAYSCALE BASE (colors to be defined later) ===== */
+:root{
+  --bg:#FAFAFA; --surface-subtle:#F1F1F1; --surface-media:#C9C9C9;
+  --ink:#171717; --ink-2:#5C5C5C; --ink-3:#6E6E6E;
+  --line:rgba(0,0,0,0.14); --line-soft:rgba(0,0,0,0.08);
+  --brand:#767676; --brand-deep:#3A3A3A;
+  --accent:#2E2E2E; --accent-strong:#171717;
+  --inverse-bg:#1C1C1C; --inverse-ink:#F2F2F0; --inverse-muted:#B7B7B5; --inverse-line:rgba(242,242,240,.18);
+  --motion-standard:cubic-bezier(.2,.7,.2,1);
+  --font:'Manrope', system-ui, -apple-system, sans-serif;
+  --space-1:4px; --space-2:8px; --space-3:12px; --space-4:16px; --space-5:24px;
+  --space-6:32px; --space-7:48px; --space-8:64px; --space-9:80px; --space-10:96px; --space-11:120px;
+  color-scheme: light;
+}
+:root[data-theme="dark"]{
+  --bg:#1A1A1A; --surface-subtle:#212121; --surface-media:#2D2D2D;
+  --ink:#EDEDED; --ink-2:#A3A3A3; --ink-3:#8A8A8A;
+  --line:rgba(255,255,255,0.16); --line-soft:rgba(255,255,255,0.08);
+  --brand:#9A9A9A; --brand-deep:#BEBEBE;
+  --accent:#C9C9C9; --accent-strong:#E4E4E4;
+  --inverse-bg:#ECECEC; --inverse-ink:#171717; --inverse-muted:#5E5E5E; --inverse-line:rgba(23,23,23,.18);
+  color-scheme: dark;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;border-radius:0}
+html{font-size:16px;background:var(--bg);color:var(--ink-2)}
+@media (prefers-reduced-motion: no-preference){html{scroll-behavior:smooth}}
+body{min-height:100vh;font-family:var(--font);font-weight:400;background:var(--bg);color:var(--ink-2);
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
+img,picture,video{max-width:100%;display:block}
+a,button{font:inherit;color:inherit}
+button{background:none;border:none;padding:0;cursor:pointer}
+::selection{background:var(--ink);color:var(--bg)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+.skip-link{position:absolute;left:-999px;top:0;background:var(--ink);color:var(--bg);padding:10px 16px;z-index:2000}
+.skip-link:focus{left:12px;top:12px}
+.material-symbols-rounded{font-family:'Material Symbols Rounded';font-weight:normal;font-style:normal;line-height:1;vertical-align:middle;font-size:18px}
+.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+.wrap{width:min(calc(100% - 64px),1320px);margin-inline:auto;padding-inline:0}
+@media (min-width:1600px){.wrap{width:min(calc(100% - 96px),1440px)}}
+@media (max-width:640px){.wrap{width:calc(100% - 40px)}}
+@media (max-width:390px){.wrap{width:calc(100% - 32px)}}
+
+section{width:100%;padding:clamp(88px,10vw,128px) 0;border-top:1px solid var(--line)}
+section:first-of-type{border-top:0}
+section[id]{scroll-margin-top:80px}
+
+.eyebrow,.section-label{display:inline-flex;align-items:center;gap:.4ch;font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);line-height:1.4}
+.display{font-weight:700;letter-spacing:-.052em;line-height:.98;font-size:clamp(3.25rem,5.8vw,5.75rem);color:var(--ink);max-width:14ch}
+.h2{font-weight:600;letter-spacing:-.035em;line-height:.98;font-size:clamp(3rem,5.4vw,5rem);color:var(--ink);max-width:18ch}
+.section-sub{font-size:clamp(1.125rem,1.55vw,1.375rem);line-height:1.55;color:var(--ink-2);max-width:52ch;margin-top:var(--space-5)}
+.link{display:inline-flex;align-items:center;gap:8px;color:var(--ink);text-decoration:none;font-weight:500;font-size:.9375rem;border-bottom:1px solid var(--ink);padding-bottom:3px;transition:color .18s var(--motion-standard),border-color .18s var(--motion-standard)}
+.link .material-symbols-rounded{transition:transform .18s var(--motion-standard)}
+.link:hover{color:var(--accent-strong);border-color:var(--accent-strong)}
+.link:hover .material-symbols-rounded{transform:translate(3px,-3px)}
+
+.button-primary{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 22px;background:var(--ink);color:var(--bg);font-size:.9375rem;font-weight:600;text-decoration:none;border:1px solid var(--ink);transition:background-color .16s var(--motion-standard),border-color .16s var(--motion-standard),transform .14s var(--motion-standard)}
+.button-primary .material-symbols-rounded{transition:transform .18s var(--motion-standard)}
+.button-primary:hover{background:var(--accent-strong);border-color:var(--accent-strong)}
+.button-primary:hover .material-symbols-rounded{transform:translateY(3px)}
+.button-primary:active{transform:scale(.985)}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:1000;background:var(--bg);border-bottom:1px solid var(--line)}
+.nav-inner{display:grid;grid-template-columns:minmax(190px,1fr) auto minmax(190px,1fr);align-items:center;gap:32px;min-height:72px}
+.nav-logo{justify-self:start;font-size:.9375rem;font-weight:600;letter-spacing:-.01em;color:var(--ink);text-decoration:none;display:inline-flex;align-items:center;min-height:44px}
+.nav-panel{justify-self:center}
+.nav-links{display:flex;align-items:center;justify-content:center;gap:28px}
+.nav-link{position:relative;display:inline-flex;align-items:center;min-height:44px;font-size:.875rem;font-weight:500;color:var(--ink-2);text-decoration:none;transition:color .18s var(--motion-standard)}
+.nav-link::after{content:"";position:absolute;left:0;bottom:8px;width:100%;height:1px;background:var(--ink);transform:scaleX(0);transform-origin:left;transition:transform .18s var(--motion-standard)}
+.nav-link:hover{color:var(--ink)}
+.nav-link:hover::after{transform:scaleX(1)}
+.nav-link.active{color:var(--ink);font-weight:600}
+.nav-link.active::after{transform:scaleX(1);background:var(--accent)}
+.nav-actions{justify-self:end;display:flex;align-items:center;gap:12px}
+.theme-toggle{display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;color:var(--ink-2);transition:color .18s var(--motion-standard)}
+.theme-toggle:hover{color:var(--ink)}
+.nav-cta{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:0 18px;background:var(--ink);color:var(--bg);font-size:.875rem;font-weight:600;text-decoration:none;border:1px solid var(--ink);transition:background-color .14s var(--motion-standard),transform .14s var(--motion-standard)}
+.nav-cta:hover{background:var(--accent-strong);border-color:var(--accent-strong)}
+.nav-cta:active{transform:scale(.985)}
+.nav-toggle{display:none;align-items:center;justify-content:center;min-width:44px;min-height:44px;color:var(--ink);gap:6px;font-size:.875rem;font-weight:500}
+.nav-cta-mobile{display:none}
+@media (max-width:940px){
+  .nav-inner{grid-template-columns:1fr auto}
+  .nav-panel{display:none;grid-column:1 / -1;justify-self:stretch}
+  .nav-panel.open{display:block}
+  .nav-links{flex-direction:column;align-items:stretch;gap:0;width:100%}
+  .nav-link{min-height:52px;border-top:1px solid var(--line-soft)}
+  .nav-link::after{display:none}
+  .nav-link.active{border-left:2px solid var(--accent);padding-left:12px}
+  .nav-toggle{display:inline-flex}
+  .nav-cta{display:none}
+  .nav-cta-mobile{display:inline-flex;align-items:center;justify-content:center;width:100%;min-height:52px;margin-top:12px;background:var(--ink);color:var(--bg);font-size:.9375rem;font-weight:600;text-decoration:none;border:1px solid var(--ink)}
+}
+
+/* HERO */
+.hero{padding-top:clamp(104px,10vw,144px);padding-bottom:clamp(112px,10vw,144px)}
+.hero-inner{display:grid;grid-template-columns:minmax(0,1fr) minmax(400px,480px);align-items:center;gap:clamp(64px,8vw,128px)}
+.hero-copy{display:flex;flex-direction:column;gap:26px}
+.hero-desc{font-size:clamp(1.125rem,1.55vw,1.375rem);line-height:1.55;max-width:46ch;color:var(--ink-2)}
+.hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:var(--space-5);margin-top:var(--space-3)}
+.hero-image-wrap{position:relative;isolation:isolate;width:min(100%,460px);justify-self:end;padding:0 24px 24px 0}
+.hero-image-wrap::before{content:"";position:absolute;inset:24px 0 0 24px;border:1px solid var(--accent);z-index:-1;pointer-events:none}
+.hero-image{width:100%;aspect-ratio:4/5;overflow:hidden;background:var(--surface-media)}
+.hero-image img{width:100%;height:100%;object-fit:cover;object-position:center}
+.hero-image .ph{width:100%;height:100%;display:grid;place-items:center;color:var(--ink-3);font-size:.82rem}
+.hero-image-caption{position:absolute;right:0;bottom:0;transform:translateY(35%);min-width:240px;display:grid;gap:3px;padding:14px 18px;background:var(--bg);border:1px solid var(--line);z-index:2}
+.hero-image-caption strong{font-size:.8125rem;font-weight:600;color:var(--ink)}
+.hero-image-caption span{font-size:.6875rem;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-3)}
+
+.section-head{margin-bottom:var(--space-10)}
+.section-head.with-action{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:var(--space-6)}
+.section-head > div{max-width:820px}
+
+/* PROJECTS */
+#proyectos .h2{font-size:clamp(3.25rem,6vw,5.75rem);line-height:.95;max-width:12ch}
+.project{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(48px,6vw,96px);
+  padding-block:clamp(80px,8vw,120px);border-top:1px solid var(--line);align-items:center}
+.project:nth-of-type(even) .project-copy{order:2}
+.project:nth-of-type(even) .project-visual{order:1}
+.project-visual{width:100%;aspect-ratio:4/3;overflow:hidden;background:var(--surface-media);position:relative}
+.project-visual img{width:100%;height:100%;object-fit:cover;transform:scale(1.01);transition:transform 600ms var(--motion-standard)}
+.project:hover .project-visual img{transform:scale(1.04)}
+.project-visual .ph{position:absolute;inset:0;display:none;place-items:center;color:var(--ink-3);font-size:.82rem;padding:24px;text-align:center}
+.project-visual.placeholder .ph{display:grid}
+.project-index{display:inline-flex;align-items:baseline;gap:12px;margin-bottom:20px}
+.project-index .n{font-size:.8125rem;font-weight:600;letter-spacing:.12em;color:var(--accent)}
+.project-index .cat{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+.project-title{font-size:clamp(2rem,3.2vw,3.25rem);font-weight:600;letter-spacing:-.03em;line-height:1.05;color:var(--ink);margin-bottom:28px;max-width:18ch}
+.project-facts{display:grid;gap:18px;margin-bottom:28px}
+.project-fact{display:grid;gap:5px}
+.project-fact .k{font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+.project-fact .v{font-size:1rem;line-height:1.6;color:var(--ink-2);max-width:52ch}
+.project-fact.result .v{color:var(--ink);padding-left:16px;border-left:1px solid var(--accent)}
+.project-meta{display:flex;flex-wrap:wrap;gap:8px 28px;margin-bottom:26px;padding-top:20px;border-top:1px solid var(--line-soft)}
+.project-meta span{font-size:.8125rem;color:var(--ink-3)}
+.project-meta b{font-weight:600;color:var(--ink);margin-right:6px}
+.project-note{margin-top:16px;color:var(--ink-3);font-size:.85rem;font-style:italic}
+@media (prefers-reduced-motion: reduce){.project-visual img,.project:hover .project-visual img{transform:none;transition:none}}
+@media (max-width:860px){
+  .project,.project:nth-of-type(even){grid-template-columns:1fr;gap:32px}
+  .project:nth-of-type(even) .project-copy{order:0}
+  .project:nth-of-type(even) .project-visual{order:0}
+}
+
+/* SERVICES */
+#servicios .h2{font-size:clamp(3rem,5.2vw,4.75rem)}
+.svc-list{display:grid;margin-top:var(--space-6)}
+.svc-item{border-top:1px solid var(--line)}
+.svc-item:last-child{border-bottom:1px solid var(--line)}
+.svc-trigger{display:grid;grid-template-columns:64px minmax(0,1fr) 44px;gap:24px;width:100%;text-align:left;min-height:104px;padding:28px 0;align-items:center}
+.svc-num{font-size:.9375rem;font-weight:700;letter-spacing:.1em;color:var(--accent)}
+.svc-head{display:grid;gap:8px}
+.svc-name{font-size:clamp(1.5rem,2.5vw,2.25rem);font-weight:600;letter-spacing:-.02em;line-height:1.13;color:var(--ink)}
+.svc-teaser{font-size:.9375rem;color:var(--ink-2);line-height:1.55;max-width:60ch}
+.svc-icon{display:inline-grid;place-items:center;width:44px;height:44px}
+.svc-icon .material-symbols-rounded{color:var(--ink-3)}
+.svc-body{overflow:hidden;height:0}
+.svc-body-inner{margin-left:88px;max-width:760px;padding-bottom:32px}
+.svc-desc{font-size:1.0625rem;line-height:1.75;color:var(--ink-2);margin-bottom:var(--space-4)}
+.svc-chips{display:flex;flex-wrap:wrap;gap:10px 22px}
+.chip-s{font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-3)}
+@media (max-width:640px){.svc-body-inner{margin-left:0}.svc-trigger{grid-template-columns:40px minmax(0,1fr) 44px;gap:16px;min-height:88px}}
+
+/* PROCESS — inverse */
+#proceso{background:var(--inverse-bg);color:var(--inverse-muted);border-top:0;padding-block:clamp(104px,11vw,152px)}
+#proceso .section-head > div{max-width:980px}
+#proceso .h2{font-size:clamp(3rem,5.4vw,5rem);line-height:.98;max-width:18ch;color:var(--inverse-ink)}
+.ia-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:var(--space-8)}
+.ia-card{min-height:320px;display:flex;flex-direction:column;justify-content:flex-end;padding:36px;border-top:1px solid var(--inverse-line)}
+.ia-card:first-child{padding-left:0}
+.ia-card:not(:first-child){border-left:1px solid var(--inverse-line)}
+.ia-index{font-size:clamp(4.5rem,8vw,8rem);line-height:.82;font-weight:700;color:transparent;-webkit-text-stroke:1px var(--inverse-line);margin-bottom:36px}
+.ia-card-title{font-size:1.25rem;font-weight:600;letter-spacing:-.01em;color:var(--inverse-ink);margin-bottom:12px}
+.ia-card-desc{font-size:.9375rem;line-height:1.6;color:var(--inverse-muted)}
+@media (max-width:940px){.ia-grid{grid-template-columns:1fr 1fr}.ia-card:nth-child(-n+2){border-top:1px solid var(--inverse-line)}.ia-card:nth-child(odd){border-left:0;padding-left:0}.ia-card:nth-child(even){padding-left:36px}}
+@media (max-width:640px){.ia-grid{grid-template-columns:1fr}.ia-card,.ia-card:nth-child(even){min-height:auto;padding:36px 0;border-left:0;padding-left:0}.ia-index{font-size:4.5rem}}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(48px,7vw,104px);align-items:center}
+.about-quote{font-size:clamp(2.5rem,4.4vw,4rem);font-weight:600;letter-spacing:-.04em;line-height:1.04;color:var(--ink);max-width:16ch;margin-bottom:var(--space-6)}
+.about-body{font-size:1.0625rem;line-height:1.75;color:var(--ink-2);max-width:60ch;margin-bottom:var(--space-4)}
+.about-stats{display:flex;flex-wrap:wrap;gap:28px;margin-top:var(--space-6);padding-top:var(--space-5);border-top:1px solid var(--line-soft)}
+.about-stats span{font-size:.9375rem;color:var(--ink-2)}
+.about-stats b{font-size:1.375rem;font-weight:700;letter-spacing:-.02em;color:var(--ink);margin-right:6px}
+.about-meta{margin-top:var(--space-4);font-size:.8125rem;line-height:1.7;color:var(--ink-3);max-width:56ch}
+.about-image-wrap{position:relative;isolation:isolate;width:min(100%,440px);justify-self:end;padding:0 0 24px 24px;margin-left:auto}
+.about-image-wrap::before{content:"";position:absolute;inset:24px 24px 0 0;border:1px solid var(--accent);z-index:-1;pointer-events:none}
+.about-image{width:100%;aspect-ratio:4/5;overflow:hidden;background:var(--surface-media)}
+.about-image img{width:100%;height:100%;object-fit:cover;object-position:center}
+.about-image .ph{width:100%;height:100%;display:grid;place-items:center;color:var(--ink-3);font-size:.8rem;padding:24px;text-align:center}
+@media (max-width:940px){.about-grid{grid-template-columns:1fr;gap:var(--space-8)}.about-image-wrap{order:-1;justify-self:start;margin-left:0;width:min(100%,380px)}}
+
+/* EXPERIENCE */
+#experiencia .h2{font-size:clamp(3rem,5.2vw,4.75rem)}
+.exp-list{display:flex;flex-direction:column}
+.exp-item{display:grid;grid-template-columns:200px minmax(0,760px);justify-content:start;gap:64px;padding:44px 0;border-top:1px solid var(--line)}
+.exp-item:first-child{border-top:2px solid var(--accent)}
+.exp-period{font-size:.8125rem;font-weight:500;line-height:1.5;color:var(--ink-3);letter-spacing:.04em;padding-top:4px}
+.badge{display:inline-block;font-size:.66rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);margin-top:var(--space-2)}
+.exp-role{font-size:1.5rem;font-weight:600;color:var(--ink);margin-bottom:5px}
+.exp-company{font-size:.9375rem;font-weight:500;color:var(--ink-3);margin-bottom:10px}
+.exp-desc{font-size:1rem;line-height:1.7;color:var(--ink-2);margin-bottom:12px;max-width:68ch}
+.exp-tags{display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:12px}
+.exp-tag{font-size:.6875rem;font-weight:500;letter-spacing:.03em;color:var(--ink-3)}
+@media (max-width:760px){.exp-item{grid-template-columns:1fr;gap:12px;padding:34px 0}}
+
+/* CONTACT */
+#contacto{background:var(--surface-subtle);border-top:0;padding-block:clamp(112px,12vw,160px)}
+.contact-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,420px);gap:clamp(48px,6vw,80px);align-items:start}
+.contact-h{font-weight:700;letter-spacing:-.05em;line-height:.96;font-size:clamp(3rem,6vw,5.75rem);color:var(--ink);max-width:11ch;margin-bottom:var(--space-6)}
+.email-big{display:inline-flex;align-items:center;gap:8px;min-height:48px;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:8px;transition:color .18s var(--motion-standard),border-color .18s var(--motion-standard);font-size:clamp(1.25rem,2.25vw,2rem);overflow-wrap:anywhere}
+.email-big:hover{color:var(--accent-strong);border-color:var(--accent-strong)}
+.contact-info{display:grid}
+.info-row{display:flex;align-items:center;gap:14px;padding:18px 0;border-top:1px solid var(--line)}
+.info-row:first-child{border-top:none}
+.info-row .lbl{font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);min-width:100px}
+.info-row .val{font-size:.9375rem;color:var(--ink);text-decoration:none}
+.social-links{display:grid;margin-top:var(--space-5);border-top:1px solid var(--line)}
+.soc-link{display:flex;align-items:center;justify-content:space-between;min-height:52px;text-decoration:none;color:var(--ink-2);padding:14px 0;border-bottom:1px solid var(--line);transition:color .25s var(--motion-standard);font-size:.9375rem}
+.soc-link:hover{color:var(--ink)}
+.social-detail{display:inline-flex;align-items:center;gap:8px}
+.link-detail{color:var(--ink-3);font-size:.78rem}
+.soc-arr{opacity:0;transition:opacity .22s var(--motion-standard),transform .22s var(--motion-standard);font-size:14px}
+.soc-link:hover .soc-arr,.soc-link:focus-visible .soc-arr{opacity:1;transform:translate(3px,-3px)}
+@media (max-width:940px){.contact-grid{grid-template-columns:1fr;gap:var(--space-8)}}
+
+/* FOOTER — infinite marquee surname */
+.footer{background:var(--bg);border-top:1px solid var(--line);overflow:hidden}
+.footer-meta{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;padding:40px 0;font-size:.8125rem;color:var(--ink-3)}
+.footer-meta .cols{display:flex;flex-wrap:wrap;gap:40px}
+.footer-meta a{color:var(--ink-2);text-decoration:none;transition:color .2s var(--motion-standard)}
+.footer-meta a:hover{color:var(--ink)}
+.footer-top{display:inline-flex;align-items:center;gap:8px;text-transform:uppercase;letter-spacing:.1em;font-weight:600;color:var(--ink-3);text-decoration:none}
+.footer-top:hover{color:var(--ink)}
+.marquee{width:100%;overflow:hidden;white-space:nowrap;user-select:none;
+  padding:clamp(20px,3vw,40px) 0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.marquee-track{display:inline-flex;align-items:center;will-change:transform;animation:marquee 28s linear infinite}
+.marquee-track span{display:inline-block;font-weight:800;letter-spacing:-.03em;text-transform:uppercase;color:var(--surface-media);
+  font-size:clamp(3.5rem,12vw,11rem);line-height:.9;padding-right:.4em}
+.marquee-track span .dot{color:var(--ink-3)}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.marquee:hover .marquee-track{animation-play-state:paused}
+@media (prefers-reduced-motion: reduce){.marquee-track{animation:none;transform:translateX(0)}
+  .marquee{-webkit-mask-image:none;mask-image:none}}
+.footer-legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding:24px 0;font-size:.78rem;color:var(--ink-3);border-top:1px solid var(--line)}
+
+/* Reveal + parallax */
+.js .sr,.js .sr-up{opacity:0;transform:translateY(14px);transition:opacity .6s var(--motion-standard),transform .6s var(--motion-standard)}
+.js .sr.vis,.js .sr-up.vis{opacity:1;transform:none}
+.js .ia-card:nth-child(2){transition-delay:.08s}
+.js .ia-card:nth-child(3){transition-delay:.16s}
+.js .ia-card:nth-child(4){transition-delay:.24s}
+.js [data-parallax]{will-change:transform}
+@media (prefers-reduced-motion: reduce){.js .sr,.js .sr-up{opacity:1!important;transform:none!important;transition:none!important}.js [data-parallax]{transform:none!important}}
+
+@media (max-width:940px){
+  .hero-inner{grid-template-columns:1fr;gap:var(--space-8)}
+  .hero-image-wrap{order:2;justify-self:start;width:min(88vw,350px)}
+  .hero-image-caption{position:relative;right:auto;bottom:auto;transform:none;margin-top:-1px;width:100%}
+}
+@media (max-width:640px){
+  section{padding-block:clamp(72px,12vw,104px)}
+  #proceso{padding-block:88px}
+}
+@media (max-width:390px){
+  .hero-actions{flex-direction:column;align-items:stretch}
+  .button-primary{width:100%}
+}
   </style>
   <link href="favicon.svg" rel="icon" type="image/svg+xml" />
-  <link rel="manifest" href="manifest.webmanifest">
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Nicolás Scarselli",
-    "jobTitle": "Senior UI/UX Designer & Brand Strategist",
-    "url": "https://nicoscarselli.github.io/scarselli-homepage/",
-    "image": "https://nicoscarselli.github.io/scarselli-homepage/img/avatar.png",
-    "sameAs": [
-      "https://www.behance.net/nicoscarselli",
-      "https://linkedin.com/in/nicoscarselli",
-      "https://dribbble.com/nicoscarselli"
-    ],
-    "address": { "@type": "PostalAddress", "addressLocality": "Buenos Aires", "addressCountry": "AR" },
-    "worksFor": { "@type": "Organization", "name": "Accenture" }
-  }
+  {"@context":"https://schema.org","@type":"Person","name":"Nicolás Scarselli",
+   "jobTitle":"Diseñador de Producto y Marca",
+   "url":"https://nicoscarselli.github.io/scarselli-homepage/",
+   "sameAs":["https://www.behance.net/nicoscarselli","https://linkedin.com/in/nicoscarselli"],
+   "address":{"@type":"PostalAddress","addressLocality":"Buenos Aires","addressCountry":"AR"},
+   "worksFor":{"@type":"Organization","name":"Accenture"}}
   </script>
 </head>
+<body>
+<a class="skip-link" href="#main-content">Saltar al contenido principal</a>
 
-<body><a class="skip-link" href="#main-content">Saltar al contenido principal</a>
-  <main id="main-content">
-    <!-- ===== NAV ===== -->
-    <nav class="nav" id="nav">
-      <div class="nav-inner">
-        <a class="nav-logo" href="#hero">Nico Scarselli</a>
+<nav class="nav" aria-label="Navegación principal">
+  <div class="wrap">
+    <div class="nav-inner">
+      <a class="nav-logo" href="#hero">Nicolás Scarselli</a>
+      <div class="nav-panel" id="navPanel">
         <div class="nav-links">
-          <a class="nav-link" href="#sobre">Sobre mí</a>
-          <a class="nav-link" href="#servicios">Servicios</a>
-          <a class="nav-link" href="#ia">IA</a>
           <a class="nav-link" href="#proyectos">Proyectos</a>
+          <a class="nav-link" href="#servicios">Servicios</a>
+          <a class="nav-link" href="#sobre">Sobre mí</a>
           <a class="nav-link" href="#experiencia">Experiencia</a>
-          <a class="nav-link" href="#contacto">Contacto</a>
         </div>
-        <div style="display:flex; align-items:center; gap: 16px;">
-          <button id="themeToggle" class="nav-link" aria-label="Cambiar tema"
-            style="background:transparent; border:1px solid var(--border-m); cursor:pointer; display:flex; align-items:center; justify-content:center; padding:7px 10px;">
-            <span class="material-symbols-rounded" aria-hidden="true">light_mode</span>
-          </button>
-          <!-- =====<a class="nav-link" href="en.html"
-            style="font-weight: 700; color: var(--text-sec); border: 1px solid var(--border-m);">EN</a>===== -->
-          <a class="nav-cta" href="mailto:scarselli.nicolas@gmail.com">Contratar</a>
-        </div>
+        <a class="nav-cta-mobile" href="#contacto">Hablemos</a>
       </div>
-    </nav>
-    <!-- ===== HERO ===== -->
-    <section class="hero" id="hero">
-      <div class="hero-inner">
-        <!-- Top: title + avatar -->
-        <div class="hero-top">
-          <h1 class="hero-title display-lg">
-            Diseño que resuelve
-          </h1>
-          <div style="display:flex;flex-direction:column;align-items:center;gap:16px;padding-top:16px;">
-            <div class="avatar-wrap">
-              <div class="avatar-ring"></div>
-              <img alt="Nicolás Scarselli — Senior UI/UX Designer" loading="eager" src="img/avatar.png" />
-            </div>
-          </div>
-        </div>
-        <!-- Bottom: desc + pills + ctas -->
-        <div class="hero-bottom">
-          <p class="hero-desc sr">
-            +18 años transformando estrategias en experiencias digitales con criterio humano. Diseño productos,
-            prototipo interfaces y entrego sistemas de componentes que funcionan en producción desde el primer día.
-          </p>
-          <div class="hero-meta sr" style="transition-delay:.12s">
-            <div class="hero-btns">
-              <a class="btn btn-solid" href="#proyectos">
-                Ver proyectos
-                <span class="material-symbols-rounded">arrow_downward</span>
-              </a>
-              <a class="btn btn-outline" href="mailto:scarselli.nicolas@gmail.com">
-                Hablemos
-                <span class="material-symbols-rounded">arrow_upward</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ===== SOBRE MÍ ===== -->
-      <section class="section-pad" id="sobre">
-        <div class="wrap">
-          <div class="about-grid">
-            <div class="sr-l">
-              <p class="about-quote">
-                "El diseño debe ser un criterio, no un capricho. Trabajo con métodos que alinean negocio, experiencia y
-                ejecución técnica desde el primer boceto."
-              </p>
-              <p class="about-body">
-                Diseñador con trayectoria desde 2006. Pasé del branding y el diseño editorial al producto digital,
-                integrando estrategias visuales, interfaces y prototipos que ya consideran la ejecución técnica.
-              </p>
-              <p class="about-body">
-                Hoy uso IA como acelerador real del flujo: para iterar más rápido, validar contenido y generar assets de
-                calidad sin perder el criterio humano en cada decisión.
-              </p>
-            </div>
-            <div class="sr-r">
-              <div class="stats-row">
-                <div>
-                  <div class="stat-n">18<span>+</span></div>
-                  <div class="stat-l">Años de experiencia</div>
-                </div>
-                <div>
-                  <div class="stat-n">+10<span>M</span></div>
-                  <div class="stat-l">Usuarios alcanzados</div>
-                </div>
-                <div>
-                  <div class="stat-n">3</div>
-                  <div class="stat-l">Continentes</div>
-                </div>
-              </div>
-              <div style="margin-top:40px;display:flex;flex-direction:column;gap:14px;">
-                <div
-                  style="display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid var(--border);">
-                  <span class="material-symbols-rounded" style="font-size:15px;color:var(--text-sec);flex-shrink:0;"
-                    aria-hidden="true">location_on</span>
-                  <span style="font-family:'Geist',sans-serif;font-size:.88rem;color:var(--text-sec);">Buenos Aires,
-                    Argentina</span>
-                </div>
-                <div
-                  style="display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid var(--border);">
-                  <span class="material-symbols-rounded" style="font-size:15px;color:var(--text-sec);flex-shrink:0;"
-                    aria-hidden="true">work</span>
-                  <span style="font-family:'Geist',sans-serif;font-size:.88rem;color:var(--text-sec);">Accenture ·
-                    Freelance disponible</span>
-                </div>
-                <div
-                  style="display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid var(--border);">
-                  <span class="material-symbols-rounded" style="font-size:15px;color:var(--text-sec);flex-shrink:0;"
-                    aria-hidden="true">translate</span>
-                  <span style="font-family:'Geist',sans-serif;font-size:.88rem;color:var(--text-sec);">Español (nativo)
-                    ·
-                    Inglés (profesional)</span>
-                </div>
-                <div style="display:flex;align-items:center;gap:14px;padding:14px 0;">
-                  <span class="material-symbols-rounded" style="font-size:15px;color:var(--text-sec);flex-shrink:0;"
-                    aria-hidden="true">bolt</span>
-                  <span style="font-family:'Geist',sans-serif;font-size:.88rem;color:var(--text-sec);">Figma · Claude ·
-                    Firefly · AI-Assisted Workflow</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- ===== SERVICIOS ===== -->
-      <section class="section-pad" id="servicios">
-        <div class="wrap">
-          <div class="section-head">
-            <div>
-              <h2 class="section-title sr headline-lg" style="transition-delay:.08s">Servicios & Soluciones</h2>
-            </div>
-
-          </div>
-          <div class="svc-list">
-            <div class="svc-item open">
-              <button aria-expanded="true" class="svc-trigger">
-                <span class="svc-num">01</span>
-                <span class="svc-name">Brand Strategy</span>
-                <span class="svc-icon"><span class="material-symbols-rounded"
-                    style="font-size:14px;color:var(--text-pri);" aria-hidden="true">add</span></span>
-              </button>
-              <div class="svc-body">
-                <div class="svc-body-inner">
-                  <p class="svc-desc">Construyo identidades visuales completas que cuentan tu historia de un vistazo.
-                    Logo, paleta cromática, tipografía, manual de marca y aplicaciones institucionales coherentes en
-                    todos
-                    los canales.</p>
-                  <div class="svc-chips">
-                    <span class="chip-s">Illustrator</span><span class="chip-s">Figma</span><span
-                      class="chip-s">Photoshop</span><span class="chip-s">InDesign</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="svc-item">
-              <button aria-expanded="false" class="svc-trigger">
-                <span class="svc-num">02</span>
-                <span class="svc-name">UI/UX Design</span>
-                <span class="svc-icon"><span class="material-symbols-rounded"
-                    style="font-size:14px;color:var(--text-pri);" aria-hidden="true">add</span></span>
-              </button>
-              <div class="svc-body">
-                <div class="svc-body-inner">
-                  <p class="svc-desc">Interfaces intuitivas y centradas en el usuario. Diseño wireframes, prototipos
-                    interactivos de alta fidelidad en Figma y sistemas de componentes escalables que conectan con las
-                    personas y generan conversiones.</p>
-                  <div class="svc-chips">
-                    <span class="chip-s">Figma</span><span class="chip-s">Adobe XD</span><span
-                      class="chip-s">Prototipado</span><span class="chip-s">Design System</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="svc-item">
-              <button aria-expanded="false" class="svc-trigger">
-                <span class="svc-num">03</span>
-                <span class="svc-name">Product &amp; Web Design</span>
-                <span class="svc-icon"><span class="material-symbols-rounded"
-                    style="font-size:14px;color:var(--text-pri);" aria-hidden="true">add</span></span>
-              </button>
-              <div class="svc-body">
-                <div class="svc-body-inner">
-                  <p class="svc-desc">Diseño y desarrollo de sitios responsive desde Figma hasta producción. Trabajo con
-                    WordPress, Bootstrap 5 y HTML5/CSS3 para crear plataformas rápidas, optimizadas y con una
-                    experiencia
-                    visual impecable.</p>
-                  <div class="svc-chips">
-                    <span class="chip-s">HTML5/CSS3</span><span class="chip-s">Bootstrap 5</span><span
-                      class="chip-s">WordPress</span><span class="chip-s">JavaScript</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="svc-item">
-              <button aria-expanded="false" class="svc-trigger">
-                <span class="svc-num">04</span>
-                <span class="svc-name">Prototipado Interactivo</span>
-                <span class="svc-icon"><span class="material-symbols-rounded"
-                    style="font-size:14px;color:var(--text-pri);" aria-hidden="true">add</span></span>
-              </button>
-              <div class="svc-body">
-                <div class="svc-body-inner">
-                  <p class="svc-desc">Prototipos funcionales de alta fidelidad para apps, plataformas iTV y sistemas
-                    complejos. Especializado en entornos de decodificador (DirecTV, Sky) con experiencia en proyectos de
-                    escala masiva para +10M usuarios.</p>
-                  <div class="svc-chips">
-                    <span class="chip-s">Figma</span><span class="chip-s">Adobe XD</span><span class="chip-s">iTV
-                      Apps</span><span class="chip-s">Interactive</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- ===== STACK IA ===== -->
-      <section class="section-pad" id="ia">
-        <div class="wrap">
-          <div class="section-head">
-            <div>
-              <h2 class="section-title sr headline-lg" style="transition-delay:.08s">Inteligencia Artificial en el flujo
-                de trabajo</h2>
-            </div>
-            <p class="section-sub sr" style="transition-delay:.12s">
-              No lo uso para reemplazar criterio — lo uso para entregar más rápido y mejor.
-            </p>
-          </div>
-          <div class="ia-grid">
-            <div class="ia-card sr">
-              <h3 class="ia-card-title">Claude</h3>
-              <p class="ia-card-desc">Arquitectura de información, copy de UI, validación de flujos</p>
-            </div>
-            <div class="ia-card sr" style="transition-delay: .05s">
-              <h3 class="ia-card-title">Gemini</h3>
-              <p class="ia-card-desc">Research competitivo, análisis de briefings, síntesis de feedback</p>
-            </div>
-            <div class="ia-card sr" style="transition-delay: .1s">
-              <h3 class="ia-card-title">Adobe Firefly</h3>
-              <p class="ia-card-desc">Generación de assets visuales integrada en flujo de Adobe CC</p>
-            </div>
-            <div class="ia-card sr" style="transition-delay: .15s">
-              <h3 class="ia-card-title">Midjourney</h3>
-              <p class="ia-card-desc">Moodboards, referencias visuales, exploración de estética de marca</p>
-            </div>
-            <div class="ia-card sr" style="transition-delay: .2s">
-              <h3 class="ia-card-title">ChatGPT</h3>
-              <p class="ia-card-desc">Primeras iteraciones de copy, naming, estructuras de contenido</p>
-            </div>
-            <div class="ia-card sr" style="transition-delay: .25s">
-              <h3 class="ia-card-title">Genspark</h3>
-              <p class="ia-card-desc">Automatización de tareas repetitivas de investigación</p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- ===== PROYECTOS ===== -->
-      <section class="section-pad" id="proyectos">
-        <div class="wrap">
-          <div class="section-head">
-            <div>
-              <h2 class="section-title sr headline-lg" style="transition-delay:.08s">Trabajo Reciente</h2>
-            </div>
-            <a class="btn btn-outline sr" href="https://www.behance.net/nicoscarselli" rel="noopener"
-              style="transition-delay:.14s;" target="_blank">
-              Ver todo en Behance
-              <span class="material-symbols-rounded" style="font-size:14px;" aria-hidden="true">open_in_new</span>
-            </a>
-          </div>
-          <div class="projects-grid">
-            <!-- XALIMART -->
-            <div class="proj-item">
-              <div class="proj-info">
-                <p class="proj-label">Branding Corporativo · Senegal · 2026</p>
-                <h3 class="proj-title headline-md">XALIMART GROUP</h3>
-                <p class="proj-desc"><strong>El problema:</strong> Constructora en Dakar perdía competitividad y
-                  licitaciones debido a una identidad percibida como de bajo presupuesto.<br><br><strong>IA-Assisted
-                    Workflow:</strong> Orquesté Claude para sintetizar frameworks globales y Firefly para explorar
-                  masivamente direcciones de arte. Ejecución final en Figma/Illustrator guiada por 17 años de rigor
-                  tipográfico.<br><br><strong>El impacto:</strong> Reducción del 40% en tiempo de conceptualización y
-                  entrega de un ecosistema de marca de clase mundial.<br><br><strong>→ Resultado:</strong> sistema de
-                  marca que compite a nivel internacional para empresa constructora con sede en Dakar.</p>
-
-                <div class="proj-meta-rows">
-                  <div class="proj-meta-row">
-                    <span class="lbl">Rol</span>
-                    <span class="val">Branding Corporativo &amp; Brand Strategy</span>
-                  </div>
-                  <div class="proj-meta-row">
-                    <span class="lbl">Stack</span>
-                    <div class="proj-tags-inline">
-                      <span class="proj-tag">Branding Corporativo</span>
-                      <span class="proj-tag">Claude</span>
-                      <span class="proj-tag">Firefly</span>
-                      <span class="proj-tag">Figma</span>
-                    </div>
-                  </div>
-                  <div class="proj-meta-row">
-                    <span class="lbl">Alcance</span>
-                    <span class="val">🌍 Internacional (Senegal)</span>
-                  </div>
-                </div>
-
-                <div>
-                  <a class="btn btn-outline"
-                    href="https://www.behance.net/gallery/243151349/XALIMART-GROUP-Constructing-new-Brand-Identity"
-                    rel="noopener" style="font-size:.78rem;padding:9px 18px;" target="_blank">
-                    Ver en Behance <span class="material-symbols-rounded" style="font-size:13px;"
-                      aria-hidden="true">open_in_new</span>
-                  </a>
-                </div>
-              </div>
-
-              <div class="proj-media">
-                <div class="proj-img-wrap"
-                  data-images="https://mir-s3-cdn-cf.behance.net/project_modules/max_632_webp/a91cef243151349.697b71976d323.jpg, https://mir-s3-cdn-cf.behance.net/project_modules/max_632_webp/318834243151349.697b71976bd5b.jpg, https://mir-s3-cdn-cf.behance.net/project_modules/max_632_webp/f5a7b4243151349.697b71976d87a.jpg, https://mir-s3-cdn-cf.behance.net/project_modules/max_632_webp/0cb4e8243151349.697b71976ebc4.jpg"
-                  data-label="XALIMART GROUP">
-                  <img alt="XALIMART GROUP — Brand Engineering" loading="lazy"
-                    src="https://mir-s3-cdn-cf.behance.net/project_modules/max_632_webp/a91cef243151349.697b71976d323.jpg" />
-                </div>
-              </div>
-            </div>
-
-            <!-- Concept App - Travel Buenos Aires -->
-            <div class="proj-item">
-              <div class="proj-info">
-                <p class="proj-label">UI/UX Concept App · Argentina</p>
-                <h3 class="proj-title headline-md">Travel Buenos Aires</h3>
-                <p class="proj-desc"><strong>El problema:</strong> El turismo en Buenos Aires carecía de una plataforma
-                  unificada que permitiera a los viajeros explorar, guardar y trazar rutas hacia sitios emblemáticos sin
-                  fricción cognitiva.<br><br><strong>El proceso (100% Human Craft):</strong> Ideación y ejecución
-                  integral desarrollada en una etapa donde la IA aún no intervenía en el diseño de interfaces. Un
-                  ejercicio de pura creatividad, estudio profundo de arquitectura de la información y empatía del
-                  usuario, diseñado píxel a píxel desde cero.<br><br><strong>El impacto:</strong> Un prototipo
-                  interactivo con mapeo integrado que demuestra mi capacidad analítica fundacional y destreza en la
-                  resolución de problemas complejos sin depender de asistencia automatizada.<br><br><strong>→
-                    Resultado:</strong> framework escalable de diseño UI que sentó las bases para todos los proyectos
-                  mobile futuros.</p>
-
-                <div class="proj-meta-rows">
-                  <div class="proj-meta-row">
-                    <span class="lbl">Rol</span>
-                    <span class="val">UI/UX Design &amp; Product Architecture</span>
-                  </div>
-                  <div class="proj-meta-row">
-                    <span class="lbl">Stack</span>
-                    <div class="proj-tags-inline">
-                      <span class="proj-tag">UI/UX Design</span>
-                      <span class="proj-tag">App Concept</span>
-                      <span class="proj-tag">Travel</span>
-                      <span class="proj-tag">Human Craft</span>
-                    </div>
-                  </div>
-                  <div class="proj-meta-row">
-                    <span class="lbl">Alcance</span>
-                    <span class="val">Nacional (Argentina)</span>
-                  </div>
-                </div>
-
-                <div>
-                  <a class="btn btn-outline"
-                    href="https://www.behance.net/gallery/121933315/Concept-App-Travel-Buenos-Aires" rel="noopener"
-                    style="font-size:.78rem;padding:9px 18px;" target="_blank">
-                    Ver en Behance <span class="material-symbols-rounded" style="font-size:13px;"
-                      aria-hidden="true">open_in_new</span>
-                  </a>
-                </div>
-              </div>
-
-              <div class="proj-media">
-                <div class="proj-img-wrap"
-                  data-images="https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/7c135d121933315.60cffc4734544.jpg, https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/faab41121933315.60cffc4734d84.jpg, https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/4ad2e4121933315.60cffc4735ccd.jpg, https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/c0eb8f121933315.60cffc47363ce.jpg, https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/1a1465121933315.60cffc47354b8.jpg"
-                  data-label="Travel Buenos Aires App">
-                  <img alt="Travel Buenos Aires — Concept App" loading="lazy"
-                    src="https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/7c135d121933315.60cffc4734544.jpg" />
-                </div>
-              </div>
-            </div>
-
-            <!-- PROCRISA -->
-            <div class="proj-item">
-              <div class="proj-info">
-                <p class="proj-label">Web Development · Argentina · 2025</p>
-                <h3 class="proj-title headline-md">PROCRISA</h3>
-                <p class="proj-desc"><strong>El problema:</strong> PROCRISA, una empresa con más de 20 años de
-                  trayectoria, necesitaba una presencia digital que reflejara su madurez técnica y calidad industrial,
-                  superando una interfaz que no comunicaba su liderazgo en el mercado.<br><br><strong>IA-Assisted
-                    Workflow:</strong> Orquestación de un rediseño integral enfocado en jerarquía visual y rendimiento.
-                  Utilicé asistentes de IA (Claude) para optimizar el flujo de trabajo de desarrollo en HTML5, CSS3 y
-                  JavaScript, integrando luego el sistema de forma nativa en WordPress.<br><br><strong>El
-                    impacto:</strong> Una plataforma robusta y moderna que posiciona a PROCRISA como referente digital
-                  en su sector, facilitando la conversión de clientes mediante una estética industrial premium y
-                  otorgando total autonomía operativa al cliente.<br><br><strong>→ Resultado:</strong> aumento inmediato
-                  en captación de leads residenciales gracias a un diseño enfocado en la conversión B2B/B2C.</p>
-
-                <div class="proj-meta-rows">
-                  <div class="proj-meta-row">
-                    <span class="lbl">Rol</span>
-                    <span class="val">Web Development &amp; UI/UX Redesign</span>
-                  </div>
-                  <div class="proj-meta-row">
-                    <span class="lbl">Stack</span>
-                    <div class="proj-tags-inline">
-                      <span class="proj-tag">Web Development</span>
-                      <span class="proj-tag">WordPress</span>
-                      <span class="proj-tag">UI/UX Design</span>
-                      <span class="proj-tag">Claude</span>
-                    </div>
-                  </div>
-                  <div class="proj-meta-row">
-                    <span class="lbl">Alcance</span>
-                    <span class="val">Nacional (Argentina)</span>
-                  </div>
-                </div>
-
-                <div style="display:flex;gap:10px;flex-wrap:wrap;">
-                  <a class="btn btn-solid" href="http://www.procrisa.com.ar" rel="noopener"
-                    style="font-size:.78rem;padding:9px 18px;" target="_blank">
-                    Ver sitio <span class="material-symbols-rounded" style="font-size:13px;"
-                      aria-hidden="true">open_in_new</span>
-                  </a>
-                  <a class="btn btn-outline" href="https://www.behance.net/gallery/234366631/Desarrollo-Web-PROCRISA"
-                    rel="noopener" style="font-size:.78rem;padding:9px 18px;" target="_blank">
-                    Behance <span class="material-symbols-rounded" style="font-size:13px;"
-                      aria-hidden="true">open_in_new</span>
-                  </a>
-                </div>
-              </div>
-
-              <div class="proj-media">
-                <div class="proj-img-wrap"
-                  data-images="https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/3e4069234366631.68c1d024b8374.jpg, https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/7f8845234366631.68c1d024b4afe.jpg, https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/912e7f234366631.68c1d024b4325.jpg, https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/258d30234366631.68c1d024b8864.jpg, https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/65b6f3234366631.68c1d024b6bc9.jpg"
-                  data-label="Desarrollo Web PROCRISA">
-                  <img alt="PROCRISA — Desarrollo Web" loading="lazy"
-                    src="https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/3e4069234366631.68c1d024b8374.jpg" />
-                </div>
-              </div>
-            </div>
-
-            <!-- Coirón -->
-            <div class="proj-item">
-              <div class="proj-info">
-                <p class="proj-label">Brand Identity + Web · Argentina · 2025</p>
-                <h3 class="proj-title headline-md">Coirón Consultoria Ambiental</h3>
-                <p class="proj-desc">Construir una identidad visual profesional y cohesiva para una consultora ambiental
-                  argentina. Diseño de logotipo y sistema de identidad visual completo orientado al sector ambiental.
-                  Desarrollo de paleta cromática que evoca la naturaleza y la precisión técnica, con aplicación
-                  coherente
-                  a piezas de comunicación institucional y web.<br><br><strong>→ Resultado:</strong> identidad visual
-                  sólida que habilitó la expansión exitosa de la consultora hacia proyectos ambientales de escala
-                  nacional.</p>
-
-                <div class="proj-meta-rows">
-                  <div class="proj-meta-row">
-                    <span class="lbl">Rol</span>
-                    <span class="val">Brand Identity &amp; Web Design</span>
-                  </div>
-                  <div class="proj-meta-row">
-                    <span class="lbl">Stack</span>
-                    <div class="proj-tags-inline">
-                      <span class="proj-tag">Brand Identity</span>
-                      <span class="proj-tag">Web Design</span>
-                      <span class="proj-tag">Illustrator</span>
-                      <span class="proj-tag">Photoshop</span>
-                    </div>
-                  </div>
-                  <div class="proj-meta-row">
-                    <span class="lbl">Alcance</span>
-                    <span class="val">Nacional (Argentina)</span>
-                  </div>
-                </div>
-
-                <div>
-                  <a class="btn btn-outline"
-                    href="https://www.behance.net/gallery/227541965/Brand-Visual-Identity-Coiron-Consultoria-Ambiental"
-                    rel="noopener" style="font-size:.78rem;padding:9px 18px;" target="_blank">
-                    Ver en Behance <span class="material-symbols-rounded" style="font-size:13px;"
-                      aria-hidden="true">open_in_new</span>
-                  </a>
-                </div>
-              </div>
-
-              <div class="proj-media">
-                <div class="proj-img-wrap"
-                  data-images="https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/181c12227541965.6841b120756f5.jpg, https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/6876a2227541965.6841b1207713e.jpg, https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/8f62a3227541965.6841b120783f4.jpg, https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/b8b2a3227541965.6841b12077f79.jpg"
-                  data-label="Coirón Consultoria Ambiental">
-                  <img alt="Coirón Consultoria Ambiental — Brand Identity" loading="lazy"
-                    src="https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/181c12227541965.6841b120756f5.jpg" />
-                </div>
-              </div>
-            </div>
-
-            <!-- Senegro -->
-            <div class="proj-item">
-              <div class="proj-info">
-                <p class="proj-label">Brand Identity · África · 2025</p>
-                <h3 class="proj-title headline-md">Senegro Brand Identity</h3>
-                <p class="proj-desc"><strong>El problema:</strong> Empresa africana de energía requería un estándar
-                  visual de clase mundial para expandir operaciones.<br><br><strong>IA-Assisted Workflow:</strong>
-                  Implementación de IA generativa (Firefly) para acelerar la creación de assets hiperrealistas bajo
-                  estricta dirección de arte humana.<br><br><strong>El impacto:</strong> Identidad corporativa de alta
-                  rentabilidad visual, logrando competir contra líderes del mercado global en tiempo
-                  récord.<br><br><strong>→ Resultado:</strong> consolidación de imagen corporativa a nivel de líderes
-                  energéticos internacionales y reducción drástica del time-to-market visual.</p>
-
-                <div class="proj-meta-rows">
-                  <div class="proj-meta-row">
-                    <span class="lbl">Rol</span>
-                    <span class="val">Brand Strategy &amp; Visual Identity</span>
-                  </div>
-                  <div class="proj-meta-row">
-                    <span class="lbl">Stack</span>
-                    <div class="proj-tags-inline">
-                      <span class="proj-tag">Brand Identity</span>
-                      <span class="proj-tag">Firefly</span>
-                      <span class="proj-tag">Claude</span>
-                      <span class="proj-tag">Illustrator</span>
-                    </div>
-                  </div>
-                  <div class="proj-meta-row">
-                    <span class="lbl">Alcance</span>
-                    <span class="val">🌍 Internacional (África)</span>
-                  </div>
-                </div>
-
-                <div>
-                  <a class="btn btn-outline" href="https://www.behance.net/gallery/223259251/Brand-Identity-Senegro"
-                    rel="noopener" style="font-size:.78rem;padding:9px 18px;" target="_blank">
-                    Ver en Behance <span class="material-symbols-rounded" style="font-size:13px;"
-                      aria-hidden="true">open_in_new</span>
-                  </a>
-                </div>
-              </div>
-
-              <div class="proj-media">
-                <div class="proj-img-wrap"
-                  data-images="https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/b0620a223259251.67f5a828cae64.jpg, https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/027d71223259251.67f5a828c8566.jpg, https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/d07622223259251.67f5a828c9b2e.jpg, https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/2c3399223259251.67f5a828cbadf.jpg"
-                  data-label="Senegro Brand Identity">
-                  <img alt="Senegro — Brand Identity" loading="lazy"
-                    src="https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/b0620a223259251.67f5a828cae64.jpg" />
-                </div>
-              </div>
-            </div>
-
-            <!-- Sólido WPC -->
-            <div class="proj-item">
-              <div class="proj-info">
-                <p class="proj-label">Web Design &amp; Dev · Argentina · 2025</p>
-                <h3 class="proj-title headline-md">Sólido WPC</h3>
-                <p class="proj-desc">Diseñar y desarrollar el sitio web corporativo de Sólido, empresa de puertas WPC.
-                  Arquitectura web construida sobre WordPress con Bootstrap 5, priorizando una navegación fluida e
-                  información accesible. Implementación completamente responsive, con velocidad de carga optimizada,
-                  demostrando un flujo de trabajo UI/UX y end-to-end completo.<br><br><strong>→ Resultado:</strong>
-                  sitio live, carga &lt;2s, 100% responsive, entregado end-to-end sin agencia intermediaria.</p>
-
-                <div class="proj-meta-rows">
-                  <div class="proj-meta-row">
-                    <span class="lbl">Rol</span>
-                    <span class="val">UI/UX Design &amp; Web Development</span>
-                  </div>
-                  <div class="proj-meta-row">
-                    <span class="lbl">Stack</span>
-                    <div class="proj-tags-inline">
-                      <span class="proj-tag">WordPress</span>
-                      <span class="proj-tag">Bootstrap 5</span>
-                      <span class="proj-tag">HTML5/CSS3</span>
-                      <span class="proj-tag">Figma</span>
-                    </div>
-                  </div>
-                  <div class="proj-meta-row">
-                    <span class="lbl">Alcance</span>
-                    <span class="val">Nacional (Argentina)</span>
-                  </div>
-                </div>
-
-                <div style="display:flex;gap:10px;flex-wrap:wrap;">
-                  <a class="btn btn-solid" href="https://solidonet.com.ar" rel="noopener"
-                    style="font-size:.78rem;padding:9px 18px;" target="_blank">
-                    Ver sitio <span class="material-symbols-rounded" style="font-size:13px;"
-                      aria-hidden="true">open_in_new</span>
-                  </a>
-                  <a class="btn btn-outline"
-                    href="https://www.behance.net/gallery/232617713/Web-Design-Development-Solido" rel="noopener"
-                    style="font-size:.78rem;padding:9px 18px;" target="_blank">
-                    Behance <span class="material-symbols-rounded" style="font-size:13px;"
-                      aria-hidden="true">open_in_new</span>
-                  </a>
-                </div>
-              </div>
-
-              <div class="proj-media">
-                <div class="proj-img-wrap"
-                  data-images="https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/11c647232617713.689f9f0c696e0.jpg, https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/e4cef7232617713.689f9f0c6b68d.jpg, https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/25001f232617713.689f9f0c6c560.jpg, https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/d55801232617713.689f9f0c6a790.jpg"
-                  data-label="Sólido WPC">
-                  <img alt="Sólido WPC — Web Design &amp; Development" loading="lazy"
-                    src="https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/11c647232617713.689f9f0c696e0.jpg" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- ===== EXPERIENCIA LABORAL ===== -->
-      <section class="section-pad" id="experiencia">
-        <div class="wrap">
-          <div class="section-head">
-            <div>
-              <h2 class="section-title sr headline-lg" style="transition-delay:.08s">Experiencia Laboral</h2>
-            </div>
-            <p class="section-sub sr" style="transition-delay:.14s">
-              20 años de evolución continua en diseño, tecnología y estrategia visual.
-            </p>
-          </div>
-          <div class="exp-list">
-            <div class="exp-item">
-              <div>
-                <div class="exp-period">Feb 2024 — Presente<div class="badge">Actual</div>
-                </div>
-              </div>
-              <div>
-                <h3 class="exp-role headline-md">Senior UI/UX Designer</h3>
-                <p class="exp-company">Accenture — Buenos Aires, Argentina</p>
-                <p class="exp-desc">Diseño y prototipado UI/UX para plataformas iTV de DirecTV, Sky y Vrio en América
-                  Latina. Trabajo en proyectos de escala masiva: Copa Mundial FIFA 2022, Gran Hermano, DIRECTV GO, Canal
-                  del Cliente, Dsports y NextGen UI (LH02/SH02) para más de 10M suscriptores. Integración de IA en flujo
-                  diario para acelerar iteraciones en Design Systems de alta complejidad.</p>
-                <div class="exp-tags">
-                  <span class="exp-tag">Figma</span><span class="exp-tag">iTV Apps</span><span class="exp-tag">UX
-                    Research</span><span class="exp-tag">Design System</span><span class="exp-tag">DirecTV</span><span
-                    class="exp-tag">Sky</span>
-                </div>
-              </div>
-            </div>
-            <div class="exp-item">
-              <div>
-                <div class="exp-period">Sep 2021 — Feb 2024</div>
-              </div>
-              <div>
-                <h3 class="exp-role headline-md">Senior UI/UX Designer</h3>
-                <p class="exp-company">DIRECTV Latin America — Argentina</p>
-                <p class="exp-desc">Liderazgo técnico en UI/UX con foco en la mejora continua de interfaces para
-                  decodificadores SD, HD y NextGenUI. Análisis y rediseño de dashboards y plataformas críticas.
-                  Fui parte del equipo que migró a Figma como herramienta central, reduciendo tiempos de entrega de
-                  prototipos en un 40%.</p>
-                <div class="exp-tags">
-                  <span class="exp-tag">Adobe XD</span><span class="exp-tag">Figma</span><span
-                    class="exp-tag">UI/UX</span><span class="exp-tag">Decoders</span><span class="exp-tag">LATAM</span>
-                </div>
-              </div>
-            </div>
-            <div class="exp-item">
-              <div>
-                <div class="exp-period">Nov 2020 — Sep 2021</div>
-              </div>
-              <div>
-                <h3 class="exp-role headline-md">Diseñador UI/UX</h3>
-                <p class="exp-company">Red Link S.A. — Argentina</p>
-                <p class="exp-desc">Análisis, prototipado y desarrollo web UI/UX de productos para entidades financieras
-                  líderes. Ajustes críticos en backoffice utilizando HTML5/CSS3 y Angular, asegurando solución de
-                  problemas técnicos y maquetación responsive.</p>
-                <div class="exp-tags">
-                  <span class="exp-tag">HTML5/CSS3</span><span class="exp-tag">Angular</span><span
-                    class="exp-tag">Figma</span><span class="exp-tag">Fintech</span>
-                </div>
-              </div>
-            </div>
-            <div class="exp-item">
-              <div>
-                <div class="exp-period">Oct 2016 — Nov 2020</div>
-              </div>
-              <div>
-                <h3 class="exp-role headline-md">Líder de Diseño Web</h3>
-                <p class="exp-company">LATCOM / Contenidos Advertising S.A. — Argentina</p>
-                <p class="exp-desc">Liderazgo de equipo a cargo del desarrollo web, maquetación y estrategia de branding
-                  y
-                  email marketing. Creación de presentaciones HTML, fotomontajes comerciales y gestión de contenidos
-                  para
-                  redes sociales.</p>
-                <div class="exp-tags">
-                  <span class="exp-tag">HTML/CSS</span><span class="exp-tag">Email Marketing</span><span
-                    class="exp-tag">Branding</span><span class="exp-tag">Adobe CC</span>
-                </div>
-              </div>
-            </div>
-            <div class="exp-item">
-              <div>
-                <div class="exp-period">Oct 2011 — Oct 2016</div>
-              </div>
-              <div>
-                <h3 class="exp-role headline-md">Diseñador Gráfico / Web Sr.</h3>
-                <p class="exp-company">TIMwe South Cone — Puerto Madero, Argentina</p>
-                <p class="exp-desc">Diseño gráfico, web, editorial y multimedia. Imagen corporativa y publicidad.
-                  Especialización en UI/UX para aplicaciones mobile y sitios de suscripción. Desarrollo de landing
-                  pages,
-                  webspots y banners para portales de gran tráfico.</p>
-                <div class="exp-tags">
-                  <span class="exp-tag">UI/UX</span><span class="exp-tag">Mobile</span><span class="exp-tag">Adobe
-                    CC</span><span class="exp-tag">HTML/CSS</span>
-                </div>
-              </div>
-            </div>
-            <div class="exp-item">
-              <div>
-                <div class="exp-period">Jun 2006 — Sep 2009</div>
-              </div>
-              <div>
-                <h3 class="exp-role">Diseñador Gráfico Jr. / Webmaster</h3>
-                <p class="exp-company">Grupo Eventoplus — Argentina</p>
-                <p class="exp-desc">Inicio de carrera. Diseño y mantenimiento web, newsletters, landing pages, campañas
-                  publicitarias, banners animados, diseño multimedia y editorial. Primeras experiencias en email
-                  marketing
-                  y gestión de contenidos digitales.</p>
-                <div class="exp-tags">
-                  <span class="exp-tag">Webmaster</span><span class="exp-tag">Email Marketing</span><span
-                    class="exp-tag">Diseño Editorial</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- ===== NAME TICKER ===== -->
-      <!-- ===== CONTACTO ===== -->
-      <section class="section-pad" id="contacto">
-        <div class="wrap">
-          <div class="contact-grid">
-            <div class="sr-l">
-              <h2 class="contact-h headline-lg">¿Hablemos de tu próximo proyecto?</h2>
-              <a class="email-big" href="mailto:scarselli.nicolas@gmail.com">scarselli.nicolas@gmail.com</a>
-
-              <div style="display:flex;gap:10px;flex-wrap:wrap;">
-                <a class="btn btn-outline" href="https://www.behance.net/nicoscarselli" rel="noopener" target="_blank">
-                  Ver portafolio <span class="material-symbols-rounded" style="font-size:14px;"
-                    aria-hidden="true">open_in_new</span>
-                </a>
-              </div>
-            </div>
-            <div class="sr-r">
-              <div class="contact-info">
-                <div class="info-row">
-                  <span class="lbl">Teléfono</span>
-                  <a class="val" href="tel:+541167336069"
-                    style="font-family:'Geist',sans-serif;font-size:.88rem;color:var(--text-pri);text-decoration:none;">+54
-                    (11) 6733.6069</a>
-                </div>
-                <div class="info-row">
-                  <span class="lbl">Ubicación</span>
-                  <span class="val">Buenos Aires, Argentina</span>
-                </div>
-                <div class="info-row">
-                  <span class="lbl">Horario</span>
-                  <span class="val">GMT-3 · Lun – Vie</span>
-                </div>
-                <div class="info-row">
-                  <span class="lbl">Disponible</span>
-                  <span class="val" style="color:var(--text-sec);">Freelance · Remoto internacional</span>
-                </div>
-              </div>
-              <div class="social-links">
-                <a class="soc-link" href="https://www.behance.net/nicoscarselli" rel="noopener" target="_blank">
-                  <span>Behance</span>
-                  <span style="display:flex;align-items:center;gap:6px;">
-                    <span style="font-size:.78rem;color:var(--text-sec);">behance.net/nicoscarselli</span>
-                    <span class="material-symbols-rounded soc-arr" style="font-size:13px;"
-                      aria-hidden="true">open_in_new</span>
-                  </span>
-                </a>
-                <a class="soc-link" href="https://linkedin.com/in/nicoscarselli" rel="noopener" target="_blank">
-                  <span>LinkedIn</span>
-                  <span style="display:flex;align-items:center;gap:6px;">
-                    <span style="font-size:.78rem;color:var(--text-sec);">linkedin.com/in/nicoscarselli</span>
-                    <span class="material-symbols-rounded soc-arr" style="font-size:13px;"
-                      aria-hidden="true">open_in_new</span>
-                  </span>
-                </a>
-                <a class="soc-link" href="https://dribbble.com/nicoscarselli" rel="noopener" target="_blank">
-                  <span>Dribbble</span>
-                  <span style="display:flex;align-items:center;gap:6px;">
-                    <span style="font-size:.78rem;color:var(--text-sec);">dribbble.com/nicoscarselli</span>
-                    <span class="material-symbols-rounded soc-arr" style="font-size:13px;"
-                      aria-hidden="true">open_in_new</span>
-                  </span>
-                </a>
-                <a class="soc-link" href="https://t.me/nicoscarselli" rel="noopener" target="_blank">
-                  <span>Telegram</span>
-                  <span style="display:flex;align-items:center;gap:6px;">
-                    <span style="font-size:.78rem;color:var(--text-sec);">t.me/nicoscarselli</span>
-                    <span class="material-symbols-rounded soc-arr" style="font-size:13px;"
-                      aria-hidden="true">open_in_new</span>
-                  </span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- ===== FOOTER ===== -->
-
-      <!-- ===== JS ===== -->
-      <script>
-        (function () {
-
-          /* Icons: using Material Symbols font — no JS init required */
-
-          /* Nav scroll */
-          var nav = document.getElementById('nav');
-          window.addEventListener('scroll', function () {
-            nav.classList.toggle('stuck', window.scrollY > 50);
-          }, { passive: true });
-
-          /* Smooth scroll */
-          document.querySelectorAll('a[href^="#"]').forEach(function (a) {
-            a.addEventListener('click', function (e) {
-              var target = document.querySelector(this.getAttribute('href'));
-              if (target) {
-                e.preventDefault();
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-              }
-            });
-          });
-
-          /* Active nav link */
-          var sections = document.querySelectorAll('section[id]');
-          var links = document.querySelectorAll('.nav-link');
-          var secObs = new IntersectionObserver(function (entries) {
-            entries.forEach(function (e) {
-              if (e.isIntersecting) {
-                var id = e.target.id;
-                links.forEach(function (l) {
-                  var isActive = l.getAttribute('href') === '#' + id;
-                  l.classList.toggle('active', isActive);
-                  if (isActive) l.setAttribute('aria-current', 'page'); else l.removeAttribute('aria-current');
-                });
-              }
-            });
-          }, { threshold: 0.3 });
-          sections.forEach(function (s) { secObs.observe(s); });
-
-          /* Scroll reveal */
-          var revObs = new IntersectionObserver(function (entries) {
-            entries.forEach(function (e) {
-              if (e.isIntersecting) {
-                e.target.classList.add('vis');
-                revObs.unobserve(e.target);
-              }
-            });
-          }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-
-          document.querySelectorAll('.sr, .sr-l, .sr-r').forEach(function (el) {
-            revObs.observe(el);
-          });
-
-          /* Project rows reveal */
-          var pObs = new IntersectionObserver(function (entries) {
-            entries.forEach(function (e) {
-              if (e.isIntersecting) {
-                e.target.classList.add('vis');
-                pObs.unobserve(e.target);
-              }
-            });
-          }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
-
-          document.querySelectorAll('.proj-item, .exp-item').forEach(function (el) {
-            pObs.observe(el);
-          });
-
-          /* Service accordion */
-          document.querySelectorAll('.svc-trigger').forEach(function (btn) {
-            btn.addEventListener('click', function () {
-              var item = this.closest('.svc-item');
-              var isOpen = item.classList.contains('open');
-              /* close all */
-              document.querySelectorAll('.svc-item').forEach(function (i) {
-                i.classList.remove('open');
-                i.querySelector('.svc-trigger').setAttribute('aria-expanded', 'false');
-              });
-              /* open clicked if it was closed */
-              if (!isOpen) {
-                item.classList.add('open');
-                this.setAttribute('aria-expanded', 'true');
-              }
-            });
-          });
-
-        })();
-      </script>
-      <div aria-hidden="true" class="zoom" id="zoom">
-        <button aria-label="Cerrar" class="zoom-close" id="zoomClose">✕</button>
-        <button aria-label="Anterior" class="zoom-nav-btn zoom-prev" id="zoomPrev">‹</button>
-        <button aria-label="Siguiente" class="zoom-nav-btn zoom-next" id="zoomNext">›</button>
-        <img alt="Vista ampliada" id="zoomImg" />
-      </div>
-      <script>
-        (function () {
-          // Theme Toggle Logic
-          const themeToggle = document.getElementById('themeToggle');
-          const root = document.documentElement;
-          if (themeToggle) {
-              const stored = localStorage.getItem('theme');
-              const isLight = stored === 'light' || (!stored);
-              if (isLight) root.classList.add('light');
-
-            const updateIcon = () => {
-              const icon = themeToggle.querySelector('.material-symbols-rounded');
-              if (icon) {
-                icon.textContent = root.classList.contains('light') ? 'dark_mode' : 'light_mode';
-              }
-            };
-            document.addEventListener('DOMContentLoaded', updateIcon);
-
-            themeToggle.addEventListener('click', () => {
-              root.classList.toggle('light');
-              localStorage.setItem('theme', root.classList.contains('light') ? 'light' : 'dark');
-              updateIcon();
-            });
-            updateIcon();
-          }
-
-          // Zoom Logic
-          const zoom = document.getElementById('zoom');
-          const zoomImg = document.getElementById('zoomImg');
-          const zoomClose = document.getElementById('zoomClose');
-          const zoomPrev = document.getElementById('zoomPrev');
-          const zoomNext = document.getElementById('zoomNext');
-
-          let currentZoomImgs = [];
-          let currentZoomIdx = 0;
-          let currentZoomLabel = '';
-
-          function updateZoomImg() {
-            if (!currentZoomImgs.length) return;
-            zoomImg.src = currentZoomImgs[currentZoomIdx];
-            zoomImg.alt = `${currentZoomLabel} — imagen ${currentZoomIdx + 1}`;
-          }
-
-          function openZoom(imgs, idx, label) {
-            currentZoomImgs = imgs;
-            currentZoomIdx = idx;
-            currentZoomLabel = label || 'Proyecto';
-            updateZoomImg();
-            zoom.classList.add('open');
-            zoom.setAttribute('aria-hidden', 'false');
-          }
-
-          function closeZoom() {
-            zoom.classList.remove('open');
-            zoom.setAttribute('aria-hidden', 'true');
-            zoomImg.src = '';
-            currentZoomImgs = [];
-          }
-
-          if (zoom) zoom.addEventListener('click', (e) => { if (e.target === zoom || e.target === zoomImg) closeZoom(); });
-          if (zoomClose) zoomClose.addEventListener('click', closeZoom);
-
-          if (zoomPrev) zoomPrev.addEventListener('click', (e) => {
-            e.stopPropagation();
-            if (!currentZoomImgs.length) return;
-            currentZoomIdx = (currentZoomIdx - 1 + currentZoomImgs.length) % currentZoomImgs.length;
-            updateZoomImg();
-          });
-
-          if (zoomNext) zoomNext.addEventListener('click', (e) => {
-            e.stopPropagation();
-            if (!currentZoomImgs.length) return;
-            currentZoomIdx = (currentZoomIdx + 1) % currentZoomImgs.length;
-            updateZoomImg();
-          });
-
-          document.addEventListener('keydown', (e) => {
-            if (zoom && zoom.classList.contains('open')) {
-              if (e.key === 'Escape') closeZoom();
-              if (e.key === 'ArrowLeft' && zoomPrev) zoomPrev.click();
-              if (e.key === 'ArrowRight' && zoomNext) zoomNext.click();
-            }
-          });
-
-          function enableSwipe(el, onLeft, onRight) {
-            let sx = 0, sy = 0;
-            el.addEventListener('touchstart', (e) => {
-              const t = e.touches[0]; sx = t.clientX; sy = t.clientY;
-            }, { passive: true });
-            el.addEventListener('touchend', (e) => {
-              const t = e.changedTouches[0];
-              const dx = t.clientX - sx, dy = t.clientY - sy;
-              if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) {
-                dx < 0 ? onLeft() : onRight();
-              }
-            }, { passive: true });
-          }
-
-          document.querySelectorAll('.proj-img-wrap[data-images]').forEach((wrap) => {
-            const imgs = wrap.getAttribute('data-images').split(',').map(s => s.trim()).filter(Boolean);
-            if (!imgs.length) return;
-            const label = wrap.getAttribute('data-label') || 'Proyecto';
-
-            wrap.innerHTML = '';
-            const slider = document.createElement('div');
-            slider.className = 'proj-slider';
-
-            const slides = document.createElement('div');
-            slides.className = 'proj-slides';
-
-            imgs.forEach((src, i) => {
-              const slide = document.createElement('div');
-              slide.className = 'proj-slide';
-              const img = document.createElement('img');
-              img.loading = 'lazy'; img.decoding = 'async';
-              img.src = src;
-              img.alt = `${label} — imagen ${i + 1}`;
-              img.addEventListener('click', () => openZoom(imgs, i, label));
-              slide.appendChild(img);
-              slides.appendChild(slide);
-            });
-
-            const nav = document.createElement('div');
-            nav.className = 'proj-nav';
-            const prev = document.createElement('button');
-            prev.className = 'proj-btn'; prev.type = 'button'; prev.setAttribute('aria-label', 'Anterior'); prev.textContent = '‹';
-            const next = document.createElement('button');
-            next.className = 'proj-btn'; next.type = 'button'; next.setAttribute('aria-label', 'Siguiente'); next.textContent = '›';
-            nav.appendChild(prev); nav.appendChild(next);
-
-            const dots = document.createElement('div');
-            dots.setAttribute('aria-live', 'polite');
-            dots.className = 'proj-dots';
-            const dotEls = imgs.map((_, i) => {
-              const d = document.createElement('button');
-              d.type = 'button'; d.className = 'proj-dot';
-              d.setAttribute('aria-label', `Ir a imagen ${i + 1}`);
-              d.setAttribute('aria-current', i === 0 ? 'true' : 'false');
-              dots.appendChild(d);
-              return d;
-            });
-
-            let idx = 0;
-            const update = () => {
-              slides.style.transform = `translateX(${-idx * 100}%)`;
-              dotEls.forEach((d, i) => d.setAttribute('aria-current', i === idx ? 'true' : 'false'));
-            };
-
-            prev.addEventListener('click', () => { idx = (idx - 1 + imgs.length) % imgs.length; update(); });
-            next.addEventListener('click', () => { idx = (idx + 1) % imgs.length; update(); });
-            dotEls.forEach((d, i) => d.addEventListener('click', () => { idx = i; update(); }));
-
-            enableSwipe(slider, () => { idx = (idx + 1) % imgs.length; update(); }, () => { idx = (idx - 1 + imgs.length) % imgs.length; update(); });
-
-            slider.appendChild(slides);
-            slider.appendChild(nav);
-            slider.appendChild(dots);
-            wrap.appendChild(slider);
-          });
-
-          // IA card subtle spotlight tracking (sets --mx / --my)
-          document.querySelectorAll('.ia-card').forEach((card) => {
-            card.addEventListener('mousemove', (e) => {
-              const r = card.getBoundingClientRect();
-              card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
-              card.style.setProperty('--my', (e.clientY - r.top) + 'px');
-            }, { passive: true });
-            card.addEventListener('mouseleave', () => {
-              card.style.removeProperty('--mx');
-              card.style.removeProperty('--my');
-            });
-          });
-        })();
-      </script>
-
-  </main>
-
-  <!-- ===== BLOQUE E — FOOTER MULTI-COLUMNA ===== -->
-  <footer class="footer-multi">
-    <div class="wrap">
-      <div class="footer-cols">
-        <!-- Col 1: Perfil -->
-        <div class="footer-col">
-          <span class="footer-col-lbl">Nicolás Scarselli</span>
-          <p class="footer-col-text">Senior UI/UX Designer &amp; Brand Strategist.<br />+18 años diseñando experiencias
-            y productos digitales.</p>
-        </div>
-
-        <!-- Col 2: Contacto -->
-        <div class="footer-col">
-          <span class="footer-col-lbl">Contacto</span>
-          <a class="footer-col-link" href="mailto:scarselli.nicolas@gmail.com">scarselli.nicolas@gmail.com</a>
-          <a class="footer-col-link" href="tel:+541167336069">+54 (11) 6733.6069</a>
-          <span class="footer-col-text">Buenos Aires, Argentina</span>
-        </div>
-
-        <!-- Col 3: Redes -->
-        <div class="footer-col">
-          <span class="footer-col-lbl">Redes</span>
-          <a class="footer-col-link" href="https://www.behance.net/nicoscarselli" target="_blank" rel="noopener">Behance
-            <span class="material-symbols-rounded" style="font-size:12px;">open_in_new</span></a>
-          <a class="footer-col-link" href="https://linkedin.com/in/nicoscarselli" target="_blank"
-            rel="noopener">LinkedIn <span class="material-symbols-rounded"
-              style="font-size:12px;">open_in_new</span></a>
-          <a class="footer-col-link" href="https://dribbble.com/nicoscarselli" target="_blank" rel="noopener">Dribbble
-            <span class="material-symbols-rounded" style="font-size:12px;">open_in_new</span></a>
-          <a class="footer-col-link" href="https://t.me/nicoscarselli" target="_blank" rel="noopener">Telegram <span
-              class="material-symbols-rounded" style="font-size:12px;">open_in_new</span></a>
-        </div>
-
-        <!-- Col 4: Info / Navegación -->
-        <div class="footer-col">
-          <span class="footer-col-lbl">Navegación</span>
-          <a class="footer-col-link" href="#sobre">Sobre mí</a>
-          <a class="footer-col-link" href="#servicios">Servicios</a>
-          <a class="footer-col-link" href="#proyectos">Proyectos</a>
-          <a class="footer-col-link" href="#experiencia">Experiencia</a>
-          <a class="footer-col-link" href="#contacto">Contacto</a>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <span class="footer-copy">© 2026 · Buenos Aires, Argentina</span>
-        <a class="footer-top" href="#hero">
-          Volver arriba <span class="material-symbols-rounded" style="font-size:13px;"
-            aria-hidden="true">arrow_upward</span>
-        </a>
+      <div class="nav-actions">
+        <button id="themeToggle" class="theme-toggle" type="button" aria-label="Activar modo oscuro">
+          <span class="material-symbols-rounded" aria-hidden="true">dark_mode</span>
+        </button>
+        <button id="navToggle" class="nav-toggle" type="button" aria-expanded="false" aria-controls="navPanel" aria-label="Abrir menú">
+          <span class="material-symbols-rounded" aria-hidden="true">menu</span>Menú
+        </button>
+        <a class="nav-cta" href="#contacto">Hablemos</a>
       </div>
     </div>
-  </footer>
-</body>
+  </div>
+</nav>
 
+<main id="main-content">
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="wrap">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <h1 class="display">Diseño digital, con criterio y oficio.</h1>
+          <p class="hero-desc">Soy Nicolás Scarselli, diseñador de producto y marca. Ayudo a equipos y organizaciones a convertir ideas complejas en experiencias claras y bien construidas.</p>
+          <div class="hero-actions">
+            <a class="button-primary" href="#proyectos">Ver proyectos <span class="material-symbols-rounded" aria-hidden="true">arrow_downward</span></a>
+          </div>
+        </div>
+        <div class="hero-image-wrap sr-up">
+          <div class="hero-image" data-parallax data-parallax-speed="-0.06">
+            <img alt="Retrato profesional de Nicolás Scarselli" width="800" height="1000" loading="eager"
+                 src="img/avatar_2026.jpg"
+                 onerror="this.remove();this.parentElement.insertAdjacentHTML('beforeend','<span class=&quot;ph&quot;>Retrato profesional · 4:5</span>');" />
+          </div>
+          <p class="hero-image-caption">
+            <strong>Diseñador de Producto y Marca</strong>
+            <span>UX/UI · Brand · Implementación</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROYECTOS -->
+  <section id="proyectos">
+    <div class="wrap">
+      <div class="section-head with-action">
+        <div>
+          <h2 class="h2 sr">Trabajo seleccionado</h2>
+          <p class="section-sub sr">Cuatro proyectos donde combiné estrategia, UX/UI, sistemas visuales e implementación.</p>
+        </div>
+        <a class="link sr" href="https://www.behance.net/nicoscarselli" target="_blank" rel="noopener noreferrer">Ver todo en Behance <span class="material-symbols-rounded icon-xs" aria-hidden="true">arrow_outward</span><span class="visually-hidden"> (se abre en otra pestaña)</span></a>
+      </div>
+
+      <!-- 01 DIRECTV -->
+      <article class="project sr-up" aria-labelledby="p1">
+        <div class="project-copy">
+          <span class="project-index"><span class="n">01</span><span class="cat">Product Design · UX/UI · Information Design</span></span>
+          <h3 class="project-title" id="p1">DIRECTV — Portal de Estadísticas World Cup 2022</h3>
+          <div class="project-facts">
+            <div class="project-fact"><span class="k">Problema</span><span class="v">El portal debía funcionar en televisión (10-foot), con navegación por control remoto y lectura a distancia. La versión previa tenía listas densas y jerarquías poco claras.</span></div>
+            <div class="project-fact"><span class="k">Solución</span><span class="v">Redefiní la organización visual con principios perceptivos y componentes reutilizables, priorizando el reconocimiento sobre la lectura constante.</span></div>
+            <div class="project-fact result"><span class="k">Resultado</span><span class="v">Experiencia más clara y consistente, con menor carga cognitiva y un sistema visual unificado en todo el portal.</span></div>
+          </div>
+          <div class="project-meta"><span><b>Rol</b>Senior UI/UX Designer</span><span><b>Stack</b>Product · UX/UI · Information Design</span></div>
+          <p class="project-note">Proyecto bajo confidencialidad.</p>
+        </div>
+        <div class="project-visual">
+          <img width="1200" height="900" loading="lazy" decoding="async" src="img/proyecto-directv.webp" alt="Portal de estadísticas DIRECTV en pantalla de televisión" onerror="this.style.display='none';this.parentElement.classList.add('placeholder');" />
+          <span class="ph">img/proyecto-directv.webp</span>
+        </div>
+      </article>
+
+      <!-- 02 PROCRISA -->
+      <article class="project sr-up" aria-labelledby="p2">
+        <div class="project-copy">
+          <span class="project-index"><span class="n">02</span><span class="cat">Web Design · UX/UI · Desarrollo</span></span>
+          <h3 class="project-title" id="p2">Procrisa — Presencia digital industrial</h3>
+          <div class="project-facts">
+            <div class="project-fact"><span class="k">Problema</span><span class="v">Procrisa (aberturas de PVC) debía comunicar una oferta técnica compleja sin volver el sitio difícil de recorrer.</span></div>
+            <div class="project-fact"><span class="k">Solución</span><span class="v">Definí una navegación simple, prototipé responsive en Figma y desarrollé la interfaz, integrándola en WordPress para su administración.</span></div>
+            <div class="project-fact result"><span class="k">Resultado</span><span class="v">Sitio responsive y administrable, con catálogo estructurado y contenidos editables sin depender de desarrollo.</span></div>
+          </div>
+          <div class="project-meta"><span><b>Rol</b>Diseño UX/UI y desarrollo web</span><span><b>Stack</b>Figma · HTML/CSS · JS · WordPress</span></div>
+          <a class="link" href="https://www.behance.net/gallery/234366631/Desarrollo-Web-PROCRISA" target="_blank" rel="noopener noreferrer">Ver en Behance <span class="material-symbols-rounded icon-xs" aria-hidden="true">arrow_outward</span><span class="visually-hidden"> (se abre en otra pestaña)</span></a>
+        </div>
+        <div class="project-visual">
+          <img width="1200" height="900" loading="lazy" decoding="async" src="img/proyecto-procrisa.webp" alt="Sitio web de Procrisa mostrado en un monitor" onerror="this.style.display='none';this.parentElement.classList.add('placeholder');" />
+          <span class="ph">img/proyecto-procrisa.webp</span>
+        </div>
+      </article>
+
+      <!-- 03 BUILD AFRICA EXPO -->
+      <article class="project sr-up" aria-labelledby="p3">
+        <div class="project-copy">
+          <span class="project-index"><span class="n">03</span><span class="cat">Branding · Dirección visual</span></span>
+          <h3 class="project-title" id="p3">Build Africa Expo — Identidad y sistema de marca</h3>
+          <div class="project-facts">
+            <div class="project-fact"><span class="k">Problema</span><span class="v">Un evento internacional necesitaba una identidad reconocible y flexible, consistente entre soportes y contextos muy distintos.</span></div>
+            <div class="project-fact"><span class="k">Solución</span><span class="v">Construí un sistema de tramas geométricas modulares, paleta de alto contraste y jerarquías tipográficas que generan variedad sin perder coherencia.</span></div>
+            <div class="project-fact result"><span class="k">Resultado</span><span class="v">Sistema integral con aplicaciones institucionales, promocionales, materiales del evento, brochure y diseño web.</span></div>
+          </div>
+          <div class="project-meta"><span><b>Rol</b>Identidad visual y diseño digital</span><span><b>Stack</b>Illustrator · Photoshop · Figma</span></div>
+          <a class="link" href="https://www.behance.net/gallery/208036471/Brand-Identity-Build-Africa-Expo" target="_blank" rel="noopener noreferrer">Ver en Behance <span class="material-symbols-rounded icon-xs" aria-hidden="true">arrow_outward</span><span class="visually-hidden"> (se abre en otra pestaña)</span></a>
+        </div>
+        <div class="project-visual">
+          <img width="1200" height="900" loading="lazy" decoding="async" src="img/proyecto-bae.webp" alt="Sistema de identidad de Build Africa Expo aplicado" onerror="this.style.display='none';this.parentElement.classList.add('placeholder');" />
+          <span class="ph">img/proyecto-bae.webp</span>
+        </div>
+      </article>
+
+      <!-- 04 COIRÓN -->
+      <article class="project sr-up" aria-labelledby="p4">
+        <div class="project-copy">
+          <span class="project-index"><span class="n">04</span><span class="cat">Branding · Identidad institucional</span></span>
+          <h3 class="project-title" id="p4">Coirón — Identidad para seguridad e higiene</h3>
+          <div class="project-facts">
+            <div class="project-fact"><span class="k">Problema</span><span class="v">Una empresa argentina del sector de seguridad e higiene necesitaba una identidad clara y profesional que transmitiera confianza.</span></div>
+            <div class="project-fact"><span class="k">Solución</span><span class="v">Desarrollé un sistema visual coherente —logotipo, paleta y aplicaciones— pensado para funcionar en distintos soportes institucionales.</span></div>
+            <div class="project-fact result"><span class="k">Resultado</span><span class="v">Una identidad sólida y reconocible, adaptable a documentación, señalética y comunicación de la empresa.</span></div>
+          </div>
+          <div class="project-meta"><span><b>Rol</b>Identidad visual y sistema de marca</span><span><b>Stack</b>Illustrator · Photoshop · Figma</span></div>
+        </div>
+        <div class="project-visual">
+          <img width="1200" height="900" loading="lazy" decoding="async" src="img/proyecto-coiron.webp" alt="Identidad visual de Coirón aplicada" onerror="this.style.display='none';this.parentElement.classList.add('placeholder');" />
+          <span class="ph">img/proyecto-coiron.webp</span>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <h2 class="h2 sr">Cómo puedo ayudar</h2>
+          <p class="section-sub sr">Estrategia de marca, producto y sistemas listos para equipos que necesitan claridad y ejecución.</p>
+        </div>
+      </div>
+      <div class="svc-list">
+        <div class="svc-item open">
+          <button aria-expanded="true" aria-controls="svc-panel-1" id="svc-btn-1" class="svc-trigger" type="button">
+            <span class="svc-num">01</span>
+            <span class="svc-head"><span class="svc-name">Product Design &amp; UX/UI</span><span class="svc-teaser">Diseño de productos digitales de principio a fin, del entendimiento del problema a una interfaz que se puede construir.</span></span>
+            <span class="svc-icon"><span class="material-symbols-rounded" aria-hidden="true">remove</span></span>
+          </button>
+          <div class="svc-body" id="svc-panel-1" role="region" aria-labelledby="svc-btn-1"><div class="svc-body-inner">
+            <p class="svc-desc">Trabajo la experiencia completa: investigación, arquitectura de información, flujos, wireframes, prototipo y UI. Me interesa entender el negocio y a las personas antes de dibujar una sola pantalla, para que cada decisión tenga una razón y pueda defenderse.</p>
+            <p class="svc-desc">En la etapa de descubrimiento y análisis apoyo el proceso con IA: la uso para acelerar research, ordenar hallazgos, explorar alternativas y contrastar decisiones. La herramienta suma velocidad; el criterio sobre qué queda y qué no sigue siendo mío.</p>
+            <div class="svc-chips"><span class="chip-s">UX/UI</span><span class="chip-s">Arquitectura</span><span class="chip-s">Prototipos</span><span class="chip-s">Design Systems</span><span class="chip-s">IA en el proceso</span></div>
+          </div></div>
+        </div>
+        <div class="svc-item">
+          <button aria-expanded="false" aria-controls="svc-panel-2" id="svc-btn-2" class="svc-trigger" type="button">
+            <span class="svc-num">02</span>
+            <span class="svc-head"><span class="svc-name">Diseño y desarrollo web</span><span class="svc-teaser">Sitios claros, rápidos y administrables, diseñados e implementados de la estructura a la publicación.</span></span>
+            <span class="svc-icon"><span class="material-symbols-rounded" aria-hidden="true">add</span></span>
+          </button>
+          <div class="svc-body" id="svc-panel-2" role="region" aria-labelledby="svc-btn-2"><div class="svc-body-inner">
+            <p class="svc-desc">Diseño e implemento sitios responsive con foco en claridad, rendimiento y accesibilidad. Puedo llevar un proyecto desde la arquitectura y el diseño en Figma hasta el código y la puesta en marcha, o integrarme a un equipo técnico existente.</p>
+            <p class="svc-desc">Uso IA para agilizar la generación de contenido, la maquetación y las primeras versiones de código, siempre revisando cada resultado con criterio para que la calidad no dependa de la herramienta.</p>
+            <div class="svc-chips"><span class="chip-s">Estrategia</span><span class="chip-s">Figma</span><span class="chip-s">Front-end</span><span class="chip-s">WordPress</span><span class="chip-s">Performance</span></div>
+          </div></div>
+        </div>
+        <div class="svc-item">
+          <button aria-expanded="false" aria-controls="svc-panel-3" id="svc-btn-3" class="svc-trigger" type="button">
+            <span class="svc-num">03</span>
+            <span class="svc-head"><span class="svc-name">Marca e identidad</span><span class="svc-teaser">Sistemas visuales con carácter, pensados para sostener el reconocimiento en cada punto de contacto.</span></span>
+            <span class="svc-icon"><span class="material-symbols-rounded" aria-hidden="true">add</span></span>
+          </button>
+          <div class="svc-body" id="svc-panel-3" role="region" aria-labelledby="svc-btn-3"><div class="svc-body-inner">
+            <p class="svc-desc">Construyo identidades que funcionan como sistema, no como un logo aislado: estrategia, símbolo, paleta, tipografía, guidelines y aplicaciones. Busco que la marca mantenga el mismo criterio en una acreditación, una fachada o una pantalla.</p>
+            <p class="svc-desc">Incorporo IA como apoyo para explorar direcciones visuales, generar variaciones y producir recursos, acortando la parte mecánica del proceso sin reemplazar las decisiones de diseño.</p>
+            <div class="svc-chips"><span class="chip-s">Identidad</span><span class="chip-s">Sistema visual</span><span class="chip-s">Editorial</span><span class="chip-s">Aplicaciones</span><span class="chip-s">IA aplicada</span></div>
+          </div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESO -->
+  <section id="proceso">
+    <div class="wrap">
+      <div class="section-head">
+        <div><h2 class="h2 sr">Entender antes de diseñar. Diseñar pensando en implementar.</h2></div>
+      </div>
+      <div class="ia-grid">
+        <div class="ia-card sr-up"><span class="ia-index" aria-hidden="true">01</span><h3 class="ia-card-title">Entender</h3><p class="ia-card-desc">Contexto, objetivos, usuarios y restricciones antes de proponer nada.</p></div>
+        <div class="ia-card sr-up"><span class="ia-index" aria-hidden="true">02</span><h3 class="ia-card-title">Ordenar</h3><p class="ia-card-desc">Prioridades, arquitectura de información y recorridos claros.</p></div>
+        <div class="ia-card sr-up"><span class="ia-index" aria-hidden="true">03</span><h3 class="ia-card-title">Diseñar</h3><p class="ia-card-desc">Sistemas, interfaces y prototipos con criterio defendible.</p></div>
+        <div class="ia-card sr-up"><span class="ia-index" aria-hidden="true">04</span><h3 class="ia-card-title">Acompañar</h3><p class="ia-card-desc">Validación, implementación y evolución junto a los equipos.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE MÍ -->
+  <section id="sobre">
+    <div class="wrap">
+      <div class="about-grid">
+        <div class="about-text sr">
+          <h2 class="about-quote">Me interesa el diseño que puede explicarse, implementarse y sostenerse en el tiempo.</h2>
+          <p class="about-body">Empecé en diseño gráfico, branding y comunicación visual. El trabajo web me acercó a la interacción, la arquitectura de información y la experiencia de usuario.</p>
+          <p class="about-body">Con el tiempo llegaron los productos digitales, los sistemas de diseño y los desafíos de implementación. Hoy conecto esas experiencias para diseñar soluciones posibles, no solamente atractivas.</p>
+          <div class="about-stats sr-up">
+            <span><b>18+</b> años de experiencia</span>
+            <span><b>10M+</b> usuarios alcanzados</span>
+            <span><b>3</b> continentes</span>
+          </div>
+          <p class="about-meta sr-up">Buenos Aires, Argentina · Accenture · Freelance disponible · Español &amp; Inglés · Figma · Design Systems</p>
+        </div>
+        <div class="about-media sr">
+          <div class="about-image-wrap">
+            <div class="about-image">
+              <img alt="Nicolás Scarselli en su espacio de trabajo" width="900" height="1100" loading="lazy" decoding="async"
+                   src="img/about_workspace.jpg"
+                   onerror="this.remove();this.parentElement.insertAdjacentHTML('beforeend','<span class=&quot;ph&quot;>Foto de proceso / espacio de trabajo · 4:5</span>');" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCIA -->
+  <section id="experiencia">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <h2 class="h2 sr">Experiencia</h2>
+          <p class="section-sub sr">Diseño, producto y sistemas para equipos digitales exigentes.</p>
+        </div>
+      </div>
+      <div class="exp-list">
+        <div class="exp-item">
+          <div class="exp-period">Feb 2024 — Presente<div class="badge">Actual</div></div>
+          <div>
+            <h3 class="exp-role">Senior UI/UX Designer</h3>
+            <p class="exp-company">Accenture — Buenos Aires, Argentina</p>
+            <p class="exp-desc">Diseño y prototipado UI/UX para plataformas iTV de DIRECTV, Sky y Vrio en América Latina. Proyectos de escala masiva: Copa Mundial FIFA 2022, DIRECTV GO, Dsports y NextGen UI para más de 10M de suscriptores. Integración de IA en el flujo diario para acelerar iteraciones en Design Systems complejos.</p>
+            <div class="exp-tags"><span class="exp-tag">Figma</span><span class="exp-tag">iTV Apps</span><span class="exp-tag">UX Research</span><span class="exp-tag">Design System</span></div>
+          </div>
+        </div>
+        <div class="exp-item">
+          <div class="exp-period">Sep 2021 — Feb 2024</div>
+          <div>
+            <h3 class="exp-role">Senior UI/UX Designer</h3>
+            <p class="exp-company">DIRECTV Latin America — Argentina</p>
+            <p class="exp-desc">Liderazgo técnico en UI/UX con foco en la mejora continua de interfaces para decodificadores SD, HD y NextGenUI. Parte del equipo que migró a Figma como herramienta central, reduciendo tiempos de entrega de prototipos.</p>
+            <div class="exp-tags"><span class="exp-tag">Adobe XD</span><span class="exp-tag">Figma</span><span class="exp-tag">UI/UX</span><span class="exp-tag">LATAM</span></div>
+          </div>
+        </div>
+        <div class="exp-item">
+          <div class="exp-period">Nov 2020 — Sep 2021</div>
+          <div>
+            <h3 class="exp-role">Diseñador UI/UX</h3>
+            <p class="exp-company">Red Link S.A. — Argentina</p>
+            <p class="exp-desc">Análisis, prototipado y desarrollo web UI/UX de productos para entidades financieras. Ajustes en backoffice con HTML5/CSS3 y Angular, con foco en maquetación responsive.</p>
+            <div class="exp-tags"><span class="exp-tag">HTML5/CSS3</span><span class="exp-tag">Angular</span><span class="exp-tag">Figma</span><span class="exp-tag">Fintech</span></div>
+          </div>
+        </div>
+        <div class="exp-item">
+          <div class="exp-period">Oct 2016 — Nov 2020</div>
+          <div>
+            <h3 class="exp-role">Líder de Diseño Web</h3>
+            <p class="exp-company">LATCOM / Contenidos Advertising S.A. — Argentina</p>
+            <p class="exp-desc">Liderazgo de equipo de desarrollo web, maquetación y estrategia de branding y email marketing. Presentaciones HTML, fotomontajes comerciales y gestión de contenidos.</p>
+            <div class="exp-tags"><span class="exp-tag">HTML/CSS</span><span class="exp-tag">Email Marketing</span><span class="exp-tag">Branding</span></div>
+          </div>
+        </div>
+        <div class="exp-item">
+          <div class="exp-period">Oct 2011 — Oct 2016</div>
+          <div>
+            <h3 class="exp-role">Diseñador Gráfico / Web Sr.</h3>
+            <p class="exp-company">TIMwe South Cone — Buenos Aires, Argentina</p>
+            <p class="exp-desc">Diseño gráfico, web, editorial y multimedia. UI/UX para aplicaciones mobile y sitios de suscripción. Landing pages y banners para portales de gran tráfico.</p>
+            <div class="exp-tags"><span class="exp-tag">UI/UX</span><span class="exp-tag">Mobile</span><span class="exp-tag">Adobe CC</span></div>
+          </div>
+        </div>
+        <div class="exp-item">
+          <div class="exp-period">Jun 2006 — Sep 2009</div>
+          <div>
+            <h3 class="exp-role">Diseñador Gráfico Jr. / Webmaster</h3>
+            <p class="exp-company">Grupo Eventoplus — Argentina</p>
+            <p class="exp-desc">Inicio de carrera. Diseño y mantenimiento web, newsletters, landing pages, banners animados y diseño editorial. Primeras experiencias en email marketing.</p>
+            <div class="exp-tags"><span class="exp-tag">Webmaster</span><span class="exp-tag">Email Marketing</span><span class="exp-tag">Editorial</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto">
+    <div class="wrap">
+      <div class="contact-grid">
+        <div class="sr">
+          <h2 class="contact-h">¿Hablamos sobre tu próximo proyecto?</h2>
+          <a class="email-big" href="mailto:scarselli.nicolas@gmail.com">scarselli.nicolas@gmail.com</a>
+        </div>
+        <div class="sr">
+          <div class="contact-info">
+            <div class="info-row"><span class="lbl">Teléfono</span><a class="val" href="tel:+541167336069">+54 (11) 6733.6069</a></div>
+            <div class="info-row"><span class="lbl">Ubicación</span><span class="val">Buenos Aires, Argentina</span></div>
+            <div class="info-row"><span class="lbl">Horario</span><span class="val">GMT-3 · Lun – Vie</span></div>
+          </div>
+          <div class="social-links">
+            <a class="soc-link" href="https://www.behance.net/nicoscarselli" rel="noopener noreferrer" target="_blank">
+              <span>Behance</span><span class="social-detail"><span class="link-detail">behance.net/nicoscarselli</span><span class="material-symbols-rounded soc-arr" aria-hidden="true">arrow_outward</span></span>
+            </a>
+            <a class="soc-link" href="https://linkedin.com/in/nicoscarselli" rel="noopener noreferrer" target="_blank">
+              <span>LinkedIn</span><span class="social-detail"><span class="link-detail">linkedin.com/in/nicoscarselli</span><span class="material-symbols-rounded soc-arr" aria-hidden="true">arrow_outward</span></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER — infinite marquee -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-meta">
+      <div class="cols">
+        <a href="#proyectos">Proyectos</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#sobre">Sobre mí</a>
+        <a href="#experiencia">Experiencia</a>
+        <a href="https://www.behance.net/nicoscarselli" target="_blank" rel="noopener noreferrer">Behance ↗</a>
+        <a href="https://linkedin.com/in/nicoscarselli" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+      </div>
+      <a class="footer-top" href="#hero">Volver arriba <span class="material-symbols-rounded" aria-hidden="true" style="font-size:16px">arrow_upward</span></a>
+    </div>
+  </div>
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>NICO SCARSELLI&nbsp;<span class="dot">·</span>&nbsp;</span>
+      <span>NICO SCARSELLI&nbsp;<span class="dot">·</span>&nbsp;</span>
+      <span>NICO SCARSELLI&nbsp;<span class="dot">·</span>&nbsp;</span>
+      <span>NICO SCARSELLI&nbsp;<span class="dot">·</span>&nbsp;</span>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="footer-legal">
+      <span>© 2026 Nicolás Scarselli · Buenos Aires</span>
+      <span>Diseño estratégico entre producto, marca y tecnología.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement;
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  var themeToggle=document.getElementById('themeToggle');
+  function syncTheme(){var dark=root.dataset.theme==='dark';var i=themeToggle&&themeToggle.querySelector('.material-symbols-rounded');
+    if(i)i.textContent=dark?'light_mode':'dark_mode';if(themeToggle)themeToggle.setAttribute('aria-label',dark?'Activar modo claro':'Activar modo oscuro');}
+  if(themeToggle){syncTheme();themeToggle.addEventListener('click',function(){
+    root.dataset.theme=root.dataset.theme==='dark'?'light':'dark';localStorage.setItem('theme',root.dataset.theme);syncTheme();});}
+
+  var navToggle=document.getElementById('navToggle'),navPanel=document.getElementById('navPanel');
+  function setMenu(open){navPanel.classList.toggle('open',open);navToggle.setAttribute('aria-expanded',open?'true':'false');
+    navToggle.setAttribute('aria-label',open?'Cerrar menú':'Abrir menú');
+    var ic=navToggle.querySelector('.material-symbols-rounded');if(ic)ic.textContent=open?'close':'menu';}
+  if(navToggle&&navPanel){navToggle.addEventListener('click',function(){setMenu(!navPanel.classList.contains('open'));});
+    navPanel.querySelectorAll('a').forEach(function(l){l.addEventListener('click',function(){setMenu(false);});});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape'&&navPanel.classList.contains('open')){setMenu(false);navToggle.focus();}});}
+
+  /* ---- Active nav highlight: scroll-position based (robust) ---- */
+  var navLinks=Array.prototype.slice.call(document.querySelectorAll('.nav-link'));
+  var targets=navLinks.map(function(l){var id=l.getAttribute('href');return {link:l,el:document.querySelector(id)};})
+    .filter(function(t){return t.el;});
+  function setActive(link){navLinks.forEach(function(l){var a=l===link;l.classList.toggle('active',a);
+    if(a)l.setAttribute('aria-current','true');else l.removeAttribute('aria-current');});}
+  function updateActive(){
+    var line=window.scrollY + Math.min(window.innerHeight*0.32, 200); // detection line ~32% down viewport
+    var current=null;
+    for(var i=0;i<targets.length;i++){
+      var top=targets[i].el.getBoundingClientRect().top + window.scrollY;
+      if(top<=line) current=targets[i].link; else break;
+    }
+    // near bottom of page → force last
+    if((window.innerHeight+window.scrollY)>=document.documentElement.scrollHeight-4 && targets.length){
+      current=targets[targets.length-1].link;
+    }
+    // above first section → none active
+    if(current) setActive(current); else navLinks.forEach(function(l){l.classList.remove('active');l.removeAttribute('aria-current');});
+  }
+  var navTicking=false;
+  function onNavScroll(){if(!navTicking){navTicking=true;requestAnimationFrame(function(){updateActive();navTicking=false;});}}
+  window.addEventListener('scroll',onNavScroll,{passive:true});
+  window.addEventListener('resize',onNavScroll,{passive:true});
+  updateActive();
+
+  var rev=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vis');rev.unobserve(e.target);}});},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.sr,.sr-up').forEach(function(el){rev.observe(el);});
+
+  document.querySelectorAll('.svc-trigger').forEach(function(btn){
+    btn.addEventListener('click',function(){var item=this.closest('.svc-item'),wasOpen=item.classList.contains('open');
+      document.querySelectorAll('.svc-item').forEach(function(i){if(i!==item&&i.classList.contains('open'))closePanel(i);});
+      if(wasOpen)closePanel(item);else openPanel(item);});});
+  function iconOf(i){return i.querySelector('.svc-trigger .material-symbols-rounded');}
+  function openPanel(item){item.classList.add('open');item.querySelector('.svc-trigger').setAttribute('aria-expanded','true');
+    var ic=iconOf(item);if(ic)ic.textContent='remove';var body=item.querySelector('.svc-body');
+    if(reduce){body.style.height='auto';return;}var t=body.querySelector('.svc-body-inner').offsetHeight;
+    body.style.height='0px';requestAnimationFrame(function(){body.style.transition='height 280ms cubic-bezier(.2,.7,.2,1)';body.style.height=t+'px';});
+    body.addEventListener('transitionend',function te(){body.style.height='auto';body.style.transition='';body.removeEventListener('transitionend',te);});}
+  function closePanel(item){var body=item.querySelector('.svc-body'),ic=iconOf(item);if(ic)ic.textContent='add';
+    item.querySelector('.svc-trigger').setAttribute('aria-expanded','false');item.classList.remove('open');
+    if(reduce){body.style.height='0px';return;}var c=body.offsetHeight;body.style.height=c+'px';body.style.transition='height 280ms cubic-bezier(.2,.7,.2,1)';
+    requestAnimationFrame(function(){body.style.height='0px';});
+    body.addEventListener('transitionend',function te(){body.style.transition='';body.removeEventListener('transitionend',te);});}
+  document.querySelectorAll('.svc-item').forEach(function(item){var body=item.querySelector('.svc-body');
+    body.style.height=item.classList.contains('open')?'auto':'0px';});
+
+  if(!reduce){
+    var pxEls=Array.prototype.slice.call(document.querySelectorAll('[data-parallax]'));
+    if(pxEls.length){
+      var ticking=false;
+      function onScroll(){if(!ticking){ticking=true;requestAnimationFrame(update);}}
+      function update(){var vh=window.innerHeight;
+        pxEls.forEach(function(el){var r=el.getBoundingClientRect();if(r.bottom<-200||r.top>vh+200)return;
+          var speed=parseFloat(el.getAttribute('data-parallax-speed'))||-0.05;var center=r.top+r.height/2-vh/2;
+          el.style.transform='translate3d(0,'+(center*speed).toFixed(1)+'px,0)';});ticking=false;}
+      window.addEventListener('scroll',onScroll,{passive:true});
+      window.addEventListener('resize',onScroll,{passive:true});update();
+    }
+  }
+})();
+</script>
+</body>
 </html>
