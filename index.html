@@ -453,6 +453,32 @@
       cursor: zoom-in
     }
 
+    .project-placeholder {
+      display: grid;
+      place-items: center;
+      cursor: default
+    }
+
+    .project-placeholder:after {
+      content: none
+    }
+
+    .project-placeholder-frame {
+      width: calc(100% - 48px);
+      height: calc(100% - 48px);
+      display: grid;
+      place-items: center;
+      border: 1px dashed var(--line)
+    }
+
+    .project-placeholder-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 13px;
+      letter-spacing: .04em;
+      text-align: center;
+      text-transform: uppercase
+    }
+
     .zoom {
       width: 100%;
       height: 100%;
@@ -1492,7 +1518,7 @@
         <div class="head projects-head reveal">
           <div>
             <h2 class="h2">Trabajo seleccionado</h2>
-            <p class="sub">Cuatro proyectos donde combiné estrategia, UX/UI, sistemas visuales e implementación.</p>
+            <p class="sub">Cinco proyectos donde combiné estrategia, UX/UI, sistemas visuales e implementación.</p>
           </div><a class="link" href="https://www.behance.net/nicoscarselli" rel="noopener" target="_blank">Ver todo en
             Behance ↗</a>
         </div>
@@ -1602,6 +1628,34 @@
           </div>
           <div class="visual reveal-image"><button aria-label="Ampliar imagen de Coirón" class="zoom"><img
                 alt="Identidad visual de Coirón aplicada" src="images/proyectos/coiron.png" /></button></div>
+        </article>
+
+        <article class="project">
+          <div class="copy reveal">
+            <div class="pindex"><span>UX/UI · Producto digital</span></div>
+            <h3 class="ptitle">Iris Hotel — Experiencia digital</h3>
+            <div class="facts">
+              <div class="fact">
+                <p>Iris Hotel es un hotel boutique de lujo en Toubab Dialaw, Senegal. Con una propuesta y una ubicación
+                  excepcionales, necesitaba construir una presencia digital capaz de comunicar su identidad y
+                  posicionarlo ante una audiencia internacional.</p>
+              </div>
+              <div class="fact">
+                <p>Diseñé una experiencia web responsive en español, inglés y francés, con un lenguaje editorial
+                  alineado al carácter del hotel. Organicé la información de habitaciones y servicios, y sumé un
+                  buscador de disponibilidad para hacer más claro el recorrido hacia la reserva directa, priorizando
+                  el uso desde mobile.</p>
+              </div>
+              <div class="fact result"><b>Resultado</b>
+                <p>Una propuesta digital consistente que presenta la experiencia del hotel, facilita la consulta y
+                  reserva en tres idiomas y ofrece un canal directo como alternativa a las plataformas intermediarias.</p>
+              </div>
+            </div>
+            <a class="link" href="https://www.behance.net/gallery/255149987/Iris-Hotel-Luxury-Hospitality-Digital-Experience"
+              rel="noopener" target="_blank">Ver proyecto completo ↗</a>
+          </div>
+          <div class="visual reveal-image"><button aria-label="Ampliar imagen de Coirón" class="zoom"><img
+                alt="Identidad visual de Coirón aplicada" src="images/proyectos/iris_hotel.png" /></button></div>
         </article>
       </div>
     </section>
