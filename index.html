@@ -4,13 +4,82 @@
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width,initial-scale=1" name="viewport" />
-  <title>Nicolás Scarselli — Diseñador de Producto y Marca</title>
+  <title>Nicolás Scarselli — Diseñador de Producto y Marca | Senior UX/UI</title>
   <meta
-    content="Diseño de producto, marca y experiencias digitales. Análisis Web UX, estrategia, design systems e implementación."
+    content="Nicolás Scarselli — Diseñador senior de producto, UX/UI y marca con más de 18 años de experiencia. Diseño de experiencias digitales, design systems, análisis Web UX e implementación front-end."
     name="description" />
+  <meta name="keywords" content="Nicolás Scarselli, Diseñador de Producto, Product Designer, Diseñador UX UI, Senior UX Designer, Brand Designer, Diseño de Marca, Design Systems, Buenos Aires, Portfolio UX" />
   <meta name="author" content="Nicolás Scarselli" />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://nicoscarselli.github.io/scarselli/" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <link rel="canonical" href="https://nicoscarselli.vercel.app/" />
+
+  <!-- Open Graph / Facebook / LinkedIn -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:site_name" content="Nicolás Scarselli Portfolio" />
+  <meta property="og:title" content="Nicolás Scarselli — Diseñador de Producto y Marca | Senior UX/UI" />
+  <meta property="og:description" content="Diseño de producto, marca y experiencias digitales con foco en claridad y resultados. Estrategia, design systems e implementación." />
+  <meta property="og:url" content="https://nicoscarselli.vercel.app/" />
+  <meta property="og:image" content="https://nicoscarselli.vercel.app/images/nicoscarselli.jpg" />
+  <meta property="og:image:alt" content="Nicolás Scarselli — Diseñador de Producto y Marca" />
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Nicolás Scarselli — Diseñador de Producto y Marca | Senior UX/UI" />
+  <meta name="twitter:description" content="Diseño de producto, marca y experiencias digitales con foco en claridad y resultados. Estrategia, design systems e implementación." />
+  <meta name="twitter:image" content="https://nicoscarselli.vercel.app/images/nicoscarselli.jpg" />
+  <meta name="twitter:image:alt" content="Nicolás Scarselli — Diseñador de Producto y Marca" />
+
+  <!-- Schema.org Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://nicoscarselli.vercel.app/#person",
+        "name": "Nicolás Scarselli",
+        "jobTitle": "Senior Product & Brand Designer",
+        "description": "Diseñador senior de producto, UX/UI y marca con más de 18 años de experiencia en productos digitales, identidad visual y design systems.",
+        "url": "https://nicoscarselli.vercel.app/",
+        "image": "https://nicoscarselli.vercel.app/images/nicoscarselli.jpg",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Buenos Aires",
+          "addressCountry": "AR"
+        },
+        "sameAs": [
+          "https://linkedin.com/in/nicoscarselli",
+          "https://www.behance.net/nicoscarselli",
+          "https://www.instagram.com/nicoscarselli.design",
+          "https://nicoscarselli.gumroad.com/",
+          "https://linktr.ee/nicoscarselli"
+        ],
+        "knowsAbout": [
+          "Product Design",
+          "User Experience (UX)",
+          "User Interface (UI)",
+          "Design Systems",
+          "Brand Identity",
+          "Front-end Development",
+          "UX Audits"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://nicoscarselli.vercel.app/#website",
+        "url": "https://nicoscarselli.vercel.app/",
+        "name": "Nicolás Scarselli — Portfolio",
+        "description": "Portfolio profesional de Nicolás Scarselli, diseñador de producto, marca y experiencias digitales.",
+        "publisher": {
+          "@id": "https://nicoscarselli.vercel.app/#person"
+        },
+        "inLanguage": "es"
+      }
+    ]
+  }
+  </script>
+
   <link href="https://fonts.googleapis.com" rel="preconnect" />
   <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" />
@@ -1483,7 +1552,7 @@
 
 <body>
   <nav class="nav">
-    <div class="wrap navin"><a class="logo" href="#hero"><img src="images/logo.svg" alt=""></a>
+    <div class="wrap navin"><a class="logo" href="#hero" aria-label="Nicolás Scarselli - Inicio"><img src="images/logo.svg" alt="Nicolás Scarselli Logo" width="36" height="36"></a>
         <div class="links" id="primary-navigation"><a href="#proyectos">Proyectos</a><a href="#servicios">Servicios</a><a
           href="#metodo">Método</a><a href="#sobre">Sobre mí</a><a href="#experiencia">Experiencia</a><a
           href="https://payhip.com/NicoScarselli" rel="noopener" target="_blank">Store</a><a class="mobile-hire" href="#contacto">Hablemos</a></div>
@@ -1506,7 +1575,7 @@
                 class="material-symbols-rounded">arrow_downward</span></a></div>
         </div>
         <div class="portrait reveal-image"><img alt="Retrato profesional de Nicolás Scarselli"
-            src="images/nicoscarselli.jpg" />
+            src="images/nicoscarselli.jpg" fetchpriority="high" />
           <div class="caption"><strong>Diseñador de Producto y Marca</strong><span>UX/UI · Brand · Implementación</span>
           </div>
         </div>
@@ -1546,7 +1615,7 @@
           </div>
           <div class="visual reveal-image"><button aria-label="Ampliar imagen de DIRECTV" class="zoom"><img
                 alt="Portal de estadísticas DIRECTV en pantalla de televisión"
-                src="images/proyectos/directv.png" /></button></div>
+                src="images/proyectos/directv.png" loading="lazy" /></button></div>
         </article>
 
         <article class="project">
@@ -1573,7 +1642,7 @@
               target="_blank">Ver proyecto completo ↗</a>
           </div>
           <div class="visual reveal-image"><button aria-label="Ampliar imagen de Procrisa" class="zoom"><img
-                alt="Sitio web industrial de Procrisa" src="images/proyectos/procrisa.png" /></button></div>
+                alt="Sitio web industrial de Procrisa" src="images/proyectos/procrisa.png" loading="lazy" /></button></div>
         </article>
 
         <article class="project">
@@ -1600,7 +1669,7 @@
               rel="noopener" target="_blank">Ver proyecto completo ↗</a>
           </div>
           <div class="visual reveal-image"><button aria-label="Ampliar imagen de Build Africa Expo" class="zoom"><img
-                alt="Sistema de identidad de Build Africa Expo" src="images/proyectos/bae.png" /></button></div>
+                alt="Sistema de identidad de Build Africa Expo" src="images/proyectos/bae.png" loading="lazy" /></button></div>
         </article>
 
         <article class="project">
@@ -1627,7 +1696,7 @@
               rel="noopener" target="_blank">Ver proyecto completo ↗</a>
           </div>
           <div class="visual reveal-image"><button aria-label="Ampliar imagen de Coirón" class="zoom"><img
-                alt="Identidad visual de Coirón aplicada" src="images/proyectos/coiron.png" /></button></div>
+                alt="Identidad visual de Coirón aplicada" src="images/proyectos/coiron.png" loading="lazy" /></button></div>
         </article>
 
         <article class="project">
@@ -1654,8 +1723,8 @@
             <a class="link" href="https://www.behance.net/gallery/255149987/Iris-Hotel-Luxury-Hospitality-Digital-Experience"
               rel="noopener" target="_blank">Ver proyecto completo ↗</a>
           </div>
-          <div class="visual reveal-image"><button aria-label="Ampliar imagen de Coirón" class="zoom"><img
-                alt="Identidad visual de Coirón aplicada" src="images/proyectos/iris_hotel.png" /></button></div>
+          <div class="visual reveal-image"><button aria-label="Ampliar imagen de Iris Hotel" class="zoom"><img
+                alt="Experiencia web e identidad digital de Iris Hotel" src="images/proyectos/iris_hotel.png" loading="lazy" /></button></div>
         </article>
       </div>
     </section>
@@ -1746,7 +1815,7 @@
           <p>Mi enfoque combina diagnóstico, estrategia visual, experiencia de usuario, design systems e implementación
             front-end. Primero entiendo el problema; después diseño el sistema que mejor puede resolverlo.</p>
         </div><img alt="Nicolás Scarselli en su espacio de trabajo" class="reveal-image"
-          src="images/nicoscarselli_atwork.jpg" />
+          src="images/nicoscarselli_atwork.jpg" loading="lazy" />
       </div>
     </section>
 
