@@ -310,9 +310,22 @@
       align-items: center
     }
 
-    .theme {
+    .theme,
+    .lang-toggle {
       width: 44px;
-      height: 44px
+      height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .05em;
+      color: var(--ink);
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      background: transparent;
+      cursor: pointer;
     }
 
     .menu-toggle {
@@ -1235,6 +1248,7 @@
     .hire,
     .link,
     .theme,
+    .lang-toggle,
     .close,
     .info a,
     .footer a {
@@ -1514,6 +1528,7 @@
       .hire,
       .link,
       .theme,
+      .lang-toggle,
       .close,
       .project,
       .service,
@@ -1552,13 +1567,13 @@
 
 <body>
   <nav class="nav">
-    <div class="wrap navin"><a class="logo" href="#hero" aria-label="Nicolás Scarselli - Inicio"><img src="images/logo.svg" alt="Nicolás Scarselli Logo"></a>
-        <div class="links" id="primary-navigation"><a href="#proyectos">Proyectos</a><a href="#servicios">Servicios</a><a
-          href="#metodo">Método</a><a href="#sobre">Sobre mí</a><a href="#experiencia">Experiencia</a><a
-          href="https://payhip.com/NicoScarselli" rel="noopener" target="_blank">Store</a><a class="mobile-hire" href="#contacto">Hablemos</a></div>
-      <div class="actions"><button aria-label="Cambiar tema" class="theme" id="theme"><span
+    <div class="wrap navin"><a class="logo" href="#hero" aria-label="Nicolás Scarselli - Inicio" data-i18n-attr="aria-label:nav.logoAria"><img src="images/logo.svg" alt="Nicolás Scarselli Logo"></a>
+        <div class="links" id="primary-navigation"><a href="#proyectos" data-i18n="nav.projects">Proyectos</a><a href="#servicios" data-i18n="nav.services">Servicios</a><a
+          href="#metodo" data-i18n="nav.method">Método</a><a href="#sobre" data-i18n="nav.about">Sobre mí</a><a href="#experiencia" data-i18n="nav.experience">Experiencia</a><a
+          href="https://payhip.com/NicoScarselli" rel="noopener" target="_blank" data-i18n="nav.store">Store</a><a class="mobile-hire" href="#contacto" data-i18n="nav.talk">Hablemos</a></div>
+      <div class="actions"><button aria-label="Cambiar idioma a inglés" class="lang-toggle" id="lang-toggle" type="button">EN</button><button aria-label="Cambiar tema" class="theme" id="theme" data-i18n-attr="aria-label:nav.themeAria"><span
             class="material-symbols-rounded">dark_mode</span></button><button aria-label="Abrir menú" aria-controls="primary-navigation" aria-expanded="false" class="menu-toggle" id="menu-toggle"><span
-        class="material-symbols-rounded" aria-hidden="true">menu</span></button><a class="hire" href="#contacto">Hablemos</a>
+        class="material-symbols-rounded" aria-hidden="true">menu</span></button><a class="hire" href="#contacto" data-i18n="nav.talk">Hablemos</a>
       </div>
     </div>
   </nav>
@@ -1567,16 +1582,16 @@
     <section class="hero" id="hero">
       <div class="wrap hero-grid">
         <div>
-          <h1 class="display">Diseño digital, con estrategia y resultados.</h1>
-          <p>Soy Nicolás Scarselli, diseñador senior de producto y marca. Ayudo a empresas y equipos a convertir
+          <h1 class="display" data-i18n="hero.title">Diseño digital, con estrategia y resultados.</h1>
+          <p data-i18n="hero.lead">Soy Nicolás Scarselli, diseñador senior de producto y marca. Ayudo a empresas y equipos a convertir
             problemas complejos en marcas, productos y experiencias digitales claras, coherentes y posibles de
             construir.</p>
-          <div class="hero-actions"><a class="btn" href="#proyectos">Cómo puedo ayudarte <span
+          <div class="hero-actions"><a class="btn" href="#proyectos"><span data-i18n="hero.cta">Cómo puedo ayudarte</span> <span
                 class="material-symbols-rounded">arrow_downward</span></a></div>
         </div>
         <div class="portrait reveal-image"><img alt="Retrato profesional de Nicolás Scarselli"
-            src="images/nicoscarselli.jpg" fetchpriority="high" />
-          <div class="caption"><strong>Diseñador de Producto y Marca</strong><span>UX/UI · Brand · Implementación</span>
+            src="images/nicoscarselli.jpg" fetchpriority="high" data-i18n-attr="alt:hero.portraitAlt" />
+          <div class="caption"><strong data-i18n="hero.captionRole">Diseñador de Producto y Marca</strong><span data-i18n="hero.captionSkills">UX/UI · Brand · Implementación</span>
           </div>
         </div>
       </div>
@@ -1586,145 +1601,145 @@
       <div class="wrap">
         <div class="head projects-head reveal">
           <div>
-            <h2 class="h2">Trabajo seleccionado</h2>
-            <p class="sub">Cinco proyectos donde combiné estrategia, UX/UI, sistemas visuales e implementación.</p>
-          </div><a class="link" href="https://www.behance.net/nicoscarselli" rel="noopener" target="_blank">Ver todo en
+            <h2 class="h2" data-i18n="projects.heading">Trabajo seleccionado</h2>
+            <p class="sub" data-i18n="projects.sub">Cinco proyectos donde combiné estrategia, UX/UI, sistemas visuales e implementación.</p>
+          </div><a class="link" href="https://www.behance.net/nicoscarselli" rel="noopener" target="_blank" data-i18n="projects.behanceLink">Ver todo en
             Behance ↗</a>
         </div>
         <article class="project">
           <div class="copy reveal">
-            <div class="pindex"><span>Producto digital · Design Systems</span></div>
-            <h3 class="ptitle">DIRECTV — Portal de Estadísticas QATAR 2022</h3>
+            <div class="pindex"><span data-i18n="projects.directv.tag">Producto digital · Design Systems</span></div>
+            <h3 class="ptitle" data-i18n="projects.directv.title">DIRECTV — Portal de Estadísticas QATAR 2022</h3>
             <div class="facts">
               <div class="fact">
-                <p>El portal debía funcionar en televisión mediante una interfaz 10-foot, con navegación por control
+                <p data-i18n="projects.directv.p1">El portal debía funcionar en televisión mediante una interfaz 10-foot, con navegación por control
                   remoto y lectura a distancia. La versión anterior concentraba demasiada información en listas
                   extensas, con jerarquías poco claras y una carga cognitiva elevada para una experiencia de consulta
                   rápida.</p>
               </div>
               <div class="fact">
-                <p>Reorganicé la arquitectura visual y los recorridos, aplicando principios perceptivos, jerarquías más
+                <p data-i18n="projects.directv.p2">Reorganicé la arquitectura visual y los recorridos, aplicando principios perceptivos, jerarquías más
                   marcadas y componentes reutilizables. El sistema priorizó el reconocimiento sobre la lectura constante
                   y contempló las restricciones de distintos decodificadores.</p>
               </div>
-              <div class="fact result"><b>Resultado</b>
-                <p>Una experiencia más clara y consistente para consultar estadísticas, con menor esfuerzo de lectura y
+              <div class="fact result"><b data-i18n="projects.resultLabel">Resultado</b>
+                <p data-i18n="projects.directv.result">Una experiencia más clara y consistente para consultar estadísticas, con menor esfuerzo de lectura y
                   un lenguaje visual unificado entre pantallas, estados y dispositivos.</p>
               </div>
             </div>
           </div>
-          <div class="visual reveal-image"><button aria-label="Ampliar imagen de DIRECTV" class="zoom"><img
+          <div class="visual reveal-image"><button aria-label="Ampliar imagen de DIRECTV" class="zoom" data-i18n-attr="aria-label:projects.directv.zoomAria"><img
                 alt="Portal de estadísticas DIRECTV en pantalla de televisión"
-                src="images/proyectos/directv.png" loading="lazy" /></button></div>
+                src="images/proyectos/directv.png" loading="lazy" data-i18n-attr="alt:projects.directv.imgAlt" /></button></div>
         </article>
 
         <article class="project">
           <div class="copy reveal">
-            <div class="pindex"><span>Estrategia · Identidad · Web</span></div>
-            <h3 class="ptitle">Procrisa — Presencia digital industrial</h3>
+            <div class="pindex"><span data-i18n="projects.procrisa.tag">Estrategia · Identidad · Web</span></div>
+            <h3 class="ptitle" data-i18n="projects.procrisa.title">Procrisa — Presencia digital industrial</h3>
             <div class="facts">
               <div class="fact">
-                <p>Procrisa necesitaba presentar una oferta técnica amplia de aberturas de PVC sin convertir el sitio en
+                <p data-i18n="projects.procrisa.p1">Procrisa necesitaba presentar una oferta técnica amplia de aberturas de PVC sin convertir el sitio en
                   un catálogo difícil de entender. La presencia existente no acompañaba la calidad industrial de la
                   empresa ni ayudaba a encontrar información relevante.</p>
               </div>
               <div class="fact">
-                <p>Definí una arquitectura simple, ordené productos y contenidos por necesidades de consulta, prototipé
+                <p data-i18n="projects.procrisa.p2">Definí una arquitectura simple, ordené productos y contenidos por necesidades de consulta, prototipé
                   la experiencia responsive en Figma y desarrollé la interfaz. La implementación en WordPress permitió
                   conservar el criterio visual y facilitar la administración.</p>
               </div>
-              <div class="fact result"><b>Resultado</b>
-                <p>Un sitio responsive, profesional y administrable, con catálogo estructurado, contenidos editables y
+              <div class="fact result"><b data-i18n="projects.resultLabel">Resultado</b>
+                <p data-i18n="projects.procrisa.result">Un sitio responsive, profesional y administrable, con catálogo estructurado, contenidos editables y
                   una presentación más clara de la capacidad técnica de la empresa.</p>
               </div>
             </div>
             <a class="link" href="https://www.behance.net/gallery/234366631/Desarrollo-Web-PROCRISA" rel="noopener"
-              target="_blank">Ver proyecto completo ↗</a>
+              target="_blank" data-i18n="projects.viewFullProject">Ver proyecto completo ↗</a>
           </div>
-          <div class="visual reveal-image"><button aria-label="Ampliar imagen de Procrisa" class="zoom"><img
-                alt="Sitio web industrial de Procrisa" src="images/proyectos/procrisa.png" loading="lazy" /></button></div>
+          <div class="visual reveal-image"><button aria-label="Ampliar imagen de Procrisa" class="zoom" data-i18n-attr="aria-label:projects.procrisa.zoomAria"><img
+                alt="Sitio web industrial de Procrisa" src="images/proyectos/procrisa.png" loading="lazy" data-i18n-attr="alt:projects.procrisa.imgAlt" /></button></div>
         </article>
 
         <article class="project">
           <div class="copy reveal">
-            <div class="pindex"><span>Identidad · Eventos · Comunicación</span></div>
-            <h3 class="ptitle">Build Africa Expo — Identidad de marca</h3>
+            <div class="pindex"><span data-i18n="projects.bae.tag">Identidad · Eventos · Comunicación</span></div>
+            <h3 class="ptitle" data-i18n="projects.bae.title">Build Africa Expo — Identidad de marca</h3>
             <div class="facts">
               <div class="fact">
-                <p>El evento necesitaba una identidad reconocible capaz de conectar empresas, instituciones y audiencias
+                <p data-i18n="projects.bae.p1">El evento necesitaba una identidad reconocible capaz de conectar empresas, instituciones y audiencias
                   diferentes. Debía funcionar con consistencia en promoción, señalética, materiales impresos, espacios
                   físicos y entornos digitales.</p>
               </div>
               <div class="fact">
-                <p>Construí una identidad basada en tramas geométricas modulares, una paleta de alto contraste y
+                <p data-i18n="projects.bae.p2">Construí una identidad basada en tramas geométricas modulares, una paleta de alto contraste y
                   jerarquías tipográficas flexibles. El sistema permite variar composiciones sin perder reconocimiento
                   ni lógica visual.</p>
               </div>
-              <div class="fact result"><b>Resultado</b>
-                <p>Un ecosistema de marca integral con aplicaciones institucionales y promocionales, piezas para el
+              <div class="fact result"><b data-i18n="projects.resultLabel">Resultado</b>
+                <p data-i18n="projects.bae.result">Un ecosistema de marca integral con aplicaciones institucionales y promocionales, piezas para el
                   evento, brochure y diseño web, preparado para escalar a nuevas ediciones y soportes.</p>
               </div>
             </div>
             <a class="link" href="https://www.behance.net/gallery/208036471/Brand-Identity-Build-Africa-Expo"
-              rel="noopener" target="_blank">Ver proyecto completo ↗</a>
+              rel="noopener" target="_blank" data-i18n="projects.viewFullProject">Ver proyecto completo ↗</a>
           </div>
-          <div class="visual reveal-image"><button aria-label="Ampliar imagen de Build Africa Expo" class="zoom"><img
-                alt="Sistema de identidad de Build Africa Expo" src="images/proyectos/bae.png" loading="lazy" /></button></div>
+          <div class="visual reveal-image"><button aria-label="Ampliar imagen de Build Africa Expo" class="zoom" data-i18n-attr="aria-label:projects.bae.zoomAria"><img
+                alt="Sistema de identidad de Build Africa Expo" src="images/proyectos/bae.png" loading="lazy" data-i18n-attr="alt:projects.bae.imgAlt" /></button></div>
         </article>
 
         <article class="project">
           <div class="copy reveal">
-            <div class="pindex"><span>Branding · Posicionamiento</span></div>
-            <h3 class="ptitle">Coirón — Identidad institucional</h3>
+            <div class="pindex"><span data-i18n="projects.coiron.tag">Branding · Posicionamiento</span></div>
+            <h3 class="ptitle" data-i18n="projects.coiron.title">Coirón — Identidad institucional</h3>
             <div class="facts">
               <div class="fact">
-                <p>Coirón, una consultora argentina de seguridad e higiene, necesitaba superar una presentación genérica
+                <p data-i18n="projects.coiron.p1">Coirón, una consultora argentina de seguridad e higiene, necesitaba superar una presentación genérica
                   y construir una identidad capaz de transmitir conocimiento técnico, confianza y profesionalismo.</p>
               </div>
               <div class="fact">
-                <p>Desarrollé un sistema visual completo: logotipo, paleta, tipografía, criterios de composición y
+                <p data-i18n="projects.coiron.p2">Desarrollé un sistema visual completo: logotipo, paleta, tipografía, criterios de composición y
                   aplicaciones. Cada elemento fue pensado para comunicación comercial, documentación técnica,
                   indumentaria y señalética.</p>
               </div>
-              <div class="fact result"><b>Resultado</b>
-                <p>Una marca sólida y consistente que traduce la especialización de la empresa en una presencia clara,
+              <div class="fact result"><b data-i18n="projects.resultLabel">Resultado</b>
+                <p data-i18n="projects.coiron.result">Una marca sólida y consistente que traduce la especialización de la empresa en una presencia clara,
                   profesional y aplicable en distintos soportes.</p>
               </div>
             </div>
             <a class="link"
               href="https://www.behance.net/gallery/227541965/Brand-Visual-Identity-Coiron-Consultoria-Amb"
-              rel="noopener" target="_blank">Ver proyecto completo ↗</a>
+              rel="noopener" target="_blank" data-i18n="projects.viewFullProject">Ver proyecto completo ↗</a>
           </div>
-          <div class="visual reveal-image"><button aria-label="Ampliar imagen de Coirón" class="zoom"><img
-                alt="Identidad visual de Coirón aplicada" src="images/proyectos/coiron.png" loading="lazy" /></button></div>
+          <div class="visual reveal-image"><button aria-label="Ampliar imagen de Coirón" class="zoom" data-i18n-attr="aria-label:projects.coiron.zoomAria"><img
+                alt="Identidad visual de Coirón aplicada" src="images/proyectos/coiron.png" loading="lazy" data-i18n-attr="alt:projects.coiron.imgAlt" /></button></div>
         </article>
 
         <article class="project">
           <div class="copy reveal">
-            <div class="pindex"><span>UX/UI · Producto digital</span></div>
-            <h3 class="ptitle">Iris Hotel — Experiencia digital</h3>
+            <div class="pindex"><span data-i18n="projects.iris.tag">UX/UI · Producto digital</span></div>
+            <h3 class="ptitle" data-i18n="projects.iris.title">Iris Hotel — Experiencia digital</h3>
             <div class="facts">
               <div class="fact">
-                <p>Iris Hotel es un hotel boutique de lujo en Toubab Dialaw, Senegal. Con una propuesta y una ubicación
+                <p data-i18n="projects.iris.p1">Iris Hotel es un hotel boutique de lujo en Toubab Dialaw, Senegal. Con una propuesta y una ubicación
                   excepcionales, necesitaba construir una presencia digital capaz de comunicar su identidad y
                   posicionarlo ante una audiencia internacional.</p>
               </div>
               <div class="fact">
-                <p>Diseñé una experiencia web responsive en español, inglés y francés, con un lenguaje editorial
+                <p data-i18n="projects.iris.p2">Diseñé una experiencia web responsive en español, inglés y francés, con un lenguaje editorial
                   alineado al carácter del hotel. Organicé la información de habitaciones y servicios, y sumé un
                   buscador de disponibilidad para hacer más claro el recorrido hacia la reserva directa, priorizando
                   el uso desde mobile.</p>
               </div>
-              <div class="fact result"><b>Resultado</b>
-                <p>Una propuesta digital consistente que presenta la experiencia del hotel, facilita la consulta y
+              <div class="fact result"><b data-i18n="projects.resultLabel">Resultado</b>
+                <p data-i18n="projects.iris.result">Una propuesta digital consistente que presenta la experiencia del hotel, facilita la consulta y
                   reserva en tres idiomas y ofrece un canal directo como alternativa a las plataformas intermediarias.</p>
               </div>
             </div>
             <a class="link" href="https://www.behance.net/gallery/255149987/Iris-Hotel-Luxury-Hospitality-Digital-Experience"
-              rel="noopener" target="_blank">Ver proyecto completo ↗</a>
+              rel="noopener" target="_blank" data-i18n="projects.viewFullProject">Ver proyecto completo ↗</a>
           </div>
-          <div class="visual reveal-image"><button aria-label="Ampliar imagen de Iris Hotel" class="zoom"><img
-                alt="Experiencia web e identidad digital de Iris Hotel" src="images/proyectos/iris_hotel.png" loading="lazy" /></button></div>
+          <div class="visual reveal-image"><button aria-label="Ampliar imagen de Iris Hotel" class="zoom" data-i18n-attr="aria-label:projects.iris.zoomAria"><img
+                alt="Experiencia web e identidad digital de Iris Hotel" src="images/proyectos/iris_hotel.png" loading="lazy" data-i18n-attr="alt:projects.iris.imgAlt" /></button></div>
         </article>
       </div>
     </section>
@@ -1732,48 +1747,48 @@
     <section id="servicios">
       <div class="wrap">
         <div class="head reveal">
-          <h2 class="h2">Cómo puedo ayudarte</h2>
-          <p class="sub">No siempre hace falta empezar de cero. Primero identifico qué está frenando la claridad, la
+          <h2 class="h2" data-i18n="services.title">Cómo puedo ayudarte</h2>
+          <p class="sub" data-i18n="services.sub">No siempre hace falta empezar de cero. Primero identifico qué está frenando la claridad, la
             confianza o la consistencia; después diseño la solución que realmente necesita el negocio.</p>
         </div>
         <div class="services">
           <article class="service reveal">
-            <h3>Análisis Web UX</h3>
-            <p>Detecto qué está limitando la claridad, credibilidad y efectividad de tu sitio web. Auditoría visual,
+            <h3 data-i18n="services.card1.title">Análisis Web UX</h3>
+            <p data-i18n="services.card1.desc">Detecto qué está limitando la claridad, credibilidad y efectividad de tu sitio web. Auditoría visual,
               experiencia de usuario, arquitectura de información, benchmark competitivo
               y oportunidades de mejora priorizadas.</p>
-            <p class="fit"><b>Ideal para</b> empresas que sienten que su web ya no representa la calidad de lo que
-              ofrecen.</p>
-            <div class="tags"><span>Auditoría
-                UX</span><span>Heurísticas</span><span>Accesibilidad</span><span>Priorización</span></div>
+            <p class="fit"><b data-i18n="services.idealPrefix">Ideal para</b> <span data-i18n="services.card1.fit">empresas que sienten que su web ya no representa la calidad de lo que
+              ofrecen.</span></p>
+            <div class="tags"><span data-i18n="services.card1.tags.0">Auditoría
+                UX</span><span data-i18n="services.card1.tags.1">Heurísticas</span><span data-i18n="services.card1.tags.2">Accesibilidad</span><span data-i18n="services.card1.tags.3">Priorización</span></div>
           </article>
           <article class="service reveal">
-            <h3>Estrategia de Marca</h3>
-            <p>Construyo sistemas de identidad pensados para diferenciar, comunicar mejor y acompañar el
+            <h3 data-i18n="services.card2.title">Estrategia de Marca</h3>
+            <p data-i18n="services.card2.desc">Construyo sistemas de identidad pensados para diferenciar, comunicar mejor y acompañar el
               crecimiento. Posicionamiento, narrativa, identidad visual, dirección de arte y criterios para aplicar la
               marca con coherencia.</p>
-            <p class="fit"><b>Ideal para</b> empresas que crecieron, pero cuya marca quedó atrás.</p>
-            <div class="tags"><span>Posicionamiento</span><span>Identidad</span><span>Dirección de
-                arte</span><span>Guidelines</span></div>
+            <p class="fit"><b data-i18n="services.idealPrefix">Ideal para</b> <span data-i18n="services.card2.fit">empresas que crecieron, pero cuya marca quedó atrás.</span></p>
+            <div class="tags"><span data-i18n="services.card2.tags.0">Posicionamiento</span><span data-i18n="services.card2.tags.1">Identidad</span><span data-i18n="services.card2.tags.2">Dirección de
+                arte</span><span data-i18n="services.card2.tags.3">Guidelines</span></div>
           </article>
           <article class="service reveal">
-            <h3>Experiencias Digitales</h3>
-            <p>Diseño sitios web y productos digitales enfocados en claridad, confianza y toma de
+            <h3 data-i18n="services.card3.title">Experiencias Digitales</h3>
+            <p data-i18n="services.card3.desc">Diseño sitios web y productos digitales enfocados en claridad, confianza y toma de
               decisiones. Arquitectura, UX, UI, contenido, prototipos, diseño responsive y acompañamiento de
               implementación.</p>
-            <p class="fit"><b>Ideal para</b> organizaciones que necesitan transformar una presencia digital desordenada
-              en una experiencia profesional.</p>
-            <div class="tags"><span>Arquitectura</span><span>UX/UI</span><span>Prototipos</span><span>Front-end</span>
+            <p class="fit"><b data-i18n="services.idealPrefix">Ideal para</b> <span data-i18n="services.card3.fit">organizaciones que necesitan transformar una presencia digital desordenada
+              en una experiencia profesional.</span></p>
+            <div class="tags"><span data-i18n="services.card3.tags.0">Arquitectura</span><span data-i18n="services.card3.tags.1">UX/UI</span><span data-i18n="services.card3.tags.2">Prototipos</span><span data-i18n="services.card3.tags.3">Front-end</span>
             </div>
           </article>
           <article class="service reveal">
-            <h3>Design Systems</h3>
-            <p>Creo sistemas escalables para mantener consistencia entre negocio, diseño y desarrollo. Componentes,
+            <h3 data-i18n="services.card4.title">Design Systems</h3>
+            <p data-i18n="services.card4.desc">Creo sistemas escalables para mantener consistencia entre negocio, diseño y desarrollo. Componentes,
               variables, patrones, documentación, handoff y criterios de evolución para
               productos digitales.</p>
-            <p class="fit"><b>Ideal para</b> equipos que quieren crecer sin perder calidad ni coherencia.</p>
+            <p class="fit"><b data-i18n="services.idealPrefix">Ideal para</b> <span data-i18n="services.card4.fit">equipos que quieren crecer sin perder calidad ni coherencia.</span></p>
             <div class="tags">
-              <span>Componentes</span><span>Variables</span><span>Documentación</span><span>Gobernanza</span>
+              <span data-i18n="services.card4.tags.0">Componentes</span><span data-i18n="services.card4.tags.1">Variables</span><span data-i18n="services.card4.tags.2">Documentación</span><span data-i18n="services.card4.tags.3">Gobernanza</span>
             </div>
           </article>
         </div>
@@ -1783,24 +1798,24 @@
     <section class="process" id="metodo">
       <div class="wrap">
         <div class="head reveal">
-          <h2 class="h2">Analizar antes de diseñar. Diseñar pensando en implementar.</h2>
+          <h2 class="h2" data-i18n="method.title">Analizar antes de diseñar. Diseñar pensando en implementar.</h2>
         </div>
         <div class="steps">
           <article class="step reveal"><b>01</b>
-            <h3>Analizar</h3>
-            <p>Contexto, objetivos, usuarios, competencia y restricciones.</p>
+            <h3 data-i18n="method.step1.title">Analizar</h3>
+            <p data-i18n="method.step1.desc">Contexto, objetivos, usuarios, competencia y restricciones.</p>
           </article>
           <article class="step reveal"><b>02</b>
-            <h3>Definir</h3>
-            <p>Prioridades, estrategia, contenidos y criterios de diseño.</p>
+            <h3 data-i18n="method.step2.title">Definir</h3>
+            <p data-i18n="method.step2.desc">Prioridades, estrategia, contenidos y criterios de diseño.</p>
           </article>
           <article class="step reveal"><b>03</b>
-            <h3>Diseñar</h3>
-            <p>Experiencias, interfaces y sistemas con una razón detrás.</p>
+            <h3 data-i18n="method.step3.title">Diseñar</h3>
+            <p data-i18n="method.step3.desc">Experiencias, interfaces y sistemas con una razón detrás.</p>
           </article>
           <article class="step reveal"><b>04</b>
-            <h3>Implementar</h3>
-            <p>Acompañamiento, documentación y evolución junto a los equipos.</p>
+            <h3 data-i18n="method.step4.title">Implementar</h3>
+            <p data-i18n="method.step4.desc">Acompañamiento, documentación y evolución junto a los equipos.</p>
           </article>
         </div>
       </div>
@@ -1809,80 +1824,80 @@
     <section id="sobre">
       <div class="wrap about">
         <div class="reveal">
-          <h2>Me interesa el diseño que puede explicarse, implementarse y sostenerse.</h2>
-          <p>Soy Nicolás Scarselli, diseñador de producto, UX/UI y marca con más de 18 años de experiencia en productos
+          <h2 data-i18n="about.title">Me interesa el diseño que puede explicarse, implementarse y sostenerse.</h2>
+          <p data-i18n="about.p1">Soy Nicolás Scarselli, diseñador de producto, UX/UI y marca con más de 18 años de experiencia en productos
             digitales, identidad visual y comunicación.</p>
-          <p>Mi enfoque combina diagnóstico, estrategia visual, experiencia de usuario, design systems e implementación
+          <p data-i18n="about.p2">Mi enfoque combina diagnóstico, estrategia visual, experiencia de usuario, design systems e implementación
             front-end. Primero entiendo el problema; después diseño el sistema que mejor puede resolverlo.</p>
         </div><img alt="Nicolás Scarselli en su espacio de trabajo" class="reveal-image"
-          src="images/nicoscarselli_atwork.jpg" loading="lazy" />
+          src="images/nicoscarselli_atwork.jpg" loading="lazy" data-i18n-attr="alt:about.imgAlt" />
       </div>
     </section>
 
     <section id="experiencia">
       <div class="wrap">
         <div class="head reveal">
-          <h2 class="h2">Experiencia</h2>
-          <p class="sub">Diseño, producto y sistemas para equipos digitales exigentes.</p>
+          <h2 class="h2" data-i18n="experience.title">Experiencia</h2>
+          <p class="sub" data-i18n="experience.sub">Diseño, producto y sistemas para equipos digitales exigentes.</p>
         </div>
         <div class="exp-list">
           <article class="exp reveal">
-            <div class="period">Feb 2024 — Presente<div class="badge">Actual</div>
+            <div class="period"><span data-i18n="experience.item1.period">Feb 2024 — Presente</span><div class="badge" data-i18n="experience.badgeCurrent">Actual</div>
             </div>
             <div>
-              <h3>Senior UX/UI Designer</h3>
-              <p>Accenture — Buenos Aires, Argentina</p>
-            </div>
-          </article>
-          <article class="exp reveal">
-            <div class="period">Nov 2021 — Ene 2024</div>
-            <div>
-              <h3>UX/UI Designer Senior</h3>
-              <p>DIRECTV / SKY / Vrio Corp — Argentina</p>
+              <h3 data-i18n="experience.item1.role">Senior UX/UI Designer</h3>
+              <p data-i18n="experience.item1.company">Accenture — Buenos Aires, Argentina</p>
             </div>
           </article>
           <article class="exp reveal">
-            <div class="period">Nov 2020 — Sep 2021</div>
+            <div class="period" data-i18n="experience.item2.period">Nov 2021 — Ene 2024</div>
             <div>
-              <h3>UX/UI Designer</h3>
-              <p>Red Link S.A. — Argentina</p>
+              <h3 data-i18n="experience.item2.role">UX/UI Designer Senior</h3>
+              <p data-i18n="experience.item2.company">DIRECTV / SKY / Vrio Corp — Argentina</p>
             </div>
           </article>
           <article class="exp reveal">
-            <div class="period">Nov 2016 — Sep 2020</div>
+            <div class="period" data-i18n="experience.item3.period">Nov 2020 — Sep 2021</div>
             <div>
-              <h3>Diseñador Digital y Web Senior</h3>
-              <p>Latcom / Contenidos Advertising — Argentina</p>
+              <h3 data-i18n="experience.item3.role">UX/UI Designer</h3>
+              <p data-i18n="experience.item3.company">Red Link S.A. — Argentina</p>
             </div>
           </article>
           <article class="exp reveal">
-            <div class="period">Oct 2011 — Oct 2016</div>
+            <div class="period" data-i18n="experience.item4.period">Nov 2016 — Sep 2020</div>
             <div>
-              <h3>Diseñador UI/UX y Multimedia</h3>
-              <p>Timwe Tech — Buenos Aires, Argentina</p>
+              <h3 data-i18n="experience.item4.role">Diseñador Digital y Web Senior</h3>
+              <p data-i18n="experience.item4.company">Latcom / Contenidos Advertising — Argentina</p>
             </div>
           </article>
           <article class="exp reveal">
-            <div class="period">2006 — 2011</div>
+            <div class="period" data-i18n="experience.item5.period">Oct 2011 — Oct 2016</div>
             <div>
-              <h3>Diseñador Gráfico y Web</h3>
-              <p>CT Educación · Eventoplus — Argentina</p>
+              <h3 data-i18n="experience.item5.role">Diseñador UI/UX y Multimedia</h3>
+              <p data-i18n="experience.item5.company">Timwe Tech — Buenos Aires, Argentina</p>
+            </div>
+          </article>
+          <article class="exp reveal">
+            <div class="period" data-i18n="experience.item6.period">2006 — 2011</div>
+            <div>
+              <h3 data-i18n="experience.item6.role">Diseñador Gráfico y Web</h3>
+              <p data-i18n="experience.item6.company">CT Educación · Eventoplus — Argentina</p>
             </div>
           </article>
         </div>
-        <a class="btn btn-secondary" href="nicolas-scarselli-product-designer.pdf" rel="noopener" target="_blank">CV DIGITAL <span
+        <a class="btn btn-secondary" href="nicolas-scarselli-product-designer.pdf" rel="noopener" target="_blank"><span data-i18n="experience.cvBtn">CV DIGITAL</span> <span
             class="material-symbols-rounded">arrow_outward</span></a>
       </div>
     </section>
 
     <section class="audit" id="analisis">
-      <div class="wrap reveal"><span class="kicker">Análisis Web UX</span>
-        <h2>¿Tu web refleja el verdadero nivel de tu empresa?</h2>
-        <p>Una revisión profesional puede revelar problemas de claridad, credibilidad y experiencia antes de que
+      <div class="wrap reveal"><span class="kicker" data-i18n="audit.kicker">Análisis Web UX</span>
+        <h2 data-i18n="audit.title">¿Tu web refleja el verdadero nivel de tu empresa?</h2>
+        <p data-i18n="audit.desc">Una revisión profesional puede revelar problemas de claridad, credibilidad y experiencia antes de que
           inviertas en un rediseño completo. Recibe un diagnóstico directo y prioridades concretas para decidir el
           próximo paso.</p><a class="btn"
-          href="mailto:scarselli.nicolas@gmail.com?subject=Solicitud%20de%20An%C3%A1lisis%20Web%20UX">Solicitar análisis
-           <span class="material-symbols-rounded">arrow_outward</span></a><small>Diagnóstico · prioridades ·
+          href="mailto:scarselli.nicolas@gmail.com?subject=Solicitud%20de%20An%C3%A1lisis%20Web%20UX"><span data-i18n="audit.btn">Solicitar análisis</span>
+           <span class="material-symbols-rounded">arrow_outward</span></a><small data-i18n="audit.small">Diagnóstico · prioridades ·
           recomendaciones</small>
       </div>
     </section>
@@ -1890,12 +1905,12 @@
     <section class="contact" id="contacto">
       <div class="wrap contact-grid">
         <div class="reveal">
-          <h2>Contame sobre tu próximo proyecto</h2><a class="email"
+          <h2 data-i18n="contact.title">Contame sobre tu próximo proyecto</h2><a class="email"
             href="mailto:scarselli.nicolas@gmail.com">scarselli.nicolas@gmail.com</a>
         </div>
         <div class="reveal">
-          <div class="info"><b>Teléfono</b><a href="tel:+541167336069">+54 (11) 6733.6069</a></div>
-          <div class="info"><b>Ubicación</b><span>Buenos Aires, Argentina</span></div>
+          <div class="info"><b data-i18n="contact.phoneLabel">Teléfono</b><a href="tel:+541167336069">+54 (11) 6733.6069</a></div>
+          <div class="info"><b data-i18n="contact.locationLabel">Ubicación</b><span data-i18n="contact.locationValue">Buenos Aires, Argentina</span></div>
           <div class="info"><b>BE</b><a href="https://www.behance.net/nicoscarselli" rel="noopener"
               target="_blank">Behance ↗</a></div>
           <div class="info"><b>LI</b><a href="https://linkedin.com/in/nicoscarselli" rel="noopener"
@@ -1903,7 +1918,7 @@
           <div class="info"><b>IG</b><a href="https://www.instagram.com/nicoscarselli.design" rel="noopener"
               target="_blank">Instagram ↗</a></div>
           <div class="info"><b>PH</b><a href="https://www.instagram.com/nicoscarselli.ph" rel="noopener"
-              target="_blank">Fotografía ↗</a></div>
+              target="_blank" data-i18n="contact.photoLabel">Fotografía ↗</a></div>
           <div class="info"><b>GU</b><a href="https://nicoscarselli.gumroad.com/" rel="noopener"
               target="_blank">Gumroad ↗</a></div>
         </div>
@@ -1912,20 +1927,20 @@
 
   </main>
   <footer class="footer">
-    <div class="wrap footer-meta"><span>© 2026 Nicolás Scarselli · Buenos Aires · <a
-        href="https://linktr.ee/nicoscarselli" rel="noopener" target="_blank">MAS INFORMACION</a></span><a
-      href="#hero">Volver arriba ↑</a></div>
+    <div class="wrap footer-meta"><span><span data-i18n="footer.metaCopy">© 2026 Nicolás Scarselli · Buenos Aires · </span><a
+        href="https://linktr.ee/nicoscarselli" rel="noopener" target="_blank" data-i18n="footer.moreInfo">MAS INFORMACION</a></span><a
+      href="#hero" data-i18n="footer.backToTop">Volver arriba ↑</a></div>
     <div aria-hidden="true" class="footer-marquee">
-      <div class="footer-track"><span>NICO SCARSELLI <span class="dot">/</span> </span><span>NICO SCARSELLI <span
-            class="dot">/</span> </span><span>NICO SCARSELLI <span class="dot">/</span> </span><span>NICO
-          SCARSELLI <span class="dot">/</span> </span><span>NICO SCARSELLI <span class="dot">/</span> </span><span>NICO
-          SCARSELLI <span class="dot">/</span> </span><span>NICO SCARSELLI <span class="dot">/</span> </span><span>NICO
-          SCARSELLI <span class="dot">/</span> </span></div>
+      <div class="footer-track"><span>NICO SCARSELLI <span class="dot">/</span> </span><span>NICO SCARSELLI <span
+            class="dot">/</span> </span><span>NICO SCARSELLI <span class="dot">/</span> </span><span>NICO
+          SCARSELLI <span class="dot">/</span> </span><span>NICO SCARSELLI <span class="dot">/</span> </span><span>NICO
+          SCARSELLI <span class="dot">/</span> </span><span>NICO SCARSELLI <span class="dot">/</span> </span><span>NICO
+          SCARSELLI <span class="dot">/</span> </span></div>
     </div>
   </footer>
   <dialog class="dialog" id="dialog">
     <div class="lightbox">
-      <p class="lcap"></p><button aria-label="Cerrar" class="close"><span
+      <p class="lcap"></p><button aria-label="Cerrar" class="close" data-i18n-attr="aria-label:dialog.closeAria"><span
           class="material-symbols-rounded">close</span></button><img alt="" src="" />
     </div>
   </dialog>
@@ -1978,6 +1993,7 @@
       function active() { var line = window.scrollY + Math.min(window.innerHeight * .32, 210), current = null; targets.forEach(function (t) { if (t.section.offsetTop <= line) current = t.link }); links.forEach(function (l) { l.classList.toggle('active', l === current) }); }
       window.addEventListener('scroll', active, { passive: true }); window.addEventListener('resize', active, { passive: true }); active();
     })();</script>
+  <script src="i18n.js"></script>
 </body>
 
 </html>
