@@ -132,7 +132,7 @@
       about: {
         title: 'Me interesa el diseño que puede explicarse, implementarse y sostenerse.',
         p1: 'Soy Nicolás Scarselli, diseñador de producto, UX/UI y marca con más de 18 años de experiencia en productos digitales, identidad visual y comunicación.',
-        p2: 'Mi enfoque combina diagnóstico, estrategia visual, experiencia de usuario, design systems e implementación front-end. Primero entiendo el problema; después diseño el sistema que mejor puede resolverlo.',
+        p2: 'Mi enfoque combina diagnóstico, estrategia visual, experiencia de usuario, design systems e implementación front-end. Uso IA como apoyo para investigar, sintetizar e idear, con revisión humana en cada entrega. Primero entiendo el problema; después diseño el sistema que mejor puede resolverlo.',
         imgAlt: 'Nicolás Scarselli en su espacio de trabajo'
       },
       experience: {
@@ -141,35 +141,45 @@
         badgeCurrent: 'Actual',
         cvBtn: 'CV DIGITAL',
         cvHref: 'nicolas-scarselli-product-designer.pdf',
+        statsAria: 'Resultados destacados',
+        stat1: 'suscriptores en Latinoamérica',
+        stat2: 'componentes en ocho productos; 35% menos tiempo de diseño de nuevas pantallas',
+        stat3: 'tickets de soporte relacionados con UX',
         item1: {
           period: 'Feb 2024 — Presente',
           role: 'Senior UX/UI Designer',
-          company: 'Accenture — Buenos Aires, Argentina'
+          company: 'Accenture — Buenos Aires, Argentina',
+          desc: 'Diseño experiencias iTV para DIRECTV y SKY en distintas plataformas; mantengo un design system de más de 120 componentes usado en ocho productos, que redujo cerca de 35% el tiempo de diseño.'
         },
         item2: {
           period: 'Nov 2021 — Ene 2024',
           role: 'UX/UI Designer Senior',
-          company: 'DIRECTV / SKY / Vrio Corp — Argentina'
+          company: 'DIRECTV / SKY / Vrio Corp — Buenos Aires, Argentina',
+          desc: 'Diseñé más de seis productos de punta a punta y rediseñé navegaciones críticas para decodificadores; el cambio redujo 22% los tickets de soporte relacionados con UX.'
         },
         item3: {
           period: 'Nov 2020 — Sep 2021',
           role: 'UX/UI Designer',
-          company: 'Red Link S.A. — Argentina'
+          company: 'Red Link S.A. — Buenos Aires, Argentina',
+          desc: 'Diseñé herramientas, aplicaciones y dashboards para entidades financieras, y prototipos interactivos de más de 80 pantallas por producto.'
         },
         item4: {
           period: 'Nov 2016 — Sep 2020',
           role: 'Diseñador Digital y Web Senior',
-          company: 'Latcom / Contenidos Advertising — Argentina'
+          company: 'Latcom / Contenidos Advertising — Buenos Aires, Argentina',
+          desc: 'Diseñé y desarrollé sitios, micrositios, newsletters y presentaciones para más de 50 clientes, combinando UX/UI, HTML, CSS, Bootstrap y WordPress.'
         },
         item5: {
           period: 'Oct 2011 — Oct 2016',
           role: 'Diseñador UI/UX y Multimedia',
-          company: 'Timwe Tech — Buenos Aires, Argentina'
+          company: 'Timwe Tech — Buenos Aires, Argentina',
+          desc: 'Diseñé portales móviles y landing pages para operadoras como Claro y Movistar, y una guía de marca interna aplicada a más de diez tipos de piezas.'
         },
         item6: {
-          period: '2006 — 2011',
+          period: 'Jun 2006 — Sep 2011',
           role: 'Diseñador Gráfico y Web',
-          company: 'CT Educación · Eventoplus — Argentina'
+          company: 'CT Educación · Eventoplus — Buenos Aires, Argentina',
+          desc: 'Desarrollé sitios web, campañas de email, piezas editoriales, identidades y materiales comerciales.'
         }
       },
       audit: {
@@ -189,7 +199,7 @@
       },
       footer: {
         metaCopy: '© 2026 Nicolás Scarselli · Buenos Aires · ',
-        moreInfo: 'MAS INFORMACION',
+        moreInfo: 'MÁS INFORMACIÓN',
         backToTop: 'Volver arriba ↑'
       },
       dialog: {
@@ -328,7 +338,7 @@
       about: {
         title: 'I care about design that can be explained, implemented, and sustained.',
         p1: 'I am Nicolás Scarselli, product, UX/UI, and brand designer with 18+ years of experience across digital products, visual identity, and strategic communication.',
-        p2: 'My approach fuses diagnostic analysis, visual strategy, user experience, design systems, and front-end implementation. First, I understand the core problem; then, I design the system that best solves it.',
+        p2: 'My approach fuses diagnostic analysis, visual strategy, user experience, design systems, and front-end implementation. I use AI to support research, synthesis, and ideation, with human review on every deliverable. First, I understand the core problem; then, I design the system that best solves it.',
         imgAlt: 'Nicolás Scarselli at his workspace'
       },
       experience: {
@@ -337,35 +347,45 @@
         badgeCurrent: 'Current',
         cvBtn: 'DIGITAL RESUME',
         cvHref: 'nicolas-scarselli-product-designer_en.pdf',
+        statsAria: 'Selected results',
+        stat1: 'subscribers across Latin America',
+        stat2: 'components across eight products; 35% less time to design new screens',
+        stat3: 'UX-related support tickets',
         item1: {
           period: 'Feb 2024 — Present',
           role: 'Senior UX/UI Designer',
-          company: 'Accenture — Buenos Aires, Argentina'
+          company: 'Accenture — Buenos Aires, Argentina',
+          desc: 'I design iTV experiences for DIRECTV and SKY across platforms, and maintain a design system of 120+ components used across eight products, reducing new-screen design time by about 35%.'
         },
         item2: {
           period: 'Nov 2021 — Jan 2024',
           role: 'Senior UX/UI Designer',
-          company: 'DIRECTV / SKY / Vrio Corp — Argentina'
+          company: 'DIRECTV / SKY / Vrio Corp — Buenos Aires, Argentina',
+          desc: 'I designed more than six products end to end and redesigned critical set-top box navigation, reducing UX-related support tickets by 22%.'
         },
         item3: {
           period: 'Nov 2020 — Sep 2021',
           role: 'UX/UI Designer',
-          company: 'Red Link S.A. — Argentina'
+          company: 'Red Link S.A. — Buenos Aires, Argentina',
+          desc: 'I designed tools, applications, and dashboards for financial institutions, and interactive prototypes with more than 80 screens per product.'
         },
         item4: {
           period: 'Nov 2016 — Sep 2020',
           role: 'Senior Digital & Web Designer',
-          company: 'Latcom / Contenidos Advertising — Argentina'
+          company: 'Latcom / Contenidos Advertising — Buenos Aires, Argentina',
+          desc: 'I designed and developed websites, microsites, newsletters, and presentations for 50+ clients, combining UX/UI, HTML, CSS, Bootstrap, and WordPress.'
         },
         item5: {
           period: 'Oct 2011 — Oct 2016',
           role: 'UI/UX & Multimedia Designer',
-          company: 'Timwe Tech — Buenos Aires, Argentina'
+          company: 'Timwe Tech — Buenos Aires, Argentina',
+          desc: 'I designed mobile portals and landing pages for carriers such as Claro and Movistar, and an internal brand guide used across more than ten types of materials.'
         },
         item6: {
-          period: '2006 — 2011',
+          period: 'Jun 2006 — Sep 2011',
           role: 'Graphic & Web Designer',
-          company: 'CT Educación · Eventoplus — Argentina'
+          company: 'CT Educación · Eventoplus — Buenos Aires, Argentina',
+          desc: 'I developed websites, email campaigns, editorial pieces, identities, and commercial materials.'
         }
       },
       audit: {

@@ -123,6 +123,7 @@
       --ink: #ffffff;
       --muted: var(--mist);
       --soft: var(--mist);
+      --accent: var(--mist);
       --line: rgba(197, 206, 211, .24);
       --line2: rgba(197, 206, 211, .14);
       --inv: #1d1f1f;
@@ -813,16 +814,24 @@
     .stats {
       display: flex;
       flex-wrap: wrap;
+      align-items: flex-start;
       gap: 28px;
       margin-top: 24px;
       padding-top: 24px;
       border-top: 1px solid var(--line2)
     }
 
+    .stats > div {
+      flex: 1 1 180px;
+      max-width: 30ch
+    }
+
     .stats b {
+      display: block;
       font-size: 1.35rem;
       color: var(--ink);
-      margin-right: 4px
+      margin-bottom: 4px;
+      line-height: 1.2
     }
 
     .about img {
@@ -861,6 +870,12 @@
       font-size: 16px
     }
 
+    .exp .exp-desc {
+      max-width: 80ch;
+      margin-top: 8px;
+      font-size: 15px
+    }
+
     .badge {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 13px;
@@ -896,6 +911,10 @@
       color: var(--ink);
       text-decoration: none;
       border-bottom: 1px solid currentColor
+    }
+
+    .contact .btn {
+      margin-top: 24px
     }
 
     .info {
@@ -1828,7 +1847,8 @@
           <p data-i18n="about.p1">Soy Nicolás Scarselli, diseñador de producto, UX/UI y marca con más de 18 años de experiencia en productos
             digitales, identidad visual y comunicación.</p>
           <p data-i18n="about.p2">Mi enfoque combina diagnóstico, estrategia visual, experiencia de usuario, design systems e implementación
-            front-end. Primero entiendo el problema; después diseño el sistema que mejor puede resolverlo.</p>
+          front-end. Uso IA como apoyo para investigar, sintetizar e idear, con revisión humana en cada entrega. Primero entiendo
+          el problema; después diseño el sistema que mejor puede resolverlo.</p>
         </div><img alt="Nicolás Scarselli en su espacio de trabajo" class="reveal-image"
           src="images/nicoscarselli_atwork.jpg" loading="lazy" data-i18n-attr="alt:about.imgAlt" />
       </div>
@@ -1847,27 +1867,31 @@
             <div>
               <h3 data-i18n="experience.item1.role">Senior UX/UI Designer</h3>
               <p data-i18n="experience.item1.company">Accenture — Buenos Aires, Argentina</p>
+              <p class="exp-desc" data-i18n="experience.item1.desc">Diseño experiencias iTV para DIRECTV y SKY en distintas plataformas; mantengo un design system de más de 120 componentes usado en ocho productos, que redujo cerca de 35% el tiempo de diseño.</p>
             </div>
           </article>
           <article class="exp reveal">
             <div class="period" data-i18n="experience.item2.period">Nov 2021 — Ene 2024</div>
             <div>
               <h3 data-i18n="experience.item2.role">UX/UI Designer Senior</h3>
-              <p data-i18n="experience.item2.company">DIRECTV / SKY / Vrio Corp — Argentina</p>
+              <p data-i18n="experience.item2.company">DIRECTV / SKY / Vrio Corp — Buenos Aires, Argentina</p>
+              <p class="exp-desc" data-i18n="experience.item2.desc">Diseñé más de seis productos de punta a punta y rediseñé navegaciones críticas para decodificadores; el cambio redujo 22% los tickets de soporte relacionados con UX.</p>
             </div>
           </article>
           <article class="exp reveal">
             <div class="period" data-i18n="experience.item3.period">Nov 2020 — Sep 2021</div>
             <div>
               <h3 data-i18n="experience.item3.role">UX/UI Designer</h3>
-              <p data-i18n="experience.item3.company">Red Link S.A. — Argentina</p>
+              <p data-i18n="experience.item3.company">Red Link S.A. — Buenos Aires, Argentina</p>
+              <p class="exp-desc" data-i18n="experience.item3.desc">Diseñé herramientas, aplicaciones y dashboards para entidades financieras, y prototipos interactivos de más de 80 pantallas por producto.</p>
             </div>
           </article>
           <article class="exp reveal">
             <div class="period" data-i18n="experience.item4.period">Nov 2016 — Sep 2020</div>
             <div>
               <h3 data-i18n="experience.item4.role">Diseñador Digital y Web Senior</h3>
-              <p data-i18n="experience.item4.company">Latcom / Contenidos Advertising — Argentina</p>
+              <p data-i18n="experience.item4.company">Latcom / Contenidos Advertising — Buenos Aires, Argentina</p>
+              <p class="exp-desc" data-i18n="experience.item4.desc">Diseñé y desarrollé sitios, micrositios, newsletters y presentaciones para más de 50 clientes, combinando UX/UI, HTML, CSS, Bootstrap y WordPress.</p>
             </div>
           </article>
           <article class="exp reveal">
@@ -1875,18 +1899,20 @@
             <div>
               <h3 data-i18n="experience.item5.role">Diseñador UI/UX y Multimedia</h3>
               <p data-i18n="experience.item5.company">Timwe Tech — Buenos Aires, Argentina</p>
+              <p class="exp-desc" data-i18n="experience.item5.desc">Diseñé portales móviles y landing pages para operadoras como Claro y Movistar, y una guía de marca interna aplicada a más de diez tipos de piezas.</p>
             </div>
           </article>
           <article class="exp reveal">
-            <div class="period" data-i18n="experience.item6.period">2006 — 2011</div>
+            <div class="period" data-i18n="experience.item6.period">Jun 2006 — Sep 2011</div>
             <div>
               <h3 data-i18n="experience.item6.role">Diseñador Gráfico y Web</h3>
-              <p data-i18n="experience.item6.company">CT Educación · Eventoplus — Argentina</p>
+              <p data-i18n="experience.item6.company">CT Educación · Eventoplus — Buenos Aires, Argentina</p>
+              <p class="exp-desc" data-i18n="experience.item6.desc">Desarrollé sitios web, campañas de email, piezas editoriales, identidades y materiales comerciales.</p>
             </div>
           </article>
         </div>
         <a class="btn btn-secondary" href="nicolas-scarselli-product-designer.pdf" data-i18n-attr="href:experience.cvHref" rel="noopener" target="_blank"><span data-i18n="experience.cvBtn">CV DIGITAL</span> <span
-            class="material-symbols-rounded">arrow_outward</span></a>
+          class="material-symbols-rounded">arrow_outward</span></a>
       </div>
     </section>
 
@@ -1928,7 +1954,7 @@
   </main>
   <footer class="footer">
     <div class="wrap footer-meta"><span><span data-i18n="footer.metaCopy">© 2026 Nicolás Scarselli · Buenos Aires · </span><a
-        href="https://linktr.ee/nicoscarselli" rel="noopener" target="_blank" data-i18n="footer.moreInfo">MAS INFORMACION</a></span><a
+        href="https://linktr.ee/nicoscarselli" rel="noopener" target="_blank" data-i18n="footer.moreInfo">MÁS INFORMACIÓN</a></span><a
       href="#hero" data-i18n="footer.backToTop">Volver arriba ↑</a></div>
     <div aria-hidden="true" class="footer-marquee">
       <div class="footer-track"><span>NICO SCARSELLI <span class="dot">/</span> </span><span>NICO SCARSELLI <span
@@ -1938,6 +1964,7 @@
           SCARSELLI <span class="dot">/</span> </span></div>
     </div>
   </footer>
+  <script defer src="/_vercel/insights/script.js"></script>
   <dialog class="dialog" id="dialog">
     <div class="lightbox">
       <p class="lcap"></p><button aria-label="Cerrar" class="close" data-i18n-attr="aria-label:dialog.closeAria"><span
@@ -1989,7 +2016,7 @@
       var observer = new IntersectionObserver(function (entries) { entries.forEach(function (entry) { if (entry.isIntersecting) { entry.target.classList.add('is-visible'); observer.unobserve(entry.target); } }); }, { threshold: .1, rootMargin: '0px 0px -44px 0px' });
       items.forEach(function (el) { observer.observe(el) });
       var links = [].slice.call(document.querySelectorAll('.links a'));
-      var targets = links.map(function (link) { return { link: link, section: document.querySelector(link.getAttribute('href')) } }).filter(function (x) { return x.section });
+      var targets = links.map(function (link) { return { link: link, section: link.hash ? document.querySelector(link.hash) : null } }).filter(function (x) { return x.section });
       function active() { var line = window.scrollY + Math.min(window.innerHeight * .32, 210), current = null; targets.forEach(function (t) { if (t.section.offsetTop <= line) current = t.link }); links.forEach(function (l) { l.classList.toggle('active', l === current) }); }
       window.addEventListener('scroll', active, { passive: true }); window.addEventListener('resize', active, { passive: true }); active();
     })();</script>
