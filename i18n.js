@@ -140,6 +140,7 @@
         sub: 'Diseño, producto y sistemas para equipos digitales exigentes.',
         badgeCurrent: 'Actual',
         cvBtn: 'CV DIGITAL',
+        cvHref: 'nicolas-scarselli-product-designer.pdf',
         item1: {
           period: 'Feb 2024 — Presente',
           role: 'Senior UX/UI Designer',
@@ -335,6 +336,7 @@
         sub: 'Design, product strategy, and design systems for demanding digital teams.',
         badgeCurrent: 'Current',
         cvBtn: 'DIGITAL RESUME',
+        cvHref: 'nicolas-scarselli-product-designer_en.pdf',
         item1: {
           period: 'Feb 2024 — Present',
           role: 'Senior UX/UI Designer',
